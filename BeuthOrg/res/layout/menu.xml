@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/beuthorg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="0.01"
+            android:text="@string/menCho"
+            android:textColor="#ffffff" />
+
+        <DigitalClock
+            android:id="@+id/digitalClock1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="DigitalClock" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:layout_weight="0.52"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_marginTop="20sp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Allgemeines Uni" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_marginTop="20sp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Allgemeines Studiengang" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_marginTop="20sp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Profil" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_marginTop="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Stundenplan" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_marginTop="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Mensa" />
+    </LinearLayout>
+
+</LinearLayout>

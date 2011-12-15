@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="name">BeuthOrganizer</string>
+    <string name="hello">Wilkommen zum neuen BeuthOrganizer! Hier hast du die Möglichkeit dein Kampus-
+         und Unileben zu strukturieren und zu organisieren.</string>
+    <string name="next">Klicke auf "Weiter" um zu starten.</string>
+    <string name="app_name">BeuthOrg</string>
+    <string name="enter_your_name">Enter your name:</string>
+    
+    <string name="hi_button">Say Hi!</string>
+	<string name="hello_button">Weiter</string>
+	
+	<string name="error_name_missing">Bitte einen Namen angeben.</string>
+	<string name="error_ok">OK</string>
+	
+	<string name="hi_greeting">Hi %s!</string>
+	<string name="hello_greeting">Hello %s!</string>
+	
+	<string name="main_screen">MainScreen</string>
+    <string name="splash_screen">SplashScreen</string>
+	<string name="line">_______________________________</string>
+	<string name="Menu">Menü</string>
+	
+	<string name="menCho">Wähle einen Menüpunkt.</string>
+
+</resources>
