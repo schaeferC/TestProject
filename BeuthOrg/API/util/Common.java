@@ -5,7 +5,7 @@ package util;
  *
  */
 public class Common {
-	public static final String PATH="lib/JSONDATA/";
+	public static final String PATH="Testdata/JSONDATA/";
 	
 	public static final String STUDIENDOKU = "Studiendoku";
 	public static final String MODUL_ORD = "ModulOrd";
