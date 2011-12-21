@@ -8,29 +8,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
-
-public class Menu extends Activity implements OnClickListener{
+public class News extends Activity implements OnClickListener{
     /** Called when the activity is first created. */
     
-    private Button AllgemeineUni;
+    private Button Back;
+
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu);
+        setContentView(R.layout.news);
         
-        AllgemeineUni = (Button)findViewById(R.id.button1);
-        AllgemeineUni.setOnClickListener(this);
+        Back = (Button)findViewById(R.id.button1);
+        Back.setOnClickListener(this);
 
     }
 
 	@Override
 	public void onClick(View v) {
-	if(v ==AllgemeineUni){
-	    startActivity(new Intent("de.bht.BeuthOrg.AllgemeinUni"));
-	}
-		
-		
+		if(v ==Back){
+		    startActivity(new Intent("de.bht.BeuthOrg.AllgemeinUni"));
+		}
 	}
 }

@@ -21,7 +21,10 @@
     <string name="splash_screen">SplashScreen</string>
 	<string name="line">_______________________________</string>
 	<string name="Menu">Menü</string>
+	<string name="News">News</string>
 	
+	    
 	<string name="menCho">Wähle einen Menüpunkt.</string>
+	<string name="newCho">Hier finden Sie die aktuellen News der Beuth.</string>
 
 </resources>
