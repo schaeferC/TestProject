@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Student>000000
+   <FirstName>Max</FirstName>
+   <Name>Mustermann</Name>
+
+   <degreeCourse>MedieninformatikBachlor</degreeCourse>
+   <Semester>4</Semester>
+   <Faculty>6</Faculty>
+   <Courses>
+      <Modul>MME2
+         <teacher>Udo Mustermann</teacher>
+         <Room>332</Room>
+         <Day>Mo</Day>
+         <Time>14:15</Time>
+         <ModulDescription></ModulDescription>
+      </Modul>
+   </Courses>  
+</Student>

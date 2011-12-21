@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Message>
+  <Sender>
+    <EMail>Tochter@tochter.com</EMail>
+    <FirstName>Tochter</FirstName>
+    <Name />
+  </Sender>
+  <Recepient>
+    <EMail>Mutti@mutti.com</EMail>
+    <FirstName>Mutti</FirstName>
+    <Name />
+  </Recepient>
+  <Received>Tue Jun 14 19:55:55 CEST 2011</Received>
+  <Subject>Hallo Mutti</Subject>
+  <Attachments />
+  <Importance />
+  <Read>false</Read>
+  <Processing />
+  <Text>Mutti, du hast vergessen mich abzuholen.</Text>
+</Message>
+
