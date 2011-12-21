@@ -235,7 +235,7 @@ public class ReadData {
 
 		}
 		String source = new String(
-				"{\"ErrorCode\":\"NoStudienDoku\",{\"StudienDoku\":[]}}");
+				"{\"ErrorCode\":\"NotStudiendokuExist\",\"Studiendoku\":[]}");
 		try {
 			json = new JSONObject(source);
 		} catch (JSONException e) {
