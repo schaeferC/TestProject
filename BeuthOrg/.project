@@ -3,6 +3,7 @@
 	<name>BeuthOrg</name>
 	<comment></comment>
 	<projects>
+		<project>FakeApi</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

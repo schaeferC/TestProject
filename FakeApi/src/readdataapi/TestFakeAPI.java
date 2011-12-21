@@ -16,7 +16,6 @@ public class TestFakeAPI {
 		System.out.println(ReadData.getAllLehrkraftnews().toString());
 		System.out.println(ReadData.getProfDataByProfname("Grude").toString());
 		System.out.println(ReadData.getModulDescriptionByStudOrd("1", "MME1").toString());
-		
 		System.out.println(ReadData.getStudienDoku().toString());
 		
 	}
