@@ -1,5 +1,6 @@
 package de.bht.BeuthOrg;
 
+import de.bht.BeuthOrg.util.Common;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -12,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AllgemeinUni extends Activity implements OnClickListener{
+public class AllgemeinUni extends Activity{
     /** Called when the activity is first created. */
 
 	private Button News;
@@ -22,14 +23,17 @@ public class AllgemeinUni extends Activity implements OnClickListener{
         setContentView(R.layout.allgemeinuni);
         
         News = (Button)findViewById(R.id.button1);
-        News.setOnClickListener(this);
+        News.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if(v ==News){
+				    startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"News"));
+				}
+				
+			}
+		});
 
     }
 
-	@Override
-	public void onClick(View v) {
-		if(v ==News){
-		    startActivity(new Intent("de.bht.BeuthOrg.News"));
-		}
-	}
 }

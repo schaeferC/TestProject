@@ -6,59 +6,70 @@
 
     <uses-sdk android:minSdkVersion="10" />
 
-	<uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-          android:icon="@drawable/ic_launcher" 
-        android:label="@string/app_name">
-        
-        
-         <activity 
-             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" 
-             android:name=".SplashScreen"
-             android:label="@string/app_name">
-            <intent-filter>
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:label="@string/app_name"
+            android:name=".SplashScreen"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
-            android:name=".BeuthOrgActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:name=".BeuthOrgActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter >
                 <action android:name="de.bht.BeuthOrg.BeuthOrgActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
-            <activity
-            android:name=".Menu"
-            android:label="Menü">
+        <activity
+            android:label="Menü"
+            android:name=".Menu" >
             <intent-filter >
                 <action android:name="de.bht.BeuthOrg.Menu" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
-                <activity
-            android:name=".AllgemeinUni"
-            android:label="Allgemeines zur Uni">
+        <activity
+            android:label="Allgemeines zur Uni"
+            android:name=".AllgemeinUni" >
             <intent-filter >
                 <action android:name="de.bht.BeuthOrg.AllgemeinUni" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
-                    <activity
-            android:name=".News"
-            android:label="News">
+        <activity
+            android:label="News"
+            android:name=".News" >
             <intent-filter >
                 <action android:name="de.bht.BeuthOrg.News" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="Login"
+            android:name=".Login" >
+            <intent-filter >
+                <action android:name="de.bht.BeuthOrg.Login" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         
+        
+		
     </application>
 
 </manifest>

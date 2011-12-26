@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loginPopUp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/hlogin"
+        android:clipToPadding="true"
+        android:orientation="vertical"
+        android:paddingRight="30px"
+        android:paddingTop="30px" >
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:clipToPadding="true"
+            android:orientation="horizontal"
+            android:paddingLeft="30px"
+            android:paddingTop="20px" >
+
+            <TextView
+                android:id="@+id/nameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.01"
+                android:text="Name"
+                android:textColor="#2a3e59" />
+
+            <EditText
+                android:id="@+id/nameTextField"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.03" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="30px"
+            android:paddingTop="20px" >
+
+            <TextView
+                android:id="@+id/passphraseLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.0066"
+                android:text="Password"
+                android:textColor="#2a3e59" />
+
+            <EditText
+                android:id="@+id/passphraseTextField"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.03"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="20px" >
+
+            <Button
+                android:id="@+id/cancelLog"
+                android:layout_width="113dp"
+                android:layout_height="88dp"
+                android:background="@drawable/cancel"
+                android:paddingTop="15px"
+                android:text="Cancel"
+                android:textColor="#2a3e59" />
+
+            <Button
+                android:id="@+id/EnterLog"
+                android:layout_width="149dp"
+                android:layout_height="116dp"
+                android:layout_marginLeft="70px"
+                android:background="@drawable/enterlogin"
+                android:paddingLeft="20px"
+                android:paddingTop="10px"
+                android:text="    OK    "
+                android:textColor="#2a3e59" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

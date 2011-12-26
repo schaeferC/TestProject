@@ -1,5 +1,6 @@
 package de.bht.BeuthOrg;
 
+import de.bht.BeuthOrg.util.Common;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +9,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 
-public class BeuthOrgActivity extends Activity implements OnClickListener{
-    /** Called when the activity is first created. */
+public class BeuthOrgActivity extends Activity{
+
+	/** Called when the activity is first created. */
 		   
 	private Button helloButton;
 	
@@ -19,13 +21,16 @@ public class BeuthOrgActivity extends Activity implements OnClickListener{
         setContentView(R.layout.main);
                 
         helloButton = (Button)findViewById(R.id.hello_button);
-        helloButton.setOnClickListener(this);
+        helloButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if (v == helloButton){
+					 startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Login"));
+				}	
+				
+			}
+		});
     }
 
-	@Override
-	public void onClick(View v) {
-		if (v == helloButton){
-			 startActivity(new Intent("de.bht.BeuthOrg.Menu"));
-		}	
-	}
 }

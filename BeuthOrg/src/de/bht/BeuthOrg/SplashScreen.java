@@ -2,6 +2,7 @@ package de.bht.BeuthOrg;
 
 
 
+import de.bht.BeuthOrg.util.Common;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,7 +35,7 @@ public class SplashScreen extends Activity {
                     // do nothing
                 } finally {
                     finish();
-                    startActivity(new Intent("de.bht.BeuthOrg.BeuthOrgActivity"));
+                    startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"BeuthOrgActivity"));
                     
                 }
             }
