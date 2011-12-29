@@ -18,6 +18,8 @@ public class TestFakeAPI {
 		System.out.println(ReadData.getModulDescriptionByStudOrd("1", "MME1").toString());
 		System.out.println(ReadData.getStudienDoku().toString());
 		
+		
+		
 	}
 
 }

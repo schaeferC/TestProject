@@ -1,6 +1,7 @@
 package de.bht.BeuthOrg;
 
 
+import de.bht.BeuthOrg.datahandler.DataHandler;
 import de.bht.BeuthOrg.util.Common;
 import android.app.Activity;
 import android.content.Intent;
@@ -50,20 +51,22 @@ public class Login extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		if(v==login){
+			DataHandler.isRegistered("000041", "1234");
+			Log.d("DEBUG", "");
 			Log.d("DEBUG", ""+R.id.loginPopUp);
 			view=findViewById(R.id.loginPopUp);
 			//Toast t=new Toast(this);
 			LayoutInflater inflater=this.getLayoutInflater();
 			View view= inflater.inflate(R.layout.loginpopup, (ViewGroup) findViewById(R.id.loginPopUp));
 			
-			nameLabel=(TextView)findViewById(R.id.nameLabel);
-			passphraseLabel=(TextView)findViewById(R.id.passphraseLabel);
-			nameText=(EditText)findViewById(R.id.nameTextField);
-			passphraseText=(EditText)findViewById(R.id.passphraseTextField);
+			nameLabel=(TextView)view.findViewById(R.id.nameLabel);
+			passphraseLabel=(TextView)view.findViewById(R.id.passphraseLabel);
+			nameText=(EditText)view.findViewById(R.id.nameTextField);
+			passphraseText=(EditText)view.findViewById(R.id.passphraseTextField);
 			
-			cancel= (Button)findViewById(R.id.cancelLog);
+			cancel= (Button)view.findViewById(R.id.cancelLog);
 			cancel.setOnClickListener(this);
-			enterLogin=(Button) findViewById(R.id.EnterLog);
+			enterLogin=(Button) view.findViewById(R.id.EnterLog);
 			enterLogin.setOnClickListener(this);
 
 
@@ -73,7 +76,10 @@ public class Login extends Activity implements OnClickListener{
 		}else if(v == cancel){
 			startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Login"));
 		}else if(v== enterLogin){
-			
+			boolean registered=DataHandler.isRegistered(nameText.getText().toString(), passphraseText.getText().toString());
+			if(registered){
+				Log.d("DEBUG",registered+"");
+			}
 		}
 		
 		

@@ -4,7 +4,7 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/FakeApi"/>
+	<classpathentry kind="lib" path="/FakeApi/path/xstream-distribution-1.4.2-bin/xstream-1.4.2/lib/xstream-1.4.2.jar"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="lib/google-gson-2.0-release/google-gson-2.0/gson-2.0.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

@@ -1,30 +1,43 @@
 package de.bht.BeuthOrg.objects;
 
-import com.google.gson.annotations.SerializedName;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class Student {
-	@SerializedName("StudienOrdnung")
 	private String studienOrdnung;
-	
-	@SerializedName("Name")
+
 	private String name;
 
-	@SerializedName("Fachbereich")
 	private String fb;
-	
-	@SerializedName("Semester")
+
 	private String semester;
-	
-	@SerializedName("Matrikelnr")
+
 	private String matrikelnr;
-	
-	@SerializedName("FirstName")
+
 	private String firstName;
-	
+
 	private StundenPlan stundenplan;
-	
-	@SerializedName("DegreeCourse")
+
 	private String degreeCourse;
+
+	public Student(JSONObject json) {
+		super();
+		try {
+			this.studienOrdnung = json.getString("StudienOrdnung");
+
+			this.name = json.getString("Name");
+			this.fb = json.getString("Fachbereich");
+			this.semester = json.getString("Semester");
+			this.matrikelnr = json.getString("Matrikelnr");
+			this.firstName = json.getString("FirstName");
+			this.stundenplan = new StundenPlan(
+					json.getJSONObject("Stundenplan"));
+			this.degreeCourse = json.getString("DegreeCourse");
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public String getStudienOrdnung() {
 		return studienOrdnung;
@@ -57,11 +70,14 @@ public class Student {
 	public String getDegreeCourse() {
 		return degreeCourse;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [studienOrdnung=" + studienOrdnung + ", name=" + name
+				+ ", fb=" + fb + ", semester=" + semester + ", matrikelnr="
+				+ matrikelnr + ", firstName=" + firstName + ", stundenplan="
+				+ stundenplan + ", degreeCourse=" + degreeCourse + "]";
+	}
+
 	
-	
-
-
-
-
-
 }
