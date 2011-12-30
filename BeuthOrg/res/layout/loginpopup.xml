@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
-
+
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+        android:layout_width="298dp"
         android:layout_height="250dp"
         android:background="@drawable/hlogin"
         android:clipToPadding="true"
@@ -32,7 +32,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="0.01"
                 android:text="Name"
-                android:textColor="#2a3e59" />
+                android:textColor="@color/beuthOrgTextColor" />
 
             <EditText
                 android:id="@+id/nameTextField"
@@ -57,42 +57,37 @@
                 android:layout_gravity="center"
                 android:layout_weight="0.0066"
                 android:text="Password"
-                android:textColor="#2a3e59" />
+                android:textColor="@color/beuthOrgTextColor" />
 
             <EditText
                 android:id="@+id/passphraseTextField"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.03"
+                android:layout_weight="0.034"
                 android:inputType="textPassword" />
         </LinearLayout>
-
+
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="20px" >
-
-            <Button
-                android:id="@+id/cancelLog"
-                android:layout_width="113dp"
-                android:layout_height="88dp"
-                android:background="@drawable/cancel"
-                android:paddingTop="15px"
-                android:text="Cancel"
-                android:textColor="#2a3e59" />
+            android:orientation="horizontal" >
 
             <Button
                 android:id="@+id/EnterLog"
                 android:layout_width="149dp"
                 android:layout_height="116dp"
-                android:layout_marginLeft="70px"
                 android:background="@drawable/enterlogin"
-                android:paddingLeft="20px"
                 android:paddingTop="10px"
                 android:text="    OK    "
-                android:textColor="#2a3e59" />
+                android:textColor="@color/beuthOrgTextColor" android:paddingLeft="20px"/>
+            
+             <Button
+                android:id="@+id/cancelLog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="@color/beuthOrgTextColor" android:background="@drawable/cancel" android:paddingTop="20px"/>
         </LinearLayout>
     </LinearLayout>
 
