@@ -1,5 +1,6 @@
-package de.bht.BeuthOrg;
+package de.bht.BeuthOrg.views;
 
+import de.bht.BeuthOrg.R;
 import de.bht.BeuthOrg.util.Common;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,30 +14,27 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class News extends Activity {
+public class AllgemeinUni extends Activity{
     /** Called when the activity is first created. */
-    
-    private Button Back;
 
-	
+	private Button News;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.news);
+        setContentView(R.layout.allgemeinuni);
         
-        Back = (Button)findViewById(R.id.button1);
-        Back.setOnClickListener(new OnClickListener() {
+        News = (Button)findViewById(R.id.button1);
+        News.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				if(v ==Back){
-				    startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"AllgemeinUni"));
+				if(v ==News){
+				    startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"News"));
 				}
 				
 			}
 		});
 
     }
-
 
 }

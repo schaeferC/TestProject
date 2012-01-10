@@ -1,6 +1,7 @@
-package de.bht.BeuthOrg;
+package de.bht.BeuthOrg.views;
 
 
+import de.bht.BeuthOrg.R;
 import de.bht.BeuthOrg.datahandler.DataHandler;
 import de.bht.BeuthOrg.util.Common;
 import android.app.Activity;
@@ -40,6 +41,8 @@ public class Login extends Activity implements OnClickListener{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
+		finishActivity(R.layout.splash);
+		finishActivity(R.layout.main);
 		
 		login= (Button)findViewById(R.id.login);
 		login.setOnClickListener(this);
@@ -76,9 +79,13 @@ public class Login extends Activity implements OnClickListener{
 		}else if(v == cancel){
 			startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Login"));
 		}else if(v== enterLogin){
+
 			boolean registered=DataHandler.isRegistered(nameText.getText().toString(), passphraseText.getText().toString());
 			if(registered){
+				finishActivity(R.layout.loginpopup);
+				finishActivity(R.layout.login);
 				Log.d("DEBUG",registered+"");
+				startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Menu"));
 			}
 		}
 		

@@ -19,28 +19,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
+            android:paddingBottom="15px"
+            android:paddingTop="20px"
             android:text="Without Login"
             android:textColor="@color/beuthOrgTextColor"
-            android:textSize="25px" android:paddingTop="20px" android:paddingBottom="15px"/>
+            android:textSize="25px" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" 
-                    android:paddingLeft="200px"
-            android:paddingTop="150px">
+        android:orientation="vertical"
+        android:paddingLeft="200px"
+        android:paddingTop="150px" >
 
         <Button
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-
+            android:paddingBottom="15px"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:paddingTop="20px"
             android:text="Login"
             android:textColor="@color/beuthOrgTextColor"
-            android:textSize="25px" android:paddingTop="20px" android:paddingBottom="15px" android:paddingLeft="20px" android:paddingRight="20px"/>
+            android:textSize="25px" />
     </LinearLayout>
 
 </LinearLayout>

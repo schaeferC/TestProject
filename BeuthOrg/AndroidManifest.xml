@@ -13,7 +13,7 @@
         android:label="@string/app_name" >
         <activity
             android:label="@string/app_name"
-            android:name=".SplashScreen"
+            android:name=".views.SplashScreen"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
@@ -23,48 +23,48 @@
         </activity>
         <activity
             android:label="@string/app_name"
-            android:name=".BeuthOrgActivity"
+            android:name=".views.BeuthOrgActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter >
-                <action android:name="de.bht.BeuthOrg.BeuthOrgActivity" />
+                <action android:name="de.bht.BeuthOrg.views.BeuthOrgActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:label="Menü"
-            android:name=".Menu" >
+            android:label="Menu"
+            android:name=".views.Menu" >
             <intent-filter >
-                <action android:name="de.bht.BeuthOrg.Menu" />
+                <action android:name="de.bht.BeuthOrg.views.Menu" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:label="Allgemeines zur Uni"
-            android:name=".AllgemeinUni" >
+            android:name=".views.AllgemeinUni" >
             <intent-filter >
-                <action android:name="de.bht.BeuthOrg.AllgemeinUni" />
+                <action android:name="de.bht.BeuthOrg.views.AllgemeinUni" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:label="News"
-            android:name=".News" >
+            android:name=".views.News" >
             <intent-filter >
-                <action android:name="de.bht.BeuthOrg.News" />
+                <action android:name="de.bht.BeuthOrg.views.News" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:label="Login"
-            android:name=".Login" >
+            android:name=".views.Login" >
             
             <intent-filter >
                 
-                <action android:name="de.bht.BeuthOrg.Login" />
+                <action android:name="de.bht.BeuthOrg.views.Login" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/beuthorg"
-    android:orientation="vertical" >
+    android:background="@drawable/menu" >
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="75dp" >
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_weight="0.01"
-            android:text="@string/menCho"
-            android:textColor="#ffffff" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
         <DigitalClock
             android:id="@+id/digitalClock1"
@@ -27,51 +16,50 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:text="DigitalClock" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginLeft="30sp"
-        android:layout_marginRight="30sp"
-        android:layout_weight="0.52"
-        android:orientation="vertical" >
 
         <Button
-            android:id="@+id/button1"
-            android:layout_marginTop="20sp"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Allgemeines Uni" />
+            android:id="@+id/uniB"
+            android:layout_width="81dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/unib"
+            android:text="Uni"
+            android:textColor="@color/beuthOrgTextColor"
+            android:textSize="25px" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_marginTop="20sp"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Allgemeines Studiengang" />
+            android:id="@+id/fb6B"
+            android:layout_width="76dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="83dp"
+            android:layout_marginTop="92dp"
+            android:background="@drawable/fb6b"
+            android:text="FB6"
+            android:textColor="@color/beuthOrgTextColor"
+            android:textSize="25px" />
 
         <Button
-            android:id="@+id/button3"
-            android:layout_marginTop="20sp"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Mensa" />
+            android:id="@+id/ichB"
+            android:layout_width="80dp"
+            android:layout_height="73dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.00"
+            android:background="@drawable/ichb"
+            android:text="Ich"
+            android:textColor="@color/beuthOrgTextColor"
+            android:textSize="25px" />
 
         <Button
-            android:id="@+id/button4"
-            android:layout_marginTop="20dp"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Stundenplan" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_marginTop="20dp"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Profil" />
+            android:id="@+id/mensaB"
+            android:layout_width="115dp"
+            android:layout_height="67dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/mensab"
+            android:text="Mensa"
+            android:textColor="@color/beuthOrgTextColor"
+            android:textSize="25px" />
     </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>
