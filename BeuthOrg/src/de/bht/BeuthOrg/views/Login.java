@@ -82,10 +82,11 @@ public class Login extends Activity implements OnClickListener{
 
 			boolean registered=DataHandler.isRegistered(nameText.getText().toString(), passphraseText.getText().toString());
 			if(registered){
-				finishActivity(R.layout.loginpopup);
-				finishActivity(R.layout.login);
+				//finishActivity(R.layout.loginpopup);
+				//finishActivity(R.layout.login);
 				Log.d("DEBUG",registered+"");
-				startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Menu"));
+				//startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Menu"));
+				startActivity(new Intent(this, Menu.class));
 			}
 		}
 		
