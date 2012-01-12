@@ -9,62 +9,55 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+public class Menu extends Activity {
+	/** Called when the activity is first created. */
 
-public class Menu extends Activity{
-    /** Called when the activity is first created. */
-    
-    private Button uniB;
-    private Button fb6B;
-    private Button ichB;
-    private Button mensaB;
-    
-	
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu);
-        
-        uniB = (Button)findViewById(R.id.uniB);
-        uniB.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
+	/**
+	 * The used Buttons. Initialization in {@link onClick}
+	 */
+	private Button uniB;
+	private Button fb6B;
+	private Button ichB;
+	private Button mensaB;
 
-				    startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"AllgemeinUni"));
-				
+	/**
+	 * OnClickListener to handle the on Click event
+	 */
+	private OnClickListener ocl = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			if (v == uniB) {
+				startActivity(new Intent(Common.DE_BHT_BEUTH_ORG
+						+ "AllgemeinUni"));
+			} else if (v == fb6B) {
+
+			} else if (v == ichB) {
+
+			} else if (v == mensaB) {
+
 			}
-		});
 
-        fb6B = (Button)findViewById(R.id.fb6B);
-        fb6B.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
+		}
+	};
 
-				
-			}
-		});
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.menu);
 
-        ichB = (Button)findViewById(R.id.ichB);
-        ichB.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
+		uniB = (Button) findViewById(R.id.uniB);
+		uniB.setOnClickListener(ocl);
 
+		fb6B = (Button) findViewById(R.id.fb6B);
+		fb6B.setOnClickListener(ocl);
 
-				
-			}
-		});
+		ichB = (Button) findViewById(R.id.ichB);
+		ichB.setOnClickListener(ocl);
 
-        mensaB = (Button)findViewById(R.id.mensaB);
-        mensaB.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-			}
-		});
+		mensaB = (Button) findViewById(R.id.mensaB);
+		mensaB.setOnClickListener(ocl);
 
-    }
+	}
 
 }
