@@ -28,8 +28,7 @@ public class Menu extends Activity {
 		@Override
 		public void onClick(View v) {
 			if (v == uniB) {
-				startActivity(new Intent(Common.DE_BHT_BEUTH_ORG
-						+ "AllgemeinUni"));
+				startActivity(new Intent(v.getContext(), AllgemeinUni.class));
 			} else if (v == fb6B) {
 
 			} else if (v == ichB) {

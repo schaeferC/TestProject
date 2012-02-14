@@ -31,7 +31,7 @@ public class News extends Activity {
 			@Override
 			public void onClick(View v) {
 				if(v ==Back){
-				    startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"AllgemeinUni"));
+				    startActivity(new Intent(v.getContext(), AllgemeinUni.class));
 				}
 				
 			}

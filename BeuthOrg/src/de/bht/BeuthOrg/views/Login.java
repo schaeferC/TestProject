@@ -77,7 +77,7 @@ public class Login extends Activity implements OnClickListener{
 			puw.showAtLocation(view, Gravity.CENTER, 0, 0);
 
 		}else if(v == cancel){
-			startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Login"));
+			startActivity(new Intent(v.getContext(),Login.class));
 		}else if(v== enterLogin){
 
 			boolean registered=DataHandler.isRegistered(nameText.getText().toString(), passphraseText.getText().toString());
@@ -86,7 +86,7 @@ public class Login extends Activity implements OnClickListener{
 				//finishActivity(R.layout.login);
 				Log.d("DEBUG",registered+"");
 				//startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Menu"));
-				startActivity(new Intent(this, Menu.class));
+				startActivity(new Intent(v.getContext(), Menu.class));
 			}
 		}
 		

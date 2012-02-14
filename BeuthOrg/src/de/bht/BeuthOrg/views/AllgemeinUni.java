@@ -29,7 +29,7 @@ public class AllgemeinUni extends Activity{
 			@Override
 			public void onClick(View v) {
 				if(v ==News){
-				    startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"News"));
+				    startActivity(new Intent(v.getContext(),News.class));
 				}
 				
 			}

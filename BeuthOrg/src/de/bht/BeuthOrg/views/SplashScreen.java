@@ -36,7 +36,7 @@ public class SplashScreen extends Activity {
                     // do nothing
                 } finally {
                     finish();
-                    startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"BeuthOrgActivity"));
+                    startActivity(new Intent(getApplicationContext(),BeuthOrgActivity.class));
                     
                 }
             }
