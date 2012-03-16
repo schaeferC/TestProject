@@ -70,7 +70,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="Mensa"
+            android:label="Mensa Essen"
             android:name=".views.MensaFood" >
             <intent-filter >
                 <action android:name="de.bht.BeuthOrg.views.MensaFood" />
@@ -79,7 +79,7 @@
             </intent-filter>
         </activity>
                 <activity
-            android:label="MensaSelected"
+            android:label="Mensa"
             android:name=".views.MensaSelected" >
             <intent-filter >
                 <action android:name="de.bht.BeuthOrg.views.MensaSelected" />
