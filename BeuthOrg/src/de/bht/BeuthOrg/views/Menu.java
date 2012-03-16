@@ -34,7 +34,7 @@ public class Menu extends Activity {
 			} else if (v == ichB) {
 
 			} else if (v == mensaB) {
-				startActivity(new Intent(v.getContext(), MensaFood.class));
+				startActivity(new Intent(v.getContext(), MensaSelected.class));
 			}
 
 		}
