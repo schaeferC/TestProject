@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mensamenu"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/foodMensaB"
+        android:layout_width="81dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="14dp"
+        android:background="@android:color/transparent"
+        android:text="Essen"
+        android:textColor="@color/beuthOrgTextColor"
+        android:textSize="25px" />
+
+</LinearLayout>

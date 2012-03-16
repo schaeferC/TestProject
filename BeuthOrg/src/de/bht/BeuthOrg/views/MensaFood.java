@@ -11,59 +11,30 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import de.bht.BeuthOrg.R;
+import de.bht.BeuthOrg.util.MensaArrayAdapter;
 import android.app.Activity;
-import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
+import android.widget.ListView;
 
 public class MensaFood extends Activity{
 	
-	TableLayout mealTab;
-	TableRow salads;
-	TextView saladsText;
-	TableRow actionstand;
-	TextView actionstandText;
-	TableRow food;
-	TextView foodText;
-	TableRow foodfixings;
-	TextView foodfixingsText;
-	TableRow desserts;
-	TextView dessertsText;
-	TableRow tagging;
-	TextView taggingText;
+	ListView mealList;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mensaessen);
+        setContentView(R.layout.mensafood);
+        mealList = (ListView)findViewById(R.id.list);
+        String[] siteContents=setContents();
         
-        mealTab = (TableLayout) findViewById(R.id.mealtable);
-        salads = (TableRow) findViewById(R.id.salads);
-        saladsText = (TextView) findViewById(R.id.saladstext);
+        MensaArrayAdapter adapter=new MensaArrayAdapter(this, R.layout.list_item, siteContents, getResources());
         
-        actionstand = (TableRow) findViewById(R.id.actionstand);
-        actionstandText = (TextView) findViewById(R.id.actionstandtext);
-        
-        food = (TableRow) findViewById(R.id.food);
-        foodText = (TextView) findViewById(R.id.foodtext);
-        
-        foodfixings = (TableRow) findViewById(R.id.foodfixings);
-        foodfixingsText = (TextView) findViewById(R.id.foodfixingstext);
-        
-        desserts = (TableRow) findViewById(R.id.desserts);
-        dessertsText = (TextView) findViewById(R.id.dessertstext);
-        
-        tagging = (TableRow) findViewById(R.id.tagging);
-        taggingText = (TextView) findViewById(R.id.taggingtext);
-        
-        setContents();
+        mealList.setAdapter(adapter);
+        mealList.setCacheColorHint(Color.TRANSPARENT);
+
     }
     
-    private void setContents(){
+    private String[] setContents(){
 		String url = new String("http://www.studentenwerk-berlin.de/mensen/speiseplan/beuth/index.html");
 
 		HttpClient hc = new DefaultHttpClient();
@@ -87,24 +58,21 @@ public class MensaFood extends Activity{
 
 			siteInformation = siteInformation.replaceAll("[^\\S]+\\s[^\\S]+", "");
 			siteInformation = siteInformation.replaceAll("<.*?>","|");
+			siteInformation = siteInformation.replaceAll("\t{1,}", "\n");
 			siteInformation = siteInformation.replaceAll("\\|{3,}", "\n");
 			
-			String[] siteContents=siteInformation.split("\n");
+			return siteInformation.split("\n");
+
+
 			
-			for(String s: siteContents){
-				if(s.contains("salate")){
-					
-				}
-			}
-//			System.out.println(s);
 		} catch (ClientProtocolException e1) {
-			// TODO Auto-generated catch block
-			System.out.println("Fehler");
+
 			e1.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			System.out.println("Fehler");
+
 			e.printStackTrace();
 		}
+
+		return new String[]{"leer"};
     }
 }
