@@ -53,11 +53,16 @@ public class MensaSelected extends Activity {
 				R.anim.menubuttonsscale);
 		Animation aAlpha = AnimationUtils.loadAnimation(this,
 				R.anim.menubuttonsalpha);
+		Animation aRotate = AnimationUtils.loadAnimation(this, R.anim.menubuttonsrotate);
+		AnimationSet set = new AnimationSet(false);
+		set.addAnimation(aRotate);
+		set.addAnimation(aAlpha);
+		
 //		Animation aSet = AnimationUtils.loadAnimation(this,
 //				R.anim.set);
 		
 		mensaWabe.startAnimation(aScale);
-		food.startAnimation(aAlpha);
+		food.startAnimation(set);
 		
 //		
 //

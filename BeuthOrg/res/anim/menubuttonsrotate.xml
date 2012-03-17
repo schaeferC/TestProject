@@ -3,7 +3,7 @@
     android:duration="4000"
 
     android:fillBefore="true"
-    android:fromDegrees="0.5"
+    android:fromDegrees="90"
     android:toDegrees="1"
     >
     
