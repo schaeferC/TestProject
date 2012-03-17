@@ -27,12 +27,13 @@ public class MensaFood extends Activity {
 	private static final String TOMORRO_LINK = "http://www.studentenwerk-berlin.de/mensen/speiseplan/beuth/01.html";
 	private static final String TODAY_LINK = "http://www.studentenwerk-berlin.de/mensen/speiseplan/beuth/index.html";
 	
-	ListView mealList;
-	Button dayB;
-	String day;
-	Bundle savedInstanceState;
-	String bottomContents;
-	TextView bottomContentsView;
+	private ListView mealList;
+	private Button dayB;
+	private TextView dayA;
+	private String day;
+	private Bundle savedInstanceState;
+	private String bottomContents;
+	private TextView bottomContentsView;
 
 	private OnClickListener onClick = new OnClickListener() {
 
@@ -53,19 +54,23 @@ public class MensaFood extends Activity {
 
 		mealList = (ListView) findViewById(R.id.list);
 		dayB = (Button) findViewById(R.id.dayB);
+		dayA = (TextView) findViewById(R.id.dayA);
 		bottomContentsView = (TextView) findViewById(R.id.bottomContent);
 		
 		if (day != null) {
 			if (day.contains("today")) {
 				day = new String("tomorrow");
 				dayB.setText("heute");
+				dayA.setText("morgen");
 			} else {
 				day = new String("today");
 				dayB.setText("morgen");
+				dayA.setText("heute");
 			}
 		} else {
 			day = new String("today");
 			dayB.setText("morgen");
+			dayA.setText("heute");
 		}
 		dayB.setOnClickListener(onClick);
 
