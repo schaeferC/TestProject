@@ -60,6 +60,7 @@
         android:paddingRight="5dp"
         android:paddingTop="5dp"
         android:textColor="@color/beuthOrgTextColor" 
-        android:textSize="8px"/>
+        android:textSize="8px"
+        />
 
 </LinearLayout>

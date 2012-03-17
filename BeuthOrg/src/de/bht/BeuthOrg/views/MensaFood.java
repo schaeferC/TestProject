@@ -119,6 +119,7 @@ public class MensaFood extends Activity {
 					"");
 			siteInformation = siteInformation.replaceAll("<.*?>", "|");
 			siteInformation = siteInformation.replaceAll("\t{1,}", "\n");
+			siteInformation = siteInformation.replaceAll("\\|{2,}[E]+[U]+[R]+", "\nEUR");
 			siteInformation = siteInformation.replaceAll("\\|{3,}", "\n");
 			bottomContents = siteInformation.substring(siteInformation.indexOf("Kennzeichnung"));
 
