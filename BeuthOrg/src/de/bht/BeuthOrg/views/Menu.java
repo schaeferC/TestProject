@@ -27,12 +27,14 @@ public class Menu extends Activity {
 		@Override
 		public void onClick(View v) {
 			if (v == uniB) {
+				finish();
 				startActivity(new Intent(v.getContext(), AllgemeinUni.class));
 			} else if (v == fb6B) {
 
 			} else if (v == ichB) {
 
 			} else if (v == mensaB) {
+				finish();
 				startActivity(new Intent(v.getContext(), MensaSelected.class));
 			}
 
@@ -56,6 +58,13 @@ public class Menu extends Activity {
 		mensaB = (Button) findViewById(R.id.mensaB);
 		mensaB.setOnClickListener(ocl);
 
+	}
+	
+	@Override
+	public void onBackPressed() {
+		finish();
+		super.onBackPressed();
+		startActivity(new Intent(this, Login.class));
 	}
 
 }

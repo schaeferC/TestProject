@@ -1,10 +1,10 @@
 package de.bht.BeuthOrg.views;
 
-
 import de.bht.BeuthOrg.R;
 import de.bht.BeuthOrg.util.HTTPContents;
 import de.bht.BeuthOrg.util.MensaArrayAdapter;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 public class MensaFood extends Activity {
 
-	
 	private ListView mealList;
 	private Button dayB;
 	private TextView dayA;
@@ -29,13 +28,13 @@ public class MensaFood extends Activity {
 		@Override
 		public void onClick(View v) {
 			if (v == dayB) {
-
 				changeDay();
 			}
 		}
 	};
 
 	public void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mensafood);
 		this.savedInstanceState = savedInstanceState;
@@ -44,7 +43,7 @@ public class MensaFood extends Activity {
 		dayB = (Button) findViewById(R.id.dayB);
 		dayA = (TextView) findViewById(R.id.dayA);
 		bottomContentsView = (TextView) findViewById(R.id.bottomContent);
-		
+
 		if (day != null) {
 			if (day.contains("today")) {
 				day = new String("tomorrow");
@@ -60,13 +59,14 @@ public class MensaFood extends Activity {
 			dayB.setText("morgen");
 			dayA.setText("heute");
 		}
-		
+
 		dayB.setOnClickListener(onClick);
 
 		String siteContent = HTTPContents.mensaGetContents(day);
-		bottomContents = siteContent.substring(siteContent.indexOf("Kennzeichnung"));
+		bottomContents = siteContent.substring(siteContent
+				.indexOf("Kennzeichnung"));
 		String[] siteContents = siteContent.split("\n");
-		
+
 		bottomContentsView.setText(bottomContents);
 		MensaArrayAdapter adapter = new MensaArrayAdapter(this,
 				R.layout.list_item, siteContents, getResources());
@@ -74,10 +74,19 @@ public class MensaFood extends Activity {
 		mealList.setAdapter(adapter);
 		mealList.setCacheColorHint(Color.TRANSPARENT);
 
+
 	}
 
 	private void changeDay() {
 
 		this.onCreate(savedInstanceState);
 	}
+
+	@Override
+	public void onBackPressed() {
+		finish();
+		super.onBackPressed();
+		startActivity(new Intent(this, MensaSelected.class));
+	}
+
 }

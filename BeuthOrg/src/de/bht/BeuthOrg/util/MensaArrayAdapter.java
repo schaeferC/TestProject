@@ -53,6 +53,7 @@ public class MensaArrayAdapter extends ArrayAdapter<String> {
 					v.setText(Html.fromHtml(first + "<sup>" + last + "</sup>"));
 					v.setTextColor(res.getColor(R.color.beuthOrgTextColor));
 					v.setTextSize(10);
+					res.finishPreloading();
 					return v;
 				}
 				
@@ -62,6 +63,7 @@ public class MensaArrayAdapter extends ArrayAdapter<String> {
 
 			}
 		}
+		res.finishPreloading();
 		return v;
 	}
 

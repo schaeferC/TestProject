@@ -75,6 +75,7 @@ public class Login extends Activity implements OnClickListener{
 			puw.showAtLocation(view, Gravity.CENTER, 0, 0);
 
 		}else if(v == cancel){
+			finish();
 			startActivity(new Intent(v.getContext(),Login.class));
 		}else if(v== enterLogin){
 
@@ -90,6 +91,7 @@ public class Login extends Activity implements OnClickListener{
 		
 		
 	}
+
 
 	
 }

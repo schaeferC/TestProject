@@ -4,6 +4,7 @@ import de.bht.BeuthOrg.R;
 import de.bht.BeuthOrg.util.HTTPContents;
 import de.bht.BeuthOrg.util.NewsArrayAdapter;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,5 +46,12 @@ public class News extends Activity {
 
     }
 
+
+    @Override
+    public void onBackPressed() {
+    	finish();
+    	super.onBackPressed();
+    	startActivity(new Intent(this, AllgemeinUni.class));
+    }
 
 }

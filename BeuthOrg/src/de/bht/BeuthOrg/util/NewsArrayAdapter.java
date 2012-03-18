@@ -43,23 +43,16 @@ public class NewsArrayAdapter extends ArrayAdapter<String> {
 		
 		
 		if(head.matches(".*\\|+.*\\||.*") && !head.matches("\\s*|\n*")){
+			
 			content = head.replaceAll("\\|+.*", "");
 			content = content.substring(head.lastIndexOf("</br>"));
 			linklast = head.substring(head.lastIndexOf("LinkNews"));
-			Log.w("news", "content " + content);
 			title = head.substring(0, head.indexOf("</br>"));
-			Log.w("news", "title " + title);
 		}
-		
-		
-		//Log.w("news", head);
-//		if(linklast == null){
-//			v.setText(Html.fromHtml(head));
-//			return v;
-//		}
-		v.setText(Html.fromHtml("<font color=\"#ffa60a\">"+ title+ "</font> "+ content));
+	
+		v.setText(Html.fromHtml("<font color=\""+res.getColor(R.color.beuthOrgOrange)+"\">"+ title+ "</font> "+ content));
 		v.setTextColor(res.getColor(R.color.beuthOrgTextColor));
-		
+		res.finishPreloading();
 		return v;
 	}
 

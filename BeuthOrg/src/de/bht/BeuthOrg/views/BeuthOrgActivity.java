@@ -26,6 +26,7 @@ public class BeuthOrgActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				if (v == helloButton){
+					finish();
 					 startActivity(new Intent(v.getContext(), Login.class));
 				}	
 				

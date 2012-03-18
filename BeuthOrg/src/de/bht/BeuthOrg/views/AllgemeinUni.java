@@ -23,6 +23,7 @@ public class AllgemeinUni extends Activity{
 			@Override
 			public void onClick(View v) {
 				if(v ==News){
+					finish();
 				    startActivity(new Intent(v.getContext(),News.class));
 				}
 				
@@ -30,5 +31,12 @@ public class AllgemeinUni extends Activity{
 		});
 
     }
+	@Override
+	public void onBackPressed() {
+		finish();
+		super.onBackPressed();
+		startActivity(new Intent(this,Menu.class));
+	}
+    
 
 }

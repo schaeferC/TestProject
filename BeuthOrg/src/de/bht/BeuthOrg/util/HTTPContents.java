@@ -23,9 +23,8 @@ public class HTTPContents {
 
 		try {
 			HttpResponse r = hc.execute(get);
-
-			BufferedReader br = new BufferedReader(new InputStreamReader(r
-					.getEntity().getContent()));
+			InputStreamReader isr = new InputStreamReader(r.getEntity().getContent());
+			BufferedReader br = new BufferedReader(isr);
 
 			String temp = br.readLine();
 
@@ -35,6 +34,9 @@ public class HTTPContents {
 				siteInformation = siteInformation.concat(temp + " ");
 				temp = br.readLine();
 			}
+			
+			isr.close();
+			br.close();
 			return siteInformation;
 		} catch (ClientProtocolException e1) {
 

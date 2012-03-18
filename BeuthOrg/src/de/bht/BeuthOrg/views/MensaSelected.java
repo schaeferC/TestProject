@@ -23,9 +23,10 @@ public class MensaSelected extends Activity {
 		public void onClick(View v) {
 			if (v == food) {
 				Log.w("click", "food clicked");
-
+				finish();
 				startActivity(new Intent(v.getContext(), MensaFood.class));
 			}
+			
 
 		}
 	};;
@@ -60,6 +61,13 @@ public class MensaSelected extends Activity {
 //		food = (Button) findViewById(R.id.foodb);
 //		food.bringToFront();
 		
+	}
+
+	@Override
+	public void onBackPressed() {
+		finish();
+		super.onBackPressed();
+		startActivity(new Intent(this, Menu.class));
 	}
 
 }
