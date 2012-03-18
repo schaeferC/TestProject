@@ -3,7 +3,6 @@ package de.bht.BeuthOrg.views;
 
 import de.bht.BeuthOrg.R;
 import de.bht.BeuthOrg.datahandler.DataHandler;
-import de.bht.BeuthOrg.util.Common;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +16,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Login extends Activity implements OnClickListener{
 	
@@ -38,7 +36,7 @@ public class Login extends Activity implements OnClickListener{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
 		finishActivity(R.layout.splash);

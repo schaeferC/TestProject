@@ -1,7 +1,5 @@
 package de.bht.BeuthOrg.views;
 
-import javax.xml.datatype.Duration;
-
 import de.bht.BeuthOrg.R;
 import android.app.Activity;
 import android.content.Intent;
@@ -9,18 +7,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
-import android.view.animation.ScaleAnimation;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 public class MensaSelected extends Activity {
 
