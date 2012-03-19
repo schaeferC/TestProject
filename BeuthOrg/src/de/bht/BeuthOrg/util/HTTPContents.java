@@ -12,10 +12,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 public class HTTPContents {
 
-	private static final String LEHRKRAFTNEWS_LINK = "http://fb6.beuth-hochschule.de/lehrkraftnews/news/";
 	private static final String MENSA_TOMORRO_LINK = "http://www.studentenwerk-berlin.de/mensen/speiseplan/beuth/01.html";
 	private static final String MENSA_TODAY_LINK = "http://www.studentenwerk-berlin.de/mensen/speiseplan/beuth/index.html";
-
 	private static String getResponse(String url) {
 
 		HttpClient hc = new DefaultHttpClient();
@@ -23,7 +21,8 @@ public class HTTPContents {
 
 		try {
 			HttpResponse r = hc.execute(get);
-			InputStreamReader isr = new InputStreamReader(r.getEntity().getContent());
+			InputStreamReader isr = new InputStreamReader(r.getEntity()
+					.getContent());
 			BufferedReader br = new BufferedReader(isr);
 
 			String temp = br.readLine();
@@ -34,7 +33,7 @@ public class HTTPContents {
 				siteInformation = siteInformation.concat(temp + " ");
 				temp = br.readLine();
 			}
-			
+
 			isr.close();
 			br.close();
 			return siteInformation;
@@ -75,16 +74,5 @@ public class HTTPContents {
 		siteInformation = siteInformation.replaceAll("\\|{3,}", "\n");
 
 		return siteInformation;
-	}
-	
-	public static String[] getLehrkraftNews(){
-		String s = getResponse(LEHRKRAFTNEWS_LINK);
-		
-		s = s.substring(s.indexOf("<td class=\"date_column\">"),s.lastIndexOf("</tbody"));
-		s = s.replaceAll("[^\\S]+\\s[^\\S]+", "");
-		s = s.replaceAll("<[^as](.*?)>", "|");
-		s = s.replaceAll("<script.*?>.*?\\//", "");
-		
-		return s.split("\\|<span title=\"");
 	}
 }

@@ -1,7 +1,11 @@
 package de.bht.BeuthOrg.views;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 import de.bht.BeuthOrg.R;
 import de.bht.BeuthOrg.util.HTTPContents;
+import de.bht.BeuthOrg.util.HTTPContentsNews;
 import de.bht.BeuthOrg.util.NewsArrayAdapter;
 import android.app.Activity;
 import android.content.Intent;
@@ -25,7 +29,7 @@ public class News extends Activity {
         
         newsList = (ListView) findViewById(R.id.listLehrkraft);
         
-        String[] contentsNews = HTTPContents.getLehrkraftNews();
+        ArrayList<String> contentsNews = HTTPContentsNews.getLehrkraftNews();
         //Log.w("news", contentsNews[2]);
         NewsArrayAdapter newsArrayAdapter = new NewsArrayAdapter(this, R.layout.list_item, contentsNews, getResources());
         
