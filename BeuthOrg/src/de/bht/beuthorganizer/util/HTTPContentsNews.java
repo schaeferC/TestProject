@@ -22,9 +22,10 @@ public class HTTPContentsNews {
 	private static final String LINK_FIRST = "http://fb6.beuth-hochschule.de";
 	private static JSONArray jsonArray = new JSONArray();
 	private static ArrayList<String> contentsNews = new ArrayList<String>();
+	private static HttpClient hc = new DefaultHttpClient();
 	
 	private static ArrayList<String> makeRequestForNews(String url) {
-		HttpClient hc = new DefaultHttpClient();
+		
 		HttpGet get = new HttpGet(url);
 		try {
 			HttpResponse r = hc.execute(get);

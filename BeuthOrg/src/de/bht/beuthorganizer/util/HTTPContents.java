@@ -14,9 +14,10 @@ public class HTTPContents {
 
 	private static final String MENSA_TOMORRO_LINK = "http://www.studentenwerk-berlin.de/mensen/speiseplan/beuth/01.html";
 	private static final String MENSA_TODAY_LINK = "http://www.studentenwerk-berlin.de/mensen/speiseplan/beuth/index.html";
+	private static HttpClient hc = new DefaultHttpClient();
 	private static String getResponse(String url) {
 
-		HttpClient hc = new DefaultHttpClient();
+		
 		HttpGet get = new HttpGet(url);
 
 		try {
