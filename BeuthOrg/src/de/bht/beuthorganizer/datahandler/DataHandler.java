@@ -1,11 +1,11 @@
-package de.bht.BeuthOrg.datahandler;
+package de.bht.beuthorganizer.datahandler;
 
 import org.json.JSONObject;
 
 import android.util.Log;
 
 
-import de.bht.BeuthOrg.objects.Student;
+import de.bht.beuthorganizer.objects.Student;
 
 public class DataHandler {
 

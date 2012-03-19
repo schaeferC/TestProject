@@ -1,17 +1,14 @@
-package de.bht.BeuthOrg.views;
+package de.bht.beuthorganizer.views;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import de.bht.BeuthOrg.R;
-import de.bht.BeuthOrg.util.HTTPContents;
-import de.bht.BeuthOrg.util.HTTPContentsNews;
-import de.bht.BeuthOrg.util.NewsArrayAdapter;
+import de.bht.beuthorganizer.R;
+import de.bht.beuthorganizer.util.HTTPContentsNews;
+import de.bht.beuthorganizer.util.NewsArrayAdapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 
 public class News extends Activity {
@@ -31,7 +28,7 @@ public class News extends Activity {
         
         ArrayList<String> contentsNews = HTTPContentsNews.getLehrkraftNews();
         //Log.w("news", contentsNews[2]);
-        NewsArrayAdapter newsArrayAdapter = new NewsArrayAdapter(this, R.layout.list_item, contentsNews, getResources());
+        NewsArrayAdapter newsArrayAdapter = new NewsArrayAdapter(this, R.layout.list_item_news, contentsNews);
         
         newsList.setAdapter(newsArrayAdapter);
         newsList.setCacheColorHint(Color.TRANSPARENT);
@@ -53,7 +50,7 @@ public class News extends Activity {
 
     @Override
     public void onBackPressed() {
-    	finish();
+    	finishActivity(this.getTaskId());
     	super.onBackPressed();
     	startActivity(new Intent(this, AllgemeinUni.class));
     }

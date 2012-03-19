@@ -1,4 +1,4 @@
-package de.bht.BeuthOrg.util;
+package de.bht.beuthorganizer.util;
 
 public class DataSaver {
 

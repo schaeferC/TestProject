@@ -1,6 +1,6 @@
-package de.bht.BeuthOrg.views;
+package de.bht.beuthorganizer.views;
 
-import de.bht.BeuthOrg.R;
+import de.bht.beuthorganizer.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class Menu extends Activity {
-	/** Called when the activity is first created. */
+	
 
 	/**
 	 * The used Buttons. Initialization in {@link onClick}
@@ -41,6 +41,7 @@ public class Menu extends Activity {
 		}
 	};
 
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -62,7 +63,7 @@ public class Menu extends Activity {
 	
 	@Override
 	public void onBackPressed() {
-		finish();
+		finishActivity(this.getTaskId());
 		super.onBackPressed();
 		startActivity(new Intent(this, Login.class));
 	}

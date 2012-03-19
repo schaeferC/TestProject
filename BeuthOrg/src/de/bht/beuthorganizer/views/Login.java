@@ -1,8 +1,8 @@
-package de.bht.BeuthOrg.views;
+package de.bht.beuthorganizer.views;
 
 
-import de.bht.BeuthOrg.R;
-import de.bht.BeuthOrg.datahandler.DataHandler;
+import de.bht.beuthorganizer.R;
+import de.bht.beuthorganizer.datahandler.DataHandler;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

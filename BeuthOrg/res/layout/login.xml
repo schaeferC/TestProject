@@ -22,7 +22,7 @@
             android:paddingBottom="15px"
             android:paddingTop="20px"
             android:text="Without Login"
-            android:textColor="@color/beuthOrgTextColor"
+            android:textColor="@color/beuthorganizerTextColor"
             android:textSize="25px" />
     </LinearLayout>
 
@@ -44,7 +44,7 @@
             android:paddingRight="20px"
             android:paddingTop="20px"
             android:text="Login"
-            android:textColor="@color/beuthOrgTextColor"
+            android:textColor="@color/beuthorganizerTextColor"
             android:textSize="25px" />
     </LinearLayout>
 

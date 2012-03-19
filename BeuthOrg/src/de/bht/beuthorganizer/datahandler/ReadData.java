@@ -1,4 +1,4 @@
-package de.bht.BeuthOrg.datahandler;
+package de.bht.beuthorganizer.datahandler;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,9 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
 
-import de.bht.BeuthOrg.util.Common;
+import de.bht.beuthorganizer.util.Common;
 
 
 /**

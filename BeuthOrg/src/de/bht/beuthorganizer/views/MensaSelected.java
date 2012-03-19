@@ -1,6 +1,6 @@
-package de.bht.BeuthOrg.views;
+package de.bht.beuthorganizer.views;
 
-import de.bht.BeuthOrg.R;
+import de.bht.beuthorganizer.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -65,7 +65,7 @@ public class MensaSelected extends Activity {
 
 	@Override
 	public void onBackPressed() {
-		finish();
+		finishActivity(this.getTaskId());
 		super.onBackPressed();
 		startActivity(new Intent(this, Menu.class));
 	}

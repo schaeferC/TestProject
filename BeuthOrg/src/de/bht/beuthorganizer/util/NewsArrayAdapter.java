@@ -1,9 +1,9 @@
-package de.bht.BeuthOrg.util;
+package de.bht.beuthorganizer.util;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import de.bht.BeuthOrg.R;
+import de.bht.beuthorganizer.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.text.Html;
@@ -15,13 +15,11 @@ import android.widget.TextView;
 public class NewsArrayAdapter extends ArrayAdapter<String> {
 
 	ArrayList<String> contents;
-	Resources res;
 	
 	public NewsArrayAdapter(Context context, int resource,
-			List<String> contentsNews, Resources resources) {
+			List<String> contentsNews) {
 		super(context, resource, contentsNews);
 		this.contents = (ArrayList<String>) contentsNews;
-		this.res = resources;
 	}
 	
 	@Override
@@ -39,8 +37,6 @@ public class NewsArrayAdapter extends ArrayAdapter<String> {
 //		}
 //	
 		v.setText(Html.fromHtml(contents.get(position)));
-		v.setTextColor(res.getColor(R.color.beuthOrgOrange));
-		res.finishPreloading();
 		return v;
 	}
 

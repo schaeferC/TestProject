@@ -1,6 +1,6 @@
-package de.bht.BeuthOrg.util;
+package de.bht.beuthorganizer.util;
 
-import de.bht.BeuthOrg.R;
+import de.bht.beuthorganizer.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.text.Html;
@@ -39,7 +39,7 @@ public class MensaArrayAdapter extends ArrayAdapter<String> {
 
 			if (contents[position - 1].isEmpty()) {
 				v.setText(contents[position]);
-				v.setTextColor(res.getColor(R.color.beuthOrgOrange));
+				v.setTextColor(res.getColor(R.color.beuthorganizerOrange));
 				v.setTextSize(12);
 
 			} else if (contents[position - 1].matches(".*?")) {
@@ -51,14 +51,14 @@ public class MensaArrayAdapter extends ArrayAdapter<String> {
 							.substring(contents[position].indexOf("|") + 1);
 					last = last.replaceAll("\\|\\|", " ");
 					v.setText(Html.fromHtml(first + "<sup>" + last + "</sup>"));
-					v.setTextColor(res.getColor(R.color.beuthOrgTextColor));
+					v.setTextColor(res.getColor(R.color.beuthorganizerTextColor));
 					v.setTextSize(10);
 					res.finishPreloading();
 					return v;
 				}
 				
 				v.setText(contents[position]);
-				v.setTextColor(res.getColor(R.color.beuthOrgTextColor));
+				v.setTextColor(res.getColor(R.color.beuthorganizerTextColor));
 				v.setTextSize(10);
 
 			}

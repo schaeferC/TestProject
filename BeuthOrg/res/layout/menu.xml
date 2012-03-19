@@ -20,7 +20,7 @@
             android:layout_marginTop="14dp"
             android:background="@android:color/transparent"
             android:text="Uni"
-            android:textColor="@color/beuthOrgTextColor"
+            android:textColor="@color/beuthorganizerTextColor"
             android:textSize="25px" />
 
         <Button
@@ -31,7 +31,7 @@
             android:layout_marginTop="91dp"
             android:background="@android:color/transparent"
             android:text="FB6"
-            android:textColor="@color/beuthOrgTextColor"
+            android:textColor="@color/beuthorganizerTextColor"
             android:textSize="25px" />
 
         <Button
@@ -43,7 +43,7 @@
             android:layout_weight="0.00"
             android:background="@android:color/transparent"
             android:text="Ich"
-            android:textColor="@color/beuthOrgTextColor"
+            android:textColor="@color/beuthorganizerTextColor"
             android:textSize="25px" />
 
         <Button
@@ -54,6 +54,6 @@
             android:layout_marginTop="58dp"
             android:background="@android:color/transparent"
             android:text="Mensa"
-            android:textColor="@color/beuthOrgTextColor"
+            android:textColor="@color/beuthorganizerTextColor"
             android:textSize="25px" />
     </LinearLayout>

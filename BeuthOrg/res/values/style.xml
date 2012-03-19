@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
        
-    <color name="beuthOrgTextColor">#2a3e59</color>
-	<color name="beuthOrgOrange">#ffa60a</color>
+    <color name="beuthorganizerTextColor">#2a3e59</color>
+	<color name="beuthorganizerOrange">#ffa60a</color>
 
     
 </resources>

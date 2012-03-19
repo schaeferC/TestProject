@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.bht.BeuthOrg"
+    package="de.bht.beuthorganizer"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -12,80 +12,43 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:label="@string/app_name"
             android:name=".views.SplashScreen"
+            android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
+            android:name=".views.beuthorganizerActivity"
             android:label="@string/app_name"
-            android:name=".views.BeuthOrgActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-            <intent-filter >
-                <action android:name="de.bht.BeuthOrg.views.BeuthOrgActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
         <activity
-            android:label="Menu"
-            android:name=".views.Menu" >
-            <intent-filter >
-                <action android:name="de.bht.BeuthOrg.views.Menu" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            android:name=".views.Menu"
+            android:label="Menu" >
         </activity>
         <activity
-            android:label="Allgemeines zur Uni"
-            android:name=".views.AllgemeinUni" >
-            <intent-filter >
-                <action android:name="de.bht.BeuthOrg.views.AllgemeinUni" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            android:name=".views.AllgemeinUni"
+            android:label="Allgemeines zur Uni" >
         </activity>
         <activity
-            android:label="News"
-            android:name=".views.News" >
-            <intent-filter >
-                <action android:name="de.bht.BeuthOrg.views.News" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            android:name=".views.News"
+            android:label="News" >
         </activity>
         <activity
-            android:label="Login"
-            android:name=".views.Login" >
-            
-            <intent-filter >
-                
-                <action android:name="de.bht.BeuthOrg.views.Login" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            android:name=".views.Login"
+            android:label="Login" >
         </activity>
         <activity
-            android:label="Mensa Essen"
-            android:name=".views.MensaFood" >
-            <intent-filter >
-                <action android:name="de.bht.BeuthOrg.views.MensaFood" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            android:name=".views.MensaFood"
+            android:label="Mensa Essen" >
         </activity>
-                <activity
-            android:label="Mensa"
-            android:name=".views.MensaSelected" >
-            <intent-filter >
-                <action android:name="de.bht.BeuthOrg.views.MensaSelected" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+        <activity
+            android:name=".views.MensaSelected"
+            android:label="Mensa" >
         </activity>
     </application>
 
