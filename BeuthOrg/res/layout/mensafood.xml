@@ -19,7 +19,7 @@
         android:layout_gravity="left"
         android:layout_marginTop="10dp"
         android:background="@drawable/hlogin"
-        android:textColor="@color/beuthorganizerOrange" android:layout_marginLeft="100dp"/>
+        android:textColor="@color/beuthorgOrange" android:layout_marginLeft="100dp"/>
 
     <Button
         android:id="@+id/dayB"
@@ -29,7 +29,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/hlogin"
-        android:textColor="@color/beuthorganizerTextColor" />
+        android:textColor="@color/beuthorgTextColor" />
 
 </LinearLayout>
     <LinearLayout
@@ -59,7 +59,7 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:paddingTop="5dp"
-        android:textColor="@color/beuthorganizerTextColor" 
+        android:textColor="@color/beuthorgTextColor" 
         android:textSize="8px"
         />
 

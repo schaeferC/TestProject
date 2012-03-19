@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="name">beuthorganizeranizer</string>
-    <string name="hello">Wilkommen zum neuen beuthorganizeranizer! Hier hast du die Möglichkeit dein Kampus-
+    <string name="name">beuthorganizer</string>
+    <string name="hello">Wilkommen zum neuen beuthorganizer! Hier hast du die Möglichkeit dein Kampus-
          und Unileben zu strukturieren und zu organisieren.</string>
     <string name="next">Klicke auf "Weiter" um zu starten.</string>
     <string name="app_name">BeuthOrg</string>

@@ -1,4 +1,4 @@
-package de.bht.beuthorganizer.util;
+package de.bht.beuthorg.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;

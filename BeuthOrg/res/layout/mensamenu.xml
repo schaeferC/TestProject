@@ -27,7 +27,7 @@
             android:paddingBottom="10px"
             android:paddingRight="10px"
             android:text="Essen"
-            android:textColor="@color/beuthorganizerTextColor" />
+            android:textColor="@color/beuthorgTextColor" />
     </RelativeLayout>
 
 </LinearLayout>

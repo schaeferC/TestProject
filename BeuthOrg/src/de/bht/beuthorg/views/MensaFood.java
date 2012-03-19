@@ -1,8 +1,8 @@
-package de.bht.beuthorganizer.views;
+package de.bht.beuthorg.views;
 
-import de.bht.beuthorganizer.R;
-import de.bht.beuthorganizer.util.HTTPContents;
-import de.bht.beuthorganizer.util.MensaArrayAdapter;
+import de.bht.beuthorg.R;
+import de.bht.beuthorg.util.HTTPContents;
+import de.bht.beuthorg.util.MensaArrayAdapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;

@@ -32,7 +32,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="0.01"
                 android:text="Name"
-                android:textColor="@color/beuthorganizerTextColor" />
+                android:textColor="@color/beuthorgTextColor" />
 
             <EditText
                 android:id="@+id/nameTextField"
@@ -57,7 +57,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="0.0066"
                 android:text="Password"
-                android:textColor="@color/beuthorganizerTextColor" />
+                android:textColor="@color/beuthorgTextColor" />
 
             <EditText
                 android:id="@+id/passphraseTextField"
@@ -80,14 +80,14 @@
                 android:background="@drawable/enterlogin"
                 android:paddingTop="10px"
                 android:text="    OK    "
-                android:textColor="@color/beuthorganizerTextColor" android:paddingLeft="20px"/>
+                android:textColor="@color/beuthorgTextColor" android:paddingLeft="20px"/>
             
              <Button
                 android:id="@+id/cancelLog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cancel"
-                android:textColor="@color/beuthorganizerTextColor" android:background="@drawable/cancel" android:paddingTop="20px"/>
+                android:textColor="@color/beuthorgTextColor" android:background="@drawable/cancel" android:paddingTop="20px"/>
         </LinearLayout>
     </LinearLayout>
 

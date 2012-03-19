@@ -1,4 +1,4 @@
-package de.bht.beuthorganizer.datahandler;
+package de.bht.beuthorg.datahandler;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-import de.bht.beuthorganizer.util.Common;
+import de.bht.beuthorg.util.Common;
 
 
 /**

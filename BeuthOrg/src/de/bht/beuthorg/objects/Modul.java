@@ -1,4 +1,4 @@
-package de.bht.beuthorganizer.objects;
+package de.bht.beuthorg.objects;
 
 import org.json.JSONException;
 import org.json.JSONObject;

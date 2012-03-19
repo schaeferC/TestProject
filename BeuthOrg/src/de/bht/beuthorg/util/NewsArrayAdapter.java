@@ -1,9 +1,9 @@
-package de.bht.beuthorganizer.util;
+package de.bht.beuthorg.util;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import de.bht.beuthorganizer.R;
+import de.bht.beuthorg.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.text.Html;

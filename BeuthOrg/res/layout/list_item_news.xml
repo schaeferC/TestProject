@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:padding="3dp"
     android:textSize="10dp"
-    android:textColor="@color/beuthorganizerOrange" >
+    android:textColor="@color/beuthorgOrange" >
     
 
 </TextView>

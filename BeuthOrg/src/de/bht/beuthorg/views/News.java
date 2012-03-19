@@ -1,10 +1,10 @@
-package de.bht.beuthorganizer.views;
+package de.bht.beuthorg.views;
 
 import java.util.ArrayList;
 
-import de.bht.beuthorganizer.R;
-import de.bht.beuthorganizer.util.HTTPContentsNews;
-import de.bht.beuthorganizer.util.NewsArrayAdapter;
+import de.bht.beuthorg.R;
+import de.bht.beuthorg.util.HTTPContentsNews;
+import de.bht.beuthorg.util.NewsArrayAdapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
