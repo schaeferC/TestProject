@@ -75,11 +75,4 @@ public class News extends Activity {
 		finish();
 	}
 
-	// @Override
-	// public void onBackPressed() {
-	// finishActivity(this.getTaskId());
-	// super.onBackPressed();
-	// startActivity(new Intent(this, AllgemeinUni.class));
-	// }
-
 }
