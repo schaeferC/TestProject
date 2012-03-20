@@ -1,6 +1,5 @@
 package de.bht.beuthorg.views;
 
-import de.bht.beuthorg.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +11,9 @@ import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import de.bht.beuthorg.R;
+import de.bht.beuthorg.mensafood.view.MensaFood;
+import de.bht.beuthorg.util.BeuthOrgApplication;
 
 public class MensaSelected extends Activity {
 
@@ -23,8 +25,8 @@ public class MensaSelected extends Activity {
 		public void onClick(View v) {
 			if (v == food) {
 				Log.w("click", "food clicked");
-				finish();
-				startActivity(new Intent(v.getContext(), MensaFood.class));
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(),MensaFood.class), MensaFood.MENSAFOOD_REQUEST_CODE);
+				
 			}
 			
 

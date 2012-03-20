@@ -44,7 +44,7 @@
             android:label="Login" >
         </activity>
         <activity
-            android:name=".views.MensaFood"
+            android:name=".mensafood.view.MensaFood"
             android:label="Mensa Essen" >
         </activity>
         <activity
