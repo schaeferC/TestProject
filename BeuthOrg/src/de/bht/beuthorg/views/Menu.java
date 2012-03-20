@@ -1,6 +1,7 @@
 package de.bht.beuthorg.views;
 
 import de.bht.beuthorg.R;
+import de.bht.beuthorg.util.BeuthOrgApplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,14 +29,14 @@ public class Menu extends Activity {
 		public void onClick(View v) {
 			if (v == uniB) {
 				finish();
-				startActivity(new Intent(v.getContext(), AllgemeinUni.class));
+				startActivity(new Intent(BeuthOrgApplication.getAppContext(), AllgemeinUni.class));
 			} else if (v == fb6B) {
 
 			} else if (v == ichB) {
 
 			} else if (v == mensaB) {
 				finish();
-				startActivity(new Intent(v.getContext(), MensaSelected.class));
+				startActivity(new Intent(BeuthOrgApplication.getAppContext(), MensaSelected.class));
 			}
 
 		}

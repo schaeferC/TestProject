@@ -3,6 +3,7 @@ package de.bht.beuthorg.views;
 
 import de.bht.beuthorg.R;
 import de.bht.beuthorg.datahandler.DataHandler;
+import de.bht.beuthorg.util.BeuthOrgApplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -85,7 +86,7 @@ public class Login extends Activity implements OnClickListener{
 				//finishActivity(R.layout.login);
 				Log.d("DEBUG",registered+"");
 				//startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Menu"));
-				startActivity(new Intent(v.getContext(), Menu.class));
+				startActivity(new Intent(BeuthOrgApplication.getAppContext(), Menu.class));
 			}
 		}
 		
