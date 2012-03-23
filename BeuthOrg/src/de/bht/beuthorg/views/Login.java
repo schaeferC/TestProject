@@ -1,9 +1,5 @@
 package de.bht.beuthorg.views;
 
-
-import de.bht.beuthorg.R;
-import de.bht.beuthorg.datahandler.DataHandler;
-import de.bht.beuthorg.util.BeuthOrgApplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import de.bht.beuthorg.R;
+import de.bht.beuthorg.datahandler.DataHandler;
+import de.bht.beuthorg.menu.views.BeuthMenu;
+import de.bht.beuthorg.util.BeuthOrgApplication;
 
 public class Login extends Activity implements OnClickListener{
 	
@@ -40,8 +40,8 @@ public class Login extends Activity implements OnClickListener{
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
-		finishActivity(R.layout.splash);
-		finishActivity(R.layout.main);
+		//finishActivity(R.layout.splash);
+		//finishActivity(R.layout.main);
 		
 		login= (Button)findViewById(R.id.login);
 		login.setOnClickListener(this);
@@ -86,13 +86,11 @@ public class Login extends Activity implements OnClickListener{
 				//finishActivity(R.layout.login);
 				Log.d("DEBUG",registered+"");
 				//startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Menu"));
-				startActivity(new Intent(BeuthOrgApplication.getAppContext(), Menu.class));
+				startActivity(new Intent(BeuthOrgApplication.getAppContext(), BeuthMenu.class));
 			}
 		}
 		
 		
 	}
 
-
-	
 }
