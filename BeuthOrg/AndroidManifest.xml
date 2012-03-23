@@ -28,11 +28,11 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name=".menu.views.BeuthMenu"
+            android:name=".beuthmenu.views.BeuthMenu"
             android:label="Menu" >
         </activity>
         <activity
-            android:name=".menu.views.AllgemeinUni"
+            android:name=".beuthmenu.views.AllgemeinUni"
             android:label="Allgemeines zur Uni" >
         </activity>
         <activity
@@ -48,7 +48,7 @@
             android:label="Mensa Essen" >
         </activity>
         <activity
-            android:name=".menu.views.MensaSelected"
+            android:name=".beuthmenu.views.MensaSelected"
             android:label="Mensa" >
         </activity>
     </application>

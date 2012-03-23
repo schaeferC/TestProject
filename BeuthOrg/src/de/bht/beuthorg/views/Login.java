@@ -14,8 +14,8 @@ import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import de.bht.beuthorg.R;
+import de.bht.beuthorg.beuthmenu.views.BeuthMenu;
 import de.bht.beuthorg.datahandler.DataHandler;
-import de.bht.beuthorg.menu.views.BeuthMenu;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 
 public class Login extends Activity implements OnClickListener{
