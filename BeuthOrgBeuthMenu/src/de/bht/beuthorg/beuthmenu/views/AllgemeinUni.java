@@ -13,18 +13,18 @@ import de.bht.beuthorg.util.BeuthOrgApplication;
 public class AllgemeinUni extends Activity{
     /** Called when the activity is first created. */
 
-	private Button news;
+	private Button newsB;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.allgemeinuni);
         
-        news = (Button)findViewById(R.id.button1);
-        news.setOnClickListener(new OnClickListener() {
+        newsB = (Button)findViewById(R.id.newsButton);
+        newsB.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				if(v ==news){
+				if(v ==newsB){
 					
 				    startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(),News.class), News.NEWS_REQUEST_CODE);
 				}

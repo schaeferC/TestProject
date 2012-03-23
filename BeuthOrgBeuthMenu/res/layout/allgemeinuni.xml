@@ -5,17 +5,6 @@
     android:background="@drawable/beuthorg"
     android:orientation="vertical" >
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="75dp" >
-
-        <DigitalClock
-            android:id="@+id/digitalClock1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
-
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
@@ -26,21 +15,21 @@
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/newsButton"
             android:layout_marginTop="20sp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="News" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/roomplanButton"
             android:layout_marginTop="20sp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Raumplan" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/mapButton"
             android:layout_marginTop="20sp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
