@@ -26,7 +26,7 @@ public class ReadData {
 
 			BufferedReader br = new BufferedReader(fr);
 			JSONObject json = new JSONObject(br.readLine());
-
+			br.close();
 			return json;
 		} catch (Exception e) {
 			e.printStackTrace();

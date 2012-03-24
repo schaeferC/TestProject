@@ -3,6 +3,7 @@ package de.bht.beuthorg.beuthmenu.views;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -11,7 +12,11 @@ import de.bht.beuthorg.news.view.News;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 
 public class AllgemeinUni extends Activity{
-    /** Called when the activity is first created. */
+   
+	public static final int UNI_REQUEST_CODE = 123321000;
+
+	public static final int UNI_SUCCESS_CODE = 3;
+	/** Called when the activity is first created. */
 
 	private Button newsB;
     @Override
@@ -41,8 +46,21 @@ public class AllgemeinUni extends Activity{
 	public void onBackPressed() {
 		finishActivity(this.getTaskId());
 		super.onBackPressed();
-		startActivity(new Intent(this,BeuthMenu.class));
+		
 	}
-    
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			returnToCallingActivity();
+		}
+		return true;
+	}
+
+	protected void returnToCallingActivity() {
+		Intent intent = new Intent();
+		setResult(AllgemeinUni.UNI_SUCCESS_CODE, intent);
+		finish();
+	}
 
 }

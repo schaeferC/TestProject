@@ -11,11 +11,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-public class News extends Activity {
+public class News extends Activity implements OnItemClickListener{
 	/** Called when the activity is first created. */
 	public static final int NEWS_REQUEST_CODE = 123321998;
 
@@ -29,38 +31,26 @@ public class News extends Activity {
 		// setContentView(R.layout.news);
 
 		setContentView(R.layout.news);
-		Context co = getApplicationContext();
-		if (co != null) {
-			Log.w("Debug", "Context exist");
-		}
 		newsList = (ListView) findViewById(R.id.listNews);
 
 		ArrayList<String> contentsNews = HTTPContentsNews.getLehrkraftNews();
-		// Log.w("news", contentsNews[2]);
 		NewsArrayAdapter newsArrayAdapter = new NewsArrayAdapter(
 				getApplicationContext(), R.layout.list_item_news, contentsNews);
-		Log.w("news", newsArrayAdapter.getItem(0));
-		Context c = getApplicationContext();
-		if (c != null) {
-			Log.w("Debug", "Context exist");
-		}
 		newsList.setAdapter(newsArrayAdapter);
 		newsList.setCacheColorHint(Color.TRANSPARENT);
-
-		// Back = (Button)findViewById(R.id.button1);
-		// Back.setOnClickListener(new OnClickListener() {
-		//
-		// @Override
-		// public void onClick(View v) {
-		// if(v ==Back){
-		// startActivity(new Intent(v.getContext(), AllgemeinUni.class));
-		// }
-		//
-		// }
-		// });
+		newsList.setOnItemClickListener(this);
 
 	}
 
+	@Override
+    public void onItemClick(AdapterView<?> parent, View view, int position,
+            long id) {
+		
+		Intent myIntent = new Intent(view.getContext(), OneNews.class); 
+		myIntent.putExtra("news", parent.getItemAtPosition(position).toString());
+		startActivity(myIntent);
+		
+	}
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {

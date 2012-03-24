@@ -16,7 +16,6 @@ public class DataHandler {
 		Student student= new Student(json);
 		
 		if(student!=null){
-			Log.d("DEBUG", student.toString());
 			return true;
 		}
 //        Gson gson = new Gson();

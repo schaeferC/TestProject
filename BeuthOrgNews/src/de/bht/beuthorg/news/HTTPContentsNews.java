@@ -16,6 +16,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+import de.bht.beuthorg.util.BeuthOrgApplication;
+import de.bht.beuthorg.util.DataSaver;
+
 public class HTTPContentsNews {
 
 	private static final String LEHRKRAFTNEWS_LINK = "http://fb6.beuth-hochschule.de/lehrkraftnews/news/";
@@ -108,13 +112,14 @@ public class HTTPContentsNews {
 		s = s.replaceAll("[^\\S]+\\s[^\\S]+", "|");
 		s = s.replaceAll("<br/>+", " ");
 		s = s.replaceAll("<.*?>", "");
+		s = s.replaceAll("\"", "'");
 	
 		String[] toJson = s.split("\\|{4,}");
 	
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("from", toJson[0].split("\\|+")[1]);
-		map.put("validTo", toJson[1].split("\\|+")[1]);
-		map.put("content", toJson[2].split("\\|+")[1]);
+		map.put("\"from\"","\""+ toJson[0].split("\\|+")[1]+"\"");
+		map.put("\"validTo\"","\""+ toJson[1].split("\\|+")[1]+"\"");
+		map.put("\"content\"", "\""+toJson[2].split("\\|+")[1]+"\"");
 	
 		return map;
 	}
@@ -127,8 +132,7 @@ public class HTTPContentsNews {
 			link = LINK_FIRST + link.replaceAll("\">.*", "");
 			map = makeJSONObjectFromNews(makeRequestForNewsContents(link));
 			jsonArray.put(map);
-			contentsNews.add("Von: "+map.get("from")+ " G&Uumlltigkeit: "+map.get("validTo"));
-			// System.out.println(link);
+			contentsNews.add(map.get("\"validTo\""));
 		}
 		
 		
@@ -138,6 +142,8 @@ public class HTTPContentsNews {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
+		DataSaver.writeData(BeuthOrgApplication.getAppContext(), "news.json", obj.toString());
+		
 		return contentsNews;
 	
 	

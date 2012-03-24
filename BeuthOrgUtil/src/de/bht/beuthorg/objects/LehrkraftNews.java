@@ -1,22 +1,18 @@
 package de.bht.beuthorg.objects;
 
-import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 public class LehrkraftNews {
 
-	private static Map<String, String[]> map;
+	private JSONArray news; 
 	public LehrkraftNews(JSONObject json){
 		try {
-			JSONArray news = json.getJSONArray("Lehrkraftnews");
-			for(int i = 0; i< news.length(); i++){
-				//ArrayList<String> list = new
-				this.map.put(news.getString(2), new String[]{news.getString(0),news.getString(1)});
-				
-			}
+			this.news = json.getJSONArray("Lehrkraftnews");
+
 		
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -24,7 +20,24 @@ public class LehrkraftNews {
 		}
 	}
 	
-	public static String[] getLehrkraftnewsByKey(String key){
-		return map.get(key);
+	public String[] getLehrkraftnewsByKey(String key){
+		for(int i = 0; i< news.length(); i++){
+			//ArrayList<String> list = new
+			JSONObject jsonobj = null;
+			try {
+				jsonobj = new JSONObject(news.getString(i));
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				if(key.contains(jsonobj.getString("validTo")))
+					return new String[]{jsonobj.getString("from"),jsonobj.getString("validTo"),jsonobj.getString("content")};
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
 }

@@ -40,6 +40,10 @@
             android:label="News" >
         </activity>
         <activity
+            android:name=".news.view.OneNews"
+            android:label="News" >
+        </activity>
+        <activity
             android:name=".views.Login"
             android:label="Login" >
         </activity>

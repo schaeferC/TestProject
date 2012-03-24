@@ -29,14 +29,14 @@ public class BeuthMenu extends Activity {
 		public void onClick(View v) {
 			if (v == uniB) {
 				finish();
-				startActivity(new Intent(BeuthOrgApplication.getAppContext(), AllgemeinUni.class));
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), AllgemeinUni.class), AllgemeinUni.UNI_REQUEST_CODE);
 			} else if (v == fb6B) {
 
 			} else if (v == ichB) {
 
 			} else if (v == mensaB) {
 				finish();
-				startActivity(new Intent(BeuthOrgApplication.getAppContext(), MensaSelected.class));
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), MensaSelected.class), MensaSelected.MENSASELECTED_REQUEST_CODE);
 			}
 
 		}
