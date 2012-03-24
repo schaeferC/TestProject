@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 public class LehrkraftNews {
 
-	private Map<String, String[]> map;
+	private static Map<String, String[]> map;
 	public LehrkraftNews(JSONObject json){
 		try {
 			JSONArray news = json.getJSONArray("Lehrkraftnews");
@@ -24,7 +24,7 @@ public class LehrkraftNews {
 		}
 	}
 	
-	public String[] getLehrkraftnewsByKey(String key){
+	public static String[] getLehrkraftnewsByKey(String key){
 		return map.get(key);
 	}
 }

@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+import org.json.JSONObject;
+
 import android.content.Context;
 
 public class DataSaver {
@@ -34,19 +36,19 @@ public class DataSaver {
         }
 	}
 	
-	public String readSettings(Context context, String filename) {
+	public static JSONObject readSettings(Context context, String filename) {
 
         FileInputStream fIn = null;
         InputStreamReader isr = null;
         BufferedReader br = null;
-        String data = null;
+        JSONObject data = null;
 
         try {
 
             fIn = context.openFileInput(filename);
             isr = new InputStreamReader(fIn);
             br = new BufferedReader(isr);
-            data = new String(br.readLine());
+            data = new JSONObject(br.readLine());
 
         } catch (Exception e) {
             e.printStackTrace();
