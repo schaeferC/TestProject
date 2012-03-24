@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 import de.bht.beuthorg.R;
 import de.bht.beuthorg.beuthmenu.views.BeuthMenu;
 import de.bht.beuthorg.datahandler.DataHandler;
@@ -87,6 +88,9 @@ public class Login extends Activity implements OnClickListener{
 				Log.d("DEBUG",registered+"");
 				//startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Menu"));
 				startActivity(new Intent(BeuthOrgApplication.getAppContext(), BeuthMenu.class));
+			}else{
+				Toast.makeText(BeuthOrgApplication.getAppContext(), "Keine validen Daten vorhanden",
+	                    Toast.LENGTH_LONG).show();
 			}
 		}
 		

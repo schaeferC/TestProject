@@ -13,15 +13,11 @@ public class DataHandler {
 	
 	static public boolean isRegistered(String matrikel, String pw){
 		JSONObject json= ReadData.LogIn(matrikel, pw);
-		Student student= new Student(json);
 		
-		if(student!=null){
-			return true;
+		if(json.has("ErrorCode")){
+			return false;
 		}
-//        Gson gson = new Gson();
-//        gson.fromJson(reader, Student.class);
-//		student = ReadData.LogIn(matrikel, pw);
-		return false;
+		return true;
 	}
 	
 }
