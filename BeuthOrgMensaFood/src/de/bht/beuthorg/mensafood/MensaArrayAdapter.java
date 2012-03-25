@@ -10,11 +10,29 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+/**
+ * Klasse zur Darstellung der List-Items
+ * @author Claudia
+ *
+ */
 public class MensaArrayAdapter extends ArrayAdapter<String> {
 
+	/**
+	 * Enthält Contents für das List_Item
+	 */
 	String[] contents;
+	/**
+	 * beinhaltet die resources der App
+	 */
 	Resources res;
 
+	/**
+	 * Konstruktor
+	 * @param context
+	 * @param textViewResourceId
+	 * @param objects
+	 * @param res
+	 */
 	public MensaArrayAdapter(Context context, int textViewResourceId,
 			String[] objects, Resources res) {
 		super(context, textViewResourceId, objects);
@@ -24,8 +42,11 @@ public class MensaArrayAdapter extends ArrayAdapter<String> {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		
 		TextView v = (TextView) super.getView(position, convertView, parent);
+		
 		if (position > 0) {
+			// nachdem welcher Content enthalten ist eine andere Darstellungsform wählen
 			if (contents[position].startsWith("EUR")) {
 				v.setText(contents[position]);
 				v.setGravity(Gravity.RIGHT);
