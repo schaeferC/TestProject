@@ -252,4 +252,5 @@ public class ReadData {
 	public static void setMatrikelnr(String matrikelnr) {
 		ReadData.matrikelnr = matrikelnr;
 	}
+
 }

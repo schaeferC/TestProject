@@ -2,7 +2,13 @@ package de.bht.beuthorg.datahandler;
 
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import de.bht.beuthorg.control.BeuthOrgControl;
+import de.bht.beuthorg.objects.ModulOrd;
+import de.bht.beuthorg.objects.ProfData;
+import de.bht.beuthorg.util.BeuthOrgApplication;
+import de.bht.beuthorg.util.DataSaver;
 
 public class DataHandler {
 
@@ -16,4 +22,17 @@ public class DataHandler {
 		return true;
 	}
 	
+	static public String getModulDescription(String modulname){
+		JSONObject json = ReadData.getModulDescriptionByStudOrd(BeuthOrgControl.getInstance().getRegistredStudent().getStudienOrdnung(), modulname);
+		Log.d("Debug", "ModulOrd: "+json.toString());
+		ModulOrd modulOrd = new ModulOrd(json);
+		BeuthOrgControl.getInstance().setModulOrd(modulOrd);
+		return modulOrd.getModuldescriptionOrd();
+	}
+	static public String getProfWebsite(String name){
+		JSONObject json = ReadData.getProfDataByProfname(name);
+		ProfData profdata = new ProfData(json);
+		return profdata.getWebsite();
+		
+	}
 }

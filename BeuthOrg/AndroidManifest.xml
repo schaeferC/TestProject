@@ -55,6 +55,22 @@
             android:name=".beuthmenu.views.MensaSelected"
             android:label="Mensa" >
         </activity>
+        <activity
+            android:name=".views.StundenplanView"
+            android:label="Mensa" >
+        </activity>
+        <activity
+            android:name=".views.Raumplan"
+            android:label="Mensa" >
+        </activity>
+        <activity
+            android:name=".views.Modulbeschreibung"
+            android:label="Mensa" >
+        </activity>
+        <activity
+            android:name=".views.ProfInfo"
+            android:label="Mensa" >
+        </activity>
     </application>
 
 </manifest>

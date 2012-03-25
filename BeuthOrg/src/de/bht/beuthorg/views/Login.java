@@ -85,8 +85,7 @@ public class Login extends Activity implements OnClickListener{
 			if(registered){
 				//finishActivity(R.layout.loginpopup);
 				//finishActivity(R.layout.login);
-				Log.d("DEBUG",registered+"");
-				//startActivity(new Intent(Common.DE_BHT_BEUTH_ORG+"Menu"));
+				
 				startActivity(new Intent(BeuthOrgApplication.getAppContext(), BeuthMenu.class));
 			}else{
 				Toast.makeText(BeuthOrgApplication.getAppContext(), "Keine validen Daten vorhanden",

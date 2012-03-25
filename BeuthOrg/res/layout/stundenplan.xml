@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="376dp"
+        android:background="@drawable/hlogin"
+        android:padding="20dp" >
+
+        <TableRow
+            android:id="@+id/tabledays"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             >
+
+            <TextView
+                android:id="@+id/firstField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12px" />
+
+            <Button
+                android:id="@+id/mondayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text=" Montag "
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="14px" />
+
+            <Button
+                android:id="@+id/tuesdayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text=" Dienstag "
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="14px" />
+
+            <Button
+                android:id="@+id/wednesdayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text=" Mittwoch "
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="14px" />
+
+            <Button
+                android:id="@+id/thursdayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text=" Donnerstag "
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="14px" />
+
+            <Button
+                android:id="@+id/fridayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text=" Freitag "
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="14px" />
+
+            <Button
+                android:id="@+id/saturdayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text=" Samstag "
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="14px" />
+        </TableRow>
+    <View
+        android:layout_height="1dip"
+        android:background="@color/beuthorgTextColor" />
+        <TableRow
+            android:id="@+id/tableBlock1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/timeBlock1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="08:00\n09:30"
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="13px" />
+
+            <Button
+                android:id="@+id/mondayBlock1Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/tuesdayBlock1Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/wednesdayBlock1Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/thursdayBlock1Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/fridayBlock1Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/saturdayBlock1Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:textSize="10px" />
+        </TableRow>
+    <View
+        android:layout_height="1dip"
+        android:background="@color/beuthorgTextColor" />
+        <TableRow
+            android:id="@+id/tableBlock2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/timeBlock2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:00\n11:30"
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="13px" />
+
+            <Button
+                android:id="@+id/mondayBlock2Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/tuesdayBlock2Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/wednesdayBlock2Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor" 
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/thursdayBlock2Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/fridayBlock2Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/saturdayBlock2Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+        </TableRow>
+    <View
+        android:layout_height="1dip"
+        android:background="@color/beuthorgTextColor" />
+        <TableRow
+            android:id="@+id/tableBlock3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/timeBlock3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:15\n13:45"
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="13px" />
+
+            <Button
+                android:id="@+id/mondayBlock3Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/tuesdayBlock3Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/wednesdayBlock3Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/thursdayBlock3Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/fridayBlock3Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/saturdayBlock3Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+        </TableRow>
+    <View
+        android:layout_height="1dip"
+        android:background="@color/beuthorgTextColor" />
+        <TableRow
+            android:id="@+id/tableBlock4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/timeBlock4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14:15\n15:45" 
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="13px" />
+
+            <Button
+                android:id="@+id/mondayBlock4Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/tuesdayBlock4Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/wednesdayBlock4Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/thursdayBlock4Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/fridayBlock4Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/saturdayBlock4Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+        </TableRow>
+    <View
+        android:layout_height="1dip"
+        android:background="@color/beuthorgTextColor" />
+        <TableRow
+            android:id="@+id/tableBlock5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/timeBlock5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16:00\n17:30"
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="13px" />
+
+            <Button
+                android:id="@+id/mondayBlock5Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/tuesdayBlock5Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/wednesdayBlock5Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/thursdayBlock5Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/fridayBlock5Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/saturdayBlock5Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+        </TableRow>
+    <View
+        android:layout_height="1dip"
+        android:background="@color/beuthorgTextColor" />
+        <TableRow
+            android:id="@+id/tableBlock6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/timeBlock6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17:45\n19:15"
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="13px" />
+
+            <Button
+                android:id="@+id/mondayBlock6Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/tuesdayBlock6Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/wednesdayBlock6Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/thursdayBlock6Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/fridayBlock6Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/saturdayBlock6Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+        </TableRow>
+    <View
+        android:layout_height="1dip"
+        android:background="@color/beuthorgTextColor" />
+        <TableRow
+            android:id="@+id/tableBlock7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/timeBlock7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19:30\n21:00"
+                android:textColor="@color/beuthorgOrange"
+                android:textSize="13px" />
+
+            <Button
+                android:id="@+id/mondayBlock7Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/tuesdayBlock7Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/wednesdayBlock7Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/thursdayBlock7Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/fridayBlock7Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+
+            <Button
+                android:id="@+id/saturdayBlock7Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/beuthorgTextColor"
+                android:gravity="center"
+                android:textSize="10px" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
