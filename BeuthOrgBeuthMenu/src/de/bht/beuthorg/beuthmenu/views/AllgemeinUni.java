@@ -25,6 +25,7 @@ public class AllgemeinUni extends Activity{
 	private Button auinfoB;
 	private Button aukontaktB;
 	private Button aubackB;
+	private Button ausurvivalB;
 	
 	private OnClickListener ocl = new OnClickListener() {
 
@@ -33,14 +34,19 @@ public class AllgemeinUni extends Activity{
 			if (v == aunewsB) {
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), News.class), News.NEWS_REQUEST_CODE);
 			} else if (v == auinfoB) {
-//				finish();
-//				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Fb6Selected.class), Fb6Selected.UNI_REQUEST_CODE);
+				
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), UniInfo.class), UniInfo.UNIINFO_REQUEST_CODE);
 			} else if (v == aukontaktB) {
-//				finish();
-//				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), IchSelected.class), IchSelected.UNI_REQUEST_CODE);
+				
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), UniKontakt.class), UniKontakt.UNIKONTAKT_REQUEST_CODE);
 			} else if (v == aubackB) {
 				returnToCallingActivity();
 			}
+			else if (v == ausurvivalB) {
+				
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Survival.class), Survival.SURVIVAL_REQUEST_CODE);
+			}
+			
 
 		}
 	};
@@ -62,6 +68,9 @@ public class AllgemeinUni extends Activity{
         aubackB = (Button)findViewById(R.id.aubackB);
         aubackB.setOnClickListener(ocl);
         
+        ausurvivalB = (Button)findViewById(R.id.ausurvivalB);
+        ausurvivalB.setOnClickListener(ocl);
+        
         Animation aScale = AnimationUtils.loadAnimation(this,
 				R.anim.menubuttonsscale);
         Animation aAlpha = AnimationUtils.loadAnimation(this,
@@ -78,6 +87,7 @@ public class AllgemeinUni extends Activity{
 		aukontaktB.startAnimation(set);
 		aunewsB.startAnimation(set);
 		auinfoB.startAnimation(set);
+		ausurvivalB.startAnimation(set);
 
     }
     @Override

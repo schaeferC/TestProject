@@ -69,7 +69,9 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="-5dp"
             android:background="@android:color/transparent"
-            android:text="" />
+            android:text="Zurück"
+            android:textColor="@color/beuthorgTextColor"
+           android:textSize="22px" />
 
     </RelativeLayout>
 

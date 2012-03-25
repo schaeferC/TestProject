@@ -28,6 +28,20 @@
             android:paddingRight="10px"
             android:text="Essen"
             android:textColor="@color/beuthorgTextColor" />
+        
+        <Button
+            android:id="@+id/mensabackB"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/imageView1"
+            android:layout_below="@+id/foodb"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="-13dp"
+            android:background="@android:color/transparent"
+            android:text="Zurück"
+             android:textColor="@color/beuthorgTextColor"
+           android:textSize="22px" />
+
     </RelativeLayout>
 
 </LinearLayout>

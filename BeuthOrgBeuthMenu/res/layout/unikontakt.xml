@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/kontaktTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hlogin" 
+        android:textColor="@color/beuthorgTextColor"
+        android:singleLine="false"
+        android:scrollHorizontally="false"
+        android:padding="20dp" android:text="
+Zentrale Studienberatung: \n
+	Haus Grashof, Raum 003\n
+	Luxemburger Straße 10\n
+	13353 Berlin\n \n
+	Tel. (+4930) 4504-2020\n
+	Fax (+4930) 4504-2720\n
+	E-Mail studienberatung@beuth-hochschule.de\n \n
+	Persönliche Beratung:\n
+	Montag   10 - 12 Uhr\n
+	Mittwoch 16 - 18 Uhr\n \n
+	Telefonische Beratung:\n
+	Dienstag     13 - 15 Uhr\n
+	Donnerstag 10 - 12 Uhr\n \n
+
+Studienverwaltung (Immatrikulations- und Prüfungsamt):\n
+	Öffnungszeiten:\n
+	Montag		13 - 16 Uhr\n
+	Dienstag	10 - 13 Uhr\n
+	Mittwoch	14 - 17 Uhr\n
+	Donnerstag	10 - 13 Uhr\n \n
+"/>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/survivalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hlogin" 
+        android:textColor="@color/beuthorgTextColor"
+        android:singleLine="false"
+        android:scrollHorizontally="false"
+        android:padding="20dp" android:text="
+Aktuelle Termine/Fristen? \n
+Belegfrist: 15.03. - 15.04.2012\n
+Rückmeldung WS12/13: 18.05. - 14.07.2012\n \n
+Bafög nach dem 4. Semester...Was muss ich tun? \n
+- Bafög Antrag ausfüllen \n
+- Studiendokumentation ausdrucken und Credits zusammenzählen \n
+- wenn Credits ausreichen, dann Bafög-Beauftragte (Frau Schaudin) mit Studiendoku aufsuchen und Formblatt 5 des Bafög-Antrags ausfüllen lassen \n
+- wenn Credits NICHT ausreichen, dann Leistungsnachweis des 4. Semesters in Form eines Laufzettels von Dozenten bestandener Module unterzeichnen lassen, wenn dann die Credits-Mindestanzahl erreicht ist, Bafög-Beauftragte (Frau Schaudin) mit Laufzettel und Studiendoku aufsuchen und Formblatt 5 des Bafög-Antrags ausfüllen lassen \n
+
+
+"/>
+
+</LinearLayout>

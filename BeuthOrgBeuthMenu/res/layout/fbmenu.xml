@@ -40,7 +40,9 @@
             android:layout_alignBottom="@+id/fbwabe"
             android:layout_alignRight="@+id/fbwabe"
             android:background="@android:color/transparent"
-            android:text="" />
+            android:text="Zurück"
+            android:textColor="@color/beuthorgTextColor"
+           android:textSize="22px" />
 
     </RelativeLayout>
 

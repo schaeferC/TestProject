@@ -30,11 +30,23 @@
             android:label="@string/app_name" >
         </activity>
         <activity
+            android:name=".views.Survival"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
             android:name="stundenplan.view.StundenplanView"
             android:label="@string/app_name" >
         </activity>
         <activity
             android:name="raumplan.view.Raumplan"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.UniInfo"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".views.UniKontakt"
             android:label="@string/app_name" >
         </activity>
     </application>

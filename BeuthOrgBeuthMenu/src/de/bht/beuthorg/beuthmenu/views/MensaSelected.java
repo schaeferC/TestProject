@@ -23,13 +23,15 @@ public class MensaSelected extends Activity {
 	
 	private ImageView mensaWabe;
 	private Button food;
+	private Button mensabackB;
 	private OnClickListener onClick = new OnClickListener() {
 
 		@Override
 		public void onClick(View v) {
 			if (v == food) {
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(),MensaFood.class), MensaFood.MENSAFOOD_REQUEST_CODE);
-				
+			}else if (v == mensabackB) {
+				returnToCallingActivity();
 			}
 			
 
@@ -44,7 +46,9 @@ public class MensaSelected extends Activity {
 		
 		mensaWabe = (ImageView) findViewById(R.id.imageView1);
 		food = (Button) findViewById(R.id.foodb);
+		mensabackB = (Button) findViewById(R.id.mensabackB);
 		food.setOnClickListener(onClick);
+		mensabackB.setOnClickListener(onClick);
 		
 		Animation aScale = AnimationUtils.loadAnimation(this,
 				R.anim.menubuttonsscale);

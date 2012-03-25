@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/infoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hlogin" 
+        android:textColor="@color/beuthorgTextColor"
+        android:singleLine="false"
+        android:scrollHorizontally="false"
+        android:padding="20dp" android:text="
+Präsidium:\n \n
+Präsidentin:\n
+Prof. Dr. Monika Gross\n
+	Sprechstunde: Di. von 17:00 – 19:00 Uhr,\n
+	um Voranmeldung wird gebeten\n
+	Tel. 4504-2335\n \n
+1.Vizepräsident:\n
+Prof. Dr.-Ing. Hans W. Gerber\n
+	Sprechstunde nach Vereinbarung,\n
+	Tel. 4504-2336\n \n
+Vizepräsident für Studium, Lehre und Internationales (VPL): \n
+Prof. Dr.-Ing. Michael Kramp \n
+	Sprechstunde nach Vereinbarung,\n
+	Tel. 4504-2075 \n \n
+Vizepräsident für Forschung und Hochschulprozesse (VPF): \n
+Prof. Dr. Sebastian von Klinski \n
+	Sprechstunde nach Vereinbarung,\n
+	Tel. 4504-2333\n \n 
+	http://www.beuth-hochschule.de/praesidium/
+"/>
+
+</LinearLayout>

@@ -1,7 +1,9 @@
 package de.bht.beuthorg.beuthmenu.views;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
@@ -28,7 +30,7 @@ public class Fb6Selected extends Activity {
 			if (v == fsinfoB) {
 
 			} else if (v == fsbackB) {
-
+				returnToCallingActivity();
 			}
 		}
 	};
@@ -59,6 +61,20 @@ public class Fb6Selected extends Activity {
 		fbwabe.startAnimation(aScale);
 		fsinfoB.startAnimation(set);
 
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			returnToCallingActivity();
+		}
+		return true;
+	}
+
+	protected void returnToCallingActivity() {
+		Intent intent = new Intent();
+		setResult(Fb6Selected.FB6SELECTED_SUCCESS_CODE, intent);
+		finish();
 	}
 
 }
