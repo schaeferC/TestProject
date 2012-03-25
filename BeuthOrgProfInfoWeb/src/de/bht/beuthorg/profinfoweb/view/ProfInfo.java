@@ -1,13 +1,20 @@
 package de.bht.beuthorg.profinfoweb.view;
 
-import de.bht.beuthorg.datahandler.DataHandler;
-import de.bht.beuthorg.profinfoweb.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.webkit.WebView;
+import de.bht.beuthorg.datahandler.DataHandler;
+import de.bht.beuthorg.profinfoweb.R;
 
 public class ProfInfo extends Activity {
+	
+	public static final int PROFINFO_REQUEST_CODE = 321900;
+
+	public static final int PROFINFO_SUCCESS_CODE = 257;
+	
 	private WebView webview;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -21,4 +28,17 @@ public class ProfInfo extends Activity {
 		webview.loadUrl(website);
 	}
 
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			returnToCallingActivity();
+		}
+		return true;
+	}
+
+	protected void returnToCallingActivity() {
+		Intent intent = new Intent();
+		setResult(ProfInfo.PROFINFO_SUCCESS_CODE, intent);
+		finish();
+	}
 }

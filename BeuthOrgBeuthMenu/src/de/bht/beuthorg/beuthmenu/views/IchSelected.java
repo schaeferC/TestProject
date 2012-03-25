@@ -35,13 +35,13 @@ public class IchSelected extends Activity{
 		@Override
 		public void onClick(View v) {
 			if (v == israumplanB) {
-				startActivity(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class));
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class), Raumplan.RAUMPLAN_REQUEST_CODE);
 			} else if (v == isstudiendokuB) {
 
 			} else if (v == isstundenplanB) {
-				startActivity(new Intent(BeuthOrgApplication.getAppContext(), StundenplanView.class));
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), StundenplanView.class), StundenplanView.STUNDENPLAN_REQUEST_CODE);
 			} else if (v == isbackB) {
-
+				returnToCallingActivity();
 			}
 
 		}

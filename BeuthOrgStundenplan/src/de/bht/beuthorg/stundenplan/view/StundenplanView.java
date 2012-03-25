@@ -10,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -22,6 +23,10 @@ import de.bht.beuthorg.stundenplan.R;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 
 public class StundenplanView extends Activity {
+
+	public static final int STUNDENPLAN_REQUEST_CODE = 15587999;
+
+	public static final int STUNDENPLAN_SUCCESS_CODE = 789658;
 
 	private Button mondayB;
 	private Button tuesdayB;
@@ -44,25 +49,22 @@ public class StundenplanView extends Activity {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					if(which == 0){
-						startActivity(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class));
+						startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class), Raumplan.RAUMPLAN_REQUEST_CODE);
 					}else if (which == 1){
 						Intent intent = new Intent(BeuthOrgApplication.getAppContext(), Modulbeschreibung.class);
 						Log.d("Debug", vb.getText().toString());
 						intent.putExtra("modul", vb.getText());
-						startActivity(intent);
+						startActivityForResult(intent, Modulbeschreibung.MODULBESCHREIBUNG_REQUEST_CODE);
 					}else if(which == 2){
 						Intent intent = new Intent(BeuthOrgApplication.getAppContext(), ProfInfo.class);
 						intent.putExtra("modul", vb.getText());
-						startActivity(intent);
+						startActivityForResult(intent, ProfInfo.PROFINFO_REQUEST_CODE);
 					}
 					
 				}
 			});
 			AlertDialog dialog = builder.create();
 			dialog.show();
-			
-			
-
 		}
 	};
 
@@ -166,6 +168,20 @@ public class StundenplanView extends Activity {
 			}
 		}
 
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			returnToCallingActivity();
+		}
+		return true;
+	}
+
+	protected void returnToCallingActivity() {
+		Intent intent = new Intent();
+		setResult(StundenplanView.STUNDENPLAN_SUCCESS_CODE, intent);
+		finish();
 	}
 
 }

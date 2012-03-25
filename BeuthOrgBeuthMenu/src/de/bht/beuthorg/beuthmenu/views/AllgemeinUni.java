@@ -39,8 +39,7 @@ public class AllgemeinUni extends Activity{
 //				finish();
 //				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), IchSelected.class), IchSelected.UNI_REQUEST_CODE);
 			} else if (v == aubackB) {
-//				finish();
-//				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), BeuthMenu.class), BeuthMenu.MENSASELECTED_REQUEST_CODE);
+				returnToCallingActivity();
 			}
 
 		}
