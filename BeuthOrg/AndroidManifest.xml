@@ -55,6 +55,10 @@
             android:name=".beuthmenu.views.MensaSelected"
             android:label="Mensa" >
         </activity>
+         <activity
+            android:label="Ich"
+            android:name=".beuthmenu.views.IchSelected" >
+        </activity>
     </application>
 
 </manifest>
