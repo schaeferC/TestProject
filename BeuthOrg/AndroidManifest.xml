@@ -59,6 +59,10 @@
             android:label="Ich"
             android:name=".beuthmenu.views.IchSelected" >
         </activity>
+        <activity
+            android:label="FB6"
+            android:name=".beuthmenu.views.Fb6Selected" >
+        </activity>
     </application>
 
 </manifest>
