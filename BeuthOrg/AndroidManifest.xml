@@ -49,19 +49,19 @@
         </activity>
                 <activity
             android:name=".moduldescription.view.Modulbeschreibung"
-            android:label="Login" >
+            android:label="Modulbeschreibung" >
         </activity>
                 <activity
             android:name=".profinfoweb.view.ProfInfo"
-            android:label="Login" >
+            android:label="Prof Info" >
         </activity>
                         <activity
             android:name=".raumplan.view.Raumplan"
-            android:label="Login" >
+            android:label="Raumplan" >
         </activity>
                         <activity
             android:name=".stundenplan.view.StundenplanView"
-            android:label="Login" >
+            android:label="Stundenplan" >
         </activity>
         <activity
             android:name=".mensafood.view.MensaFood"
@@ -80,16 +80,20 @@
             android:name=".beuthmenu.views.Survival" >
         </activity>
         <activity
-            android:label="FB6"
+            android:label="Fachbereich VI"
             android:name=".beuthmenu.views.Fb6Selected" >
         </activity>
         <activity
-            android:label="UniInfo"
+            android:label="Infos"
             android:name=".beuthmenu.views.UniInfo" >
         </activity>
         <activity
-            android:label="UniKontakt"
+            android:label="Kontakt"
             android:name=".beuthmenu.views.UniKontakt" >
+        </activity>
+        <activity
+            android:label="Informationen zum Fachbereich VI"
+            android:name=".beuthmenu.views.Fb6Info" >
         </activity>
     </application>
 
