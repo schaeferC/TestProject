@@ -76,8 +76,20 @@
             android:name=".beuthmenu.views.IchSelected" >
         </activity>
         <activity
+            android:label="Survival"
+            android:name=".beuthmenu.views.Survival" >
+        </activity>
+        <activity
             android:label="FB6"
             android:name=".beuthmenu.views.Fb6Selected" >
+        </activity>
+        <activity
+            android:label="UniInfo"
+            android:name=".beuthmenu.views.UniInfo" >
+        </activity>
+        <activity
+            android:label="UniKontakt"
+            android:name=".beuthmenu.views.UniKontakt" >
         </activity>
     </application>
 
