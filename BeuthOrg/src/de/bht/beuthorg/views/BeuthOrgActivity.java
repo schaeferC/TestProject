@@ -9,6 +9,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 
+/**
+ * Nicht mehr in Benutzung
+ *
+ */
 public class BeuthOrgActivity extends Activity{
 
 	/** Called when the activity is first created. */

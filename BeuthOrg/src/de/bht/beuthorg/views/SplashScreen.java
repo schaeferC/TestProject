@@ -6,8 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 
+/**
+ * Activity für den ersten Screen
+ *
+ */
 public class SplashScreen extends Activity {
-    private boolean active = true;
+    // Variablen für Dauer und Activität des SplashScreens
+	private boolean active = true;
     private static final int TIMER = 5000;
     
     /** Called when the activity is first created. */

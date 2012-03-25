@@ -20,83 +20,93 @@ import de.bht.beuthorg.beuthmenu.views.WithoutLoginMenu;
 import de.bht.beuthorg.datahandler.DataHandler;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 
-public class Login extends Activity implements OnClickListener{
-	
+/**
+ * Diese Klasse stellt den Loginbereich da. Dazu gehört die auswahl mit oder
+ * ohne Login und ein Popup zum Anmelden.
+ * 
+ * @author Claudia
+ * 
+ */
+public class Login extends Activity implements OnClickListener {
+
+	// Objekte vom MainMenu
 	private Button login;
 	private Button withoutLogin;
-	
+
+	// Objekte von LoginPopUp
 	private TextView nameLabel;
 	private TextView passphraseLabel;
-	
+
 	private EditText nameText;
 	private EditText passphraseText;
 	private PopupWindow puw;
 	private View view;
-	
+
 	private Button cancel;
 	private Button enterLogin;
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
-		//finishActivity(R.layout.splash);
-		//finishActivity(R.layout.main);
-		
-		login= (Button)findViewById(R.id.login);
+
+		login = (Button) findViewById(R.id.login);
 		login.setOnClickListener(this);
-		withoutLogin=(Button) findViewById(R.id.withoutLogin);
+		withoutLogin = (Button) findViewById(R.id.withoutLogin);
 		withoutLogin.setOnClickListener(this);
 
 	}
 
-
 	@Override
 	public void onClick(View v) {
-		if(v==login){
+
+		if (v == login) {
 			DataHandler.isRegistered("000041", "1234");
-			Log.d("DEBUG", "");
-			Log.d("DEBUG", ""+R.id.loginPopUp);
-			view=findViewById(R.id.loginPopUp);
-			//Toast t=new Toast(this);
-			LayoutInflater inflater=this.getLayoutInflater();
-			View view= inflater.inflate(R.layout.loginpopup, (ViewGroup) findViewById(R.id.loginPopUp));
-			
-			nameLabel=(TextView)view.findViewById(R.id.nameLabel);
-			passphraseLabel=(TextView)view.findViewById(R.id.passphraseLabel);
-			nameText=(EditText)view.findViewById(R.id.nameTextField);
-			passphraseText=(EditText)view.findViewById(R.id.passphraseTextField);
-			
-			cancel= (Button)view.findViewById(R.id.cancelLog);
+
+			view = findViewById(R.id.loginPopUp);
+			// Zum Laden und darstellen der LoginPopUpView
+			LayoutInflater inflater = this.getLayoutInflater();
+			View view = inflater.inflate(R.layout.loginpopup,
+					(ViewGroup) findViewById(R.id.loginPopUp));
+
+			nameLabel = (TextView) view.findViewById(R.id.nameLabel);
+			passphraseLabel = (TextView) view
+					.findViewById(R.id.passphraseLabel);
+			nameText = (EditText) view.findViewById(R.id.nameTextField);
+			passphraseText = (EditText) view
+					.findViewById(R.id.passphraseTextField);
+
+			cancel = (Button) view.findViewById(R.id.cancelLog);
 			cancel.setOnClickListener(this);
-			enterLogin=(Button) view.findViewById(R.id.EnterLog);
+			enterLogin = (Button) view.findViewById(R.id.EnterLog);
 			enterLogin.setOnClickListener(this);
 
-
-			puw=new PopupWindow(view, 500, 500, true);
+			puw = new PopupWindow(view, 500, 500, true);
 			puw.showAtLocation(view, Gravity.CENTER, 0, 0);
 
-		}else if(v == cancel){
+		} else if (v == cancel) {
+			// LoginPopUp schließen
 			puw.dismiss();
-		}else if(v== enterLogin){
+		} else if (v == enterLogin) {
+			// Überprüfen ob Person registriert mit Matrikelnr und Passwort
+			boolean registered = DataHandler.isRegistered(nameText.getText()
+					.toString(), passphraseText.getText().toString());
+			if (registered) {
 
-			boolean registered=DataHandler.isRegistered(nameText.getText().toString(), passphraseText.getText().toString());
-			if(registered){
-				//finishActivity(R.layout.loginpopup);
-				//finishActivity(R.layout.login);
-				
-				startActivity(new Intent(BeuthOrgApplication.getAppContext(), BeuthMenu.class));
-			}else{
-				Toast.makeText(BeuthOrgApplication.getAppContext(), "Keine validen Daten vorhanden",
-	                    Toast.LENGTH_LONG).show();
+				startActivity(new Intent(BeuthOrgApplication.getAppContext(),
+						BeuthMenu.class));
+			} else {
+				Toast.makeText(BeuthOrgApplication.getAppContext(),
+						"Keine validen Daten vorhanden", Toast.LENGTH_LONG)
+						.show();
 			}
-		}else if(v==withoutLogin){
-			startActivity(new Intent(BeuthOrgApplication.getAppContext(), WithoutLoginMenu.class));
+
+		} else if (v == withoutLogin) {
+			startActivity(new Intent(BeuthOrgApplication.getAppContext(),
+					WithoutLoginMenu.class));
 		}
-		
-		
+
 	}
 
 }
