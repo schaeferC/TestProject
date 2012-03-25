@@ -79,8 +79,7 @@ public class Login extends Activity implements OnClickListener{
 			puw.showAtLocation(view, Gravity.CENTER, 0, 0);
 
 		}else if(v == cancel){
-			finish();
-			startActivity(new Intent(v.getContext(),Login.class));
+			puw.dismiss();
 		}else if(v== enterLogin){
 
 			boolean registered=DataHandler.isRegistered(nameText.getText().toString(), passphraseText.getText().toString());
