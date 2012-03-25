@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menumodulroot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/llmodulmenu"
+        android:layout_width="183dp"
+        android:layout_height="226dp"
+        android:background="@drawable/hlogin"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/menumodulhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Auswahlmenu"
+            android:textColor="@color/beuthorgOrange"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/beuthorgTextColor" />
+
+        <ListView
+            android:id="@+id/menuformodulListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

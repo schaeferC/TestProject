@@ -4,16 +4,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.PopupWindow;
 import de.bht.beuthorg.control.BeuthOrgControl;
 import de.bht.beuthorg.moduldescription.view.Modulbeschreibung;
 import de.bht.beuthorg.objects.Modul;
@@ -22,7 +28,7 @@ import de.bht.beuthorg.raumplan.view.Raumplan;
 import de.bht.beuthorg.stundenplan.R;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 
-public class StundenplanView extends Activity {
+public class StundenplanView extends Activity{
 
 	public static final int STUNDENPLAN_REQUEST_CODE = 15587999;
 
@@ -34,6 +40,9 @@ public class StundenplanView extends Activity {
 	private Button thursdayB;
 	private Button fridayB;
 	private Button saturdayB;
+	private ListView menuforList;
+	private PopupWindow puwmodulmenu;
+	
 	
 	
 	private OnClickListener blockButtonsClicked = new OnClickListener() {
@@ -41,30 +50,62 @@ public class StundenplanView extends Activity {
 		@Override
 		public void onClick(View v) {
 			vb = (Button) v;
-			final CharSequence[] items = {"Raumplan", "Modulbeschreibung", "zur Lehrkraftwebsite"};
-			Builder builder = new AlertDialog.Builder(v.getContext());
-			builder.setTitle("Select ");
-			//builder.setCancelable(true);
-			builder.setItems(items, new DialogInterface.OnClickListener() {
+			LayoutInflater inflater= getLayoutInflater();
+			View view= inflater.inflate(R.layout.menuformodul, (ViewGroup) findViewById(R.id.menumodulroot));
+
+			menuforList = (ListView) view.findViewById(R.id.menuformodulListView);
+			
+			final String[] items = {"Raumplan", "Modulbeschreibung", "zur Lehrkraftwebsite"};
+			ArrayAdapter<String> adapter = new ArrayAdapter<String>(BeuthOrgApplication.getAppContext(), R.layout.list_item_modulmenu, items);
+
+			menuforList.setAdapter(adapter);
+			menuforList.setOnItemClickListener(new OnItemClickListener() {
+				
 				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					if(which == 0){
-						startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class), Raumplan.RAUMPLAN_REQUEST_CODE);
-					}else if (which == 1){
-						Intent intent = new Intent(BeuthOrgApplication.getAppContext(), Modulbeschreibung.class);
-						Log.d("Debug", vb.getText().toString());
-						intent.putExtra("modul", vb.getText());
-						startActivityForResult(intent, Modulbeschreibung.MODULBESCHREIBUNG_REQUEST_CODE);
-					}else if(which == 2){
-						Intent intent = new Intent(BeuthOrgApplication.getAppContext(), ProfInfo.class);
-						intent.putExtra("modul", vb.getText());
-						startActivityForResult(intent, ProfInfo.PROFINFO_REQUEST_CODE);
-					}
-					
+			    public void onItemClick(AdapterView<?> parent, View view, int position,
+			            long id) {
+					if(position == 0){
+					startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class), Raumplan.RAUMPLAN_REQUEST_CODE);
+				}else if (position == 1){
+					Intent intent = new Intent(BeuthOrgApplication.getAppContext(), Modulbeschreibung.class);
+					Log.d("Debug", vb.getText().toString());
+					intent.putExtra("modul", vb.getText());
+					startActivityForResult(intent, Modulbeschreibung.MODULBESCHREIBUNG_REQUEST_CODE);
+				}else if(position == 2){
+					Intent intent = new Intent(BeuthOrgApplication.getAppContext(), ProfInfo.class);
+					intent.putExtra("modul", vb.getText());
+					startActivityForResult(intent, ProfInfo.PROFINFO_REQUEST_CODE);
+				}
+
 				}
 			});
-			AlertDialog dialog = builder.create();
-			dialog.show();
+			puwmodulmenu=new PopupWindow(view, 500, 500, true);
+			puwmodulmenu.showAtLocation(view, Gravity.CENTER, 0, 0);
+//			Builder builder = new AlertDialog.Builder(v.getContext());
+//			builder.setView(view);
+//			builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
+//				@Override
+//				public void onClick(DialogInterface dialog, int which) {
+//					if(which == 0){
+//						startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class), Raumplan.RAUMPLAN_REQUEST_CODE);
+//					}else if (which == 1){
+//						Intent intent = new Intent(BeuthOrgApplication.getAppContext(), Modulbeschreibung.class);
+//						Log.d("Debug", vb.getText().toString());
+//						intent.putExtra("modul", vb.getText());
+//						startActivityForResult(intent, Modulbeschreibung.MODULBESCHREIBUNG_REQUEST_CODE);
+//					}else if(which == 2){
+//						Intent intent = new Intent(BeuthOrgApplication.getAppContext(), ProfInfo.class);
+//						intent.putExtra("modul", vb.getText());
+//						startActivityForResult(intent, ProfInfo.PROFINFO_REQUEST_CODE);
+//					}
+//					
+//				}
+//			});
+//			
+//			AlertDialog dialog = builder.create();
+//			
+//
+//			dialog.show();
 		}
 	};
 
