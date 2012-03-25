@@ -23,57 +23,76 @@ import javax.swing.JTextField;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import util.Common;
+import util.Constants;
 
 /**
+ * Diese Klasse dient zum schreiben der FakeDaten als JSONObjekte in den dafür vorgesehenen Dateien.
  * @author Claudia Schaefer
  *
  */
 class writeData {
 
+	/**
+	 * Diese Methode schreibt das JSONObject json in eine Datei mit dem Namen fileName in einen Ordner je nach name.
+	 * 
+	 * @param name
+	 * 		String, um welche Art Object es sich handelt
+	 * @param fileName
+	 * 		String, Namen der Datei
+	 * @param json
+	 * 		JSONObject, Inhalt der Datei
+	 * @return
+	 */
 	public static boolean writeJSON(String name, String fileName,
 			JSONObject json) {
-		if (name.equals(Common.REGISTRATION)) {
-			writeFile(new String(Common.PATH + "" + fileName + ""
-					+ Common.JSON2), json);
+		if (name.equals(Constants.REGISTRATION)) {
+			writeFile(new String(Constants.PATH + "" + fileName + ""
+					+ Constants.JSON2), json);
 
-		} else if (name.equals(Common.STUDENT)) {
-			createFile(Common.PATH + "" + Common.STUDENT_DATA + "/" + fileName
-					+ "" + Common.JSON2, json);
+		} else if (name.equals(Constants.STUDENT)) {
+			createFile(Constants.PATH + "" + Constants.STUDENT_DATA + "/" + fileName
+					+ "" + Constants.JSON2, json);
 
-		} else if (name.equals(Common.MODUL)) {
-			createFile(Common.PATH + "" + Common.MODUL_DATA + "/" + fileName
-					+ "" + Common.JSON2, json);
+		} else if (name.equals(Constants.MODUL)) {
+			createFile(Constants.PATH + "" + Constants.MODUL_DATA + "/" + fileName
+					+ "" + Constants.JSON2, json);
 
-		} else if (name.equals(Common.STUNDENPLAN)) {
-			createFile(Common.PATH + "" + Common.STUNDENPLAN_DATA + "/"
-					+ fileName + "" + Common.JSON2, json);
+		} else if (name.equals(Constants.STUNDENPLAN)) {
+			createFile(Constants.PATH + "" + Constants.STUNDENPLAN_DATA + "/"
+					+ fileName + "" + Constants.JSON2, json);
 
-		} else if (name.equals(Common.EVENT)) {
-			createFile(Common.PATH + "" + Common.Event_DATA + "/" + fileName
-					+ "" + Common.JSON2, json);
+		} else if (name.equals(Constants.EVENT)) {
+			createFile(Constants.PATH + "" + Constants.Event_DATA + "/" + fileName
+					+ "" + Constants.JSON2, json);
 
-		} else if (name.equals(Common.LEHRKRAFTNEWS)) {
-			createFile(Common.PATH + "" + Common.LEHRKRAFTNEWS_DATA + "/"
-					+ fileName + "" + Common.JSON2, json);
+		} else if (name.equals(Constants.LEHRKRAFTNEWS)) {
+			createFile(Constants.PATH + "" + Constants.LEHRKRAFTNEWS_DATA + "/"
+					+ fileName + "" + Constants.JSON2, json);
 
-		} else if (name.equals(Common.PROF_DATA)) {
-			createFile(Common.PATH + "" + "" + Common.PROF_DATA + "/"
-					+ fileName + "" + Common.JSON2, json);
+		} else if (name.equals(Constants.PROF_DATA)) {
+			createFile(Constants.PATH + "" + "" + Constants.PROF_DATA + "/"
+					+ fileName + "" + Constants.JSON2, json);
 
-		} else if (name.equals(Common.MODUL_ORD)) {
-			writeFile(Common.PATH + "" + "" + fileName + "" + Common.JSON2,
+		} else if (name.equals(Constants.MODUL_ORD)) {
+			writeFile(Constants.PATH + "" + "" + fileName + "" + Constants.JSON2,
 					json);
 
-		} else if (name.equals(Common.STUDIENDOKU)) {
-			writeFile(Common.PATH + "" + Common.STUDIENDOKU_DATA + "/Doku"
-					+ fileName + "" + Common.JSON2, json);
+		} else if (name.equals(Constants.STUDIENDOKU)) {
+			writeFile(Constants.PATH + "" + Constants.STUDIENDOKU_DATA + "/Doku"
+					+ fileName + "" + Constants.JSON2, json);
 
 		}
 
 		return false;
 	}
 
+	/**
+	 * Diese Methode erzeugt neue Datei filePath mit dem Inhalt json.
+	 * @param filePath
+	 * 		String, Pfad der Datei
+	 * @param json
+	 * 		JSONObject, Inhalt der Datei
+	 */
 	private static void createFile(String filePath, JSONObject json) {
 		FileWriter fstream = null;
 		try {
@@ -101,6 +120,13 @@ class writeData {
 		}
 	}
 
+	/**
+	 * Diese Methode überschreibt die Datei filePath mit dem Inhalt json.
+	 * @param filePath
+	 * 		String, Pfad der Datei
+	 * @param json
+	 * 		JSONObject, Inhalt der Datei
+	 */
 	private static void writeFile(String filePath, JSONObject json) {
 		FileWriter fstream = null;
 		try {
@@ -123,6 +149,12 @@ class writeData {
 		}
 	}
 
+	/**
+	 * Liest den Inhalt des Files file aus.
+	 * @param file
+	 * 		File, wird ausgelesen
+	 * @return
+	 */
 	private static String readFile(File file) {
 		FileReader fr = null;
 		try {
@@ -133,6 +165,12 @@ class writeData {
 		return brReadIn(new BufferedReader(fr));
 	}
 
+	/**
+	 * Liest den Inhalt des BufferedReader br
+	 * @param br
+	 * 		BufferedReader, dessen Inhalt wird gelesen
+	 * @return
+	 */
 	private static String brReadIn(BufferedReader br) {
 
 		try {
@@ -144,9 +182,19 @@ class writeData {
 
 	}
 
+	/**
+	 * Erzeugt ein JSONObject aus s. Mit dem Name var und des FakeDatenTyps cons.
+	 * @param s
+	 * 		String, aus dem JSONObject erzeugt wird
+	 * @param cons
+	 * 		String, Typ des FakeDatanContents
+	 * @param var
+	 * 		String, Name des FakeDatenContents
+	 */
 	private static void generateJSON(String s, String cons, String var) {
 
 		try {
+			//erstelle Datei var in ordner cons mit Inhalt s
 			writeJSON(cons, var, new JSONObject(s));
 
 		} catch (JSONException e1) {
@@ -155,6 +203,9 @@ class writeData {
 
 	}
 
+	/**
+	 * Erzeugt die Dialog GUI, um die Daten einzugeben
+	 */
 	public static void selectDialog() {
 		final JDialog dialog = new JDialog();
 
@@ -168,10 +219,10 @@ class writeData {
 		JLabel jsonTypeLabel = new JLabel("Select Type for creating Json-File");
 
 		// combo box
-		String[] possibilities = { Common.REGISTRATION, Common.STUDENT,
-				Common.MODUL, Common.STUNDENPLAN, Common.EVENT,
-				Common.LEHRKRAFTNEWS, Common.PROF_DATA, Common.MODUL_ORD,
-				Common.STUDIENDOKU };
+		String[] possibilities = { Constants.REGISTRATION, Constants.STUDENT,
+				Constants.MODUL, Constants.STUNDENPLAN, Constants.EVENT,
+				Constants.LEHRKRAFTNEWS, Constants.PROF_DATA, Constants.MODUL_ORD,
+				Constants.STUDIENDOKU };
 		final JComboBox jsonTypesCombo = new JComboBox(possibilities);
 		jsonTypesCombo.setSelectedIndex(-1);
 
@@ -185,8 +236,10 @@ class writeData {
 					int selectionIndex = ((JComboBox) e.getSource())
 							.getSelectedIndex();
 					System.out.println(selectionIndex);
-
+					
 					if (selectionIndex == 0) {
+						//Oberfläche für Registrierungsdaten
+						
 						Box tempBox = Box.createVerticalBox();
 
 						tempBox.add(new JLabel("Matrikelnr: "));
@@ -200,12 +253,14 @@ class writeData {
 						tempBox.add(registrationPasswordText);
 
 						JButton saveButton = new JButton("Save");
+						
+						//Erzeugung der Registrierungsdaten
 						saveButton.addActionListener(new ActionListener() {
 
 							@SuppressWarnings("unused")
 							@Override
 							public void actionPerformed(ActionEvent e) {
-								File file = new File(Common.PATH + "" + "/"
+								File file = new File(Constants.PATH + "" + "/"
 										+ "registration.json");
 								if (!file.exists()) {
 									try {
@@ -226,13 +281,13 @@ class writeData {
 									if (source1 == null) {
 										generateJSON(
 												new String("{"
-														+ Common.REGISTRATION
+														+ Constants.REGISTRATION
 														+ ":["
 														+ new JSONObject(map)
 																.toString()
 														+ "]}"),
-												Common.REGISTRATION,
-												Common.REGISTRATION);
+												Constants.REGISTRATION,
+												Constants.REGISTRATION);
 									}
 									if (source1 != null) {
 										source1 = source1.substring(0,
@@ -241,15 +296,15 @@ class writeData {
 												+ "]}");
 
 										generateJSON(source1,
-												Common.REGISTRATION,
-												Common.REGISTRATION);
+												Constants.REGISTRATION,
+												Constants.REGISTRATION);
 									}
 								} else {
 									generateJSON(new String("{"
-											+ Common.REGISTRATION + ""
+											+ Constants.REGISTRATION + ""
 											+ new JSONObject(map).toString()
-											+ "}"), Common.REGISTRATION,
-											Common.REGISTRATION);
+											+ "}"), Constants.REGISTRATION,
+											Constants.REGISTRATION);
 
 								}
 
@@ -258,7 +313,10 @@ class writeData {
 						});
 						dynamicBox.add(tempBox);
 						dynamicBox.add(saveButton);
+						
 					} else if (selectionIndex == 1) {
+						//Oberfläche für Studentdaten
+						
 						Box tempBox = Box.createVerticalBox();
 						tempBox.add(new JLabel("Matrikelnr.: "));
 
@@ -297,7 +355,7 @@ class writeData {
 
 						tempBox.add(new JLabel("Stundenplan: "));
 
-						File file = new File(Common.PATH + ""
+						File file = new File(Constants.PATH + ""
 								+ "/StudenplanData/");
 						final File[] file1 = file.listFiles();
 
@@ -340,9 +398,9 @@ class writeData {
 								source = source.substring(0,
 										source.length() - 1);
 
-								source = source.concat("," + Common.STUNDENPLAN
+								source = source.concat("," + Constants.STUNDENPLAN
 										+ ":" + source1 + "}");
-								generateJSON(source, Common.STUDENT,
+								generateJSON(source, Constants.STUDENT,
 										studentMatrikelnrText.getText());
 
 							}
@@ -351,6 +409,8 @@ class writeData {
 						dynamicBox.add(saveButton);
 
 					} else if (selectionIndex == 2) {
+						//Oberfläche für Moduldaten
+						
 						Box tempBox = Box.createVerticalBox();
 						tempBox.add(new JLabel("Modul: "));
 
@@ -397,7 +457,7 @@ class writeData {
 								map.put("GueltigNStudienOrdnung",
 										coursesModulOrdnungText.getText());
 								JSONObject json = new JSONObject(map);
-								writeJSON(Common.MODUL,
+								writeJSON(Constants.MODUL,
 										coursesModulText.getText(), json);
 
 							}
@@ -406,9 +466,11 @@ class writeData {
 						dynamicBox.add(saveButton);
 
 					} else if (selectionIndex == 3) {
+						//Oberfläche für Studenplandaten
+						
 						Box tempBox = Box.createVerticalBox();
-						File file = new File(Common.PATH + ""
-								+ Common.MODUL_DATA + "/");
+						File file = new File(Constants.PATH + ""
+								+ Constants.MODUL_DATA + "/");
 						final File[] file1 = file.listFiles();
 						String[] module = new String[file1.length];
 						for (int i = 0; i < file1.length; i++) {
@@ -472,10 +534,10 @@ class writeData {
 										.getSelectedIndex()]);
 
 								jsonString = jsonString.concat(new String(","
-										+ Common.MODUL + ":[" + source1 + ","
+										+ Constants.MODUL + ":[" + source1 + ","
 										+ source2 + "," + source3 + ","
 										+ source4 + "]}"));
-								generateJSON(jsonString, Common.STUNDENPLAN,
+								generateJSON(jsonString, Constants.STUNDENPLAN,
 										stundenplanText.getText());
 
 							}
@@ -485,6 +547,8 @@ class writeData {
 						dynamicBox.add(saveButton);
 
 					} else if (selectionIndex == 4) {
+						//Oberfläche für Eventdaten
+						
 						Box tempBox = Box.createVerticalBox();
 
 						tempBox.add(new JLabel("Eventtitle: "));
@@ -514,7 +578,7 @@ class writeData {
 								map.put("Time", eventTimeText.getText());
 
 								JSONObject json = new JSONObject(map);
-								writeJSON(Common.EVENT,
+								writeJSON(Constants.EVENT,
 										eventTitleText.getText(), json);
 
 							}
@@ -524,6 +588,8 @@ class writeData {
 						dynamicBox.add(saveButton);
 
 					} else if (selectionIndex == 5) {
+						//Oberfläche für Lehrkraftnewsdaten
+						
 						Box tempBox = Box.createVerticalBox();
 						tempBox.add(new JLabel("LehrkraftnewsName: "));
 
@@ -552,7 +618,7 @@ class writeData {
 								map.put("Description",
 										lehrkraftNewsDescriptionText.getText());
 
-								writeJSON(Common.LEHRKRAFTNEWS,
+								writeJSON(Constants.LEHRKRAFTNEWS,
 										lehrkraftNewsNameText.getText(),
 										new JSONObject(map));
 
@@ -561,6 +627,7 @@ class writeData {
 						dynamicBox.add(tempBox);
 						dynamicBox.add(saveButton);
 					} else if (selectionIndex == 6) {
+						//Oberfläche für Profdaten
 						Box tempBox = Box.createVerticalBox();
 
 						tempBox.add(new JLabel("ProfName: "));
@@ -584,7 +651,7 @@ class writeData {
 								map.put("Website", profWebsiteText.getText());
 
 								JSONObject json = new JSONObject(map);
-								writeJSON(Common.PROF_DATA,
+								writeJSON(Constants.PROF_DATA,
 										profNameText.getText(), json);
 
 							}
@@ -594,6 +661,7 @@ class writeData {
 						dynamicBox.add(saveButton);
 
 					} else if (selectionIndex == 7) {
+						//Oberfläche für Modulbeschreibungsdaten
 						Box tempBox = Box.createVerticalBox();
 
 						tempBox.add(new JLabel("Modul: "));
@@ -617,9 +685,9 @@ class writeData {
 
 							@Override
 							public void actionPerformed(ActionEvent e) {
-								File file = new File(Common.PATH + "" + "/"
+								File file = new File(Constants.PATH + "" + "/"
 										+ modulNOrdText.getText() + ""
-										+ Common.JSON2);
+										+ Constants.JSON2);
 
 								Map<String, String> map = new HashMap<String, String>();
 								map.put("ModulNameOrd",
@@ -640,7 +708,7 @@ class writeData {
 									}
 									generateJSON(new String("{\"ModulOrd\":["
 											+ json.toString() + "]}"),
-											Common.MODUL_ORD,
+											Constants.MODUL_ORD,
 											modulNOrdText.getText());
 
 								}
@@ -652,7 +720,7 @@ class writeData {
 								generateJSON(
 										new String(source + ","
 												+ json.toString() + "]}"),
-										Common.MODUL_ORD,
+										Constants.MODUL_ORD,
 										modulNOrdText.getText());
 							}
 						});
@@ -661,6 +729,7 @@ class writeData {
 						dynamicBox.add(saveButton);
 
 					} else if (selectionIndex == 8) {
+						//Oberfläche für Studiendokudaten
 						Box tempBox = Box.createVerticalBox();
 						tempBox.add(new JLabel("dokuMatrikelnr: "));
 
@@ -716,13 +785,11 @@ class writeData {
 										dokuBelegungText.getText());
 
 								JSONObject json = new JSONObject(map);
-								// writeJSON(MODUL,
-								// dokuMatrikelnrText.getText(),
-								// json);
-								File file = new File(Common.PATH + ""
+
+								File file = new File(Constants.PATH + ""
 										+ "/StudiendokuData/Doku"
 										+ dokuMatrikelnrText.getText() + ""
-										+ Common.JSON2);
+										+ Constants.JSON2);
 								System.out.println(file.getAbsolutePath());
 
 								if (!file.exists()) {
@@ -738,7 +805,7 @@ class writeData {
 									generateJSON(
 											new String("{\"StudienDoku\":["
 													+ json.toString() + "]}"),
-											Common.STUDIENDOKU,
+											Constants.STUDIENDOKU,
 											dokuMatrikelnrText.getText());
 
 								}
@@ -754,7 +821,7 @@ class writeData {
 													+ ":["
 													+ new JSONObject(map)
 															.toString() + "]}"),
-											Common.STUDIENDOKU,
+											Constants.STUDIENDOKU,
 											dokuMatrikelnrText.getText());
 
 								} else if (source1 != null) {
@@ -762,7 +829,7 @@ class writeData {
 											source1.length() - 2);
 									source1 = source1.concat("," + source
 											+ "]}");
-									generateJSON(source1, Common.STUDIENDOKU,
+									generateJSON(source1, Constants.STUDIENDOKU,
 											dokuMatrikelnrText.getText());
 
 								}

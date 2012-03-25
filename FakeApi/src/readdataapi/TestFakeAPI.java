@@ -2,6 +2,7 @@ package readdataapi;
 
 
 /**
+ * Testklasse zum Ausführen der ReadData-Klasse
  * @author Claudia Schaefer
  *
  */

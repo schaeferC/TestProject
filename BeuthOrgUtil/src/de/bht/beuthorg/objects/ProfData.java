@@ -5,9 +5,20 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+/**
+ * Java Objekt für die Daten die zu einem Prof gehören
+ * @author Claudia
+ *
+ */
 public class ProfData {
 	
+	/**
+	 * Name des Profs
+	 */
 	private String profName;
+	/**
+	 * Website des Profs
+	 */
 	private String website;
 	public ProfData(JSONObject json){
 		String errorString = null;

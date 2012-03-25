@@ -1,10 +1,11 @@
 package util;
 
 /**
+ * Beinhaltet benötigte Konstanten
  * @author Claudia Schaefer
  *
  */
-public class Common {
+public class Constants {
 	public static final String PATH="lib/JSONDATA/";
 	
 	public static final String STUDIENDOKU = "Studiendoku";
@@ -16,6 +17,7 @@ public class Common {
 	public static final String EVENT = "Event";
 	public static final String LEHRKRAFTNEWS = "Lehrkraftnews";
 
+	
 	public static final String PROF_DATA = "ProfData";
 	public static final String STUDIENDOKU_DATA = "StudiendokuData";
 	public static final String REGISTRATION_DATA = "registration";

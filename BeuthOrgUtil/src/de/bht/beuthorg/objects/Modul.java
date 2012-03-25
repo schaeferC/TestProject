@@ -3,15 +3,42 @@ package de.bht.beuthorg.objects;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * Java Objekt der Module im Stundenplan
+ * @author Claudia
+ *
+ */
 public class Modul {
 
+	/**
+	 * Unterrichtender des Moduls
+	 */
 	private String teacher;
+	/**
+	 * Raum in der die Lehrveranstaltung stattfindet
+	 */
 	private String room;
+	/**
+	 * Anfangszeit der Lehrveranstaltung.
+	 */
 	private String time;
+	/**
+	 * Name der Lehrveranstaltung
+	 */
 	private String modulName;
+	/**
+	 * Wochentag der Lehrveranstaltung
+	 */
 	private String day;
+	/**
+	 * Studienordnung nach der die Lehrveranstaltung stattfindet
+	 */
 	private String gueltigNStudienOrdnung;
 
+	/**
+	 * Konstruktor
+	 * @param json
+	 */
 	public Modul(JSONObject json) {
 		super();
 		try {

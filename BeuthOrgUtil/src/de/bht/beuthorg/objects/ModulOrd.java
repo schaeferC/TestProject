@@ -5,11 +5,29 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+/**
+ * Java Objekt der Module mit Modulordnung und -beschreibung
+ * @author Claudia
+ *
+ */
 public class ModulOrd {
+	/**
+	 * Beschreibt die Ordnung des Moduls nach welcher Studienordnung dieses stattfindet
+	 */
 	private String modulNOrd;
+	/**
+	 * Beschreibung des Moduls
+	 */
 	private String moduldescriptionOrd;
+	/**
+	 * Name des Moduls
+	 */
 	private String modulNameOrd;
 
+	/**
+	 * Konstruktor
+	 * @param json
+	 */
 	public ModulOrd(JSONObject json) {
 		String errorString = null;
 		try {

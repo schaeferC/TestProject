@@ -3,6 +3,7 @@ package writetestdata;
 import org.json.JSONException;
 
 /**
+ * Ausführbare Klasse zum erzeugen der FakeDaten.
  * @author Claudia Schafer
  *
  */

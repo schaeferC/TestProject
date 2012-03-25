@@ -12,6 +12,7 @@ import de.bht.beuthorg.util.Common;
 
 
 /**
+ * Nachzulesen in FakeApi ReadData
  * @author Claudia Schaefer
  *
  */

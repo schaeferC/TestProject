@@ -6,9 +6,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+/**
+ * Java Objekt der Lehrkraftnews
+ * @author Claudia
+ *
+ */
 public class LehrkraftNews {
 
+	/**
+	 * Enthält die gesamten Lehrkraftnews
+	 */
 	private JSONArray news; 
+	
+	/**
+	 * Konstruktor
+	 * @param json
+	 */
 	public LehrkraftNews(JSONObject json){
 		try {
 			this.news = json.getJSONArray("Lehrkraftnews");
@@ -20,6 +33,12 @@ public class LehrkraftNews {
 		}
 	}
 	
+	/**
+	 * Gibt eine bestimmte LehrkraftNews zurück.
+	 * @param key
+	 * 		String, Schlüssel für die Nachricht.
+	 * @return
+	 */
 	public String[] getLehrkraftnewsByKey(String key){
 		for(int i = 0; i< news.length(); i++){
 			//ArrayList<String> list = new

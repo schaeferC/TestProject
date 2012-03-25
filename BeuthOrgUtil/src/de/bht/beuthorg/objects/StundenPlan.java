@@ -6,11 +6,26 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * Java Objekt des Stundenplans
+ * @author Claudia
+ *
+ */
 public class StundenPlan {
+	/**
+	 * Module aus denen ein Stundenplan besteht
+	 */
 	private Modul[] modul;
 
+	/**
+	 * Name des Stundenplans
+	 */
 	private String stundenPlanName;
 
+	/**
+	 * Konstruktor
+	 * @param json
+	 */
 	public StundenPlan(JSONObject json) {
 		super();
 		try {
