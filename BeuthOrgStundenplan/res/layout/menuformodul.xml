@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical" >
-
+
     <LinearLayout
         android:id="@+id/llmodulmenu"
         android:layout_width="183dp"
@@ -26,12 +26,21 @@
             android:layout_width="match_parent"
             android:layout_height="1dip"
             android:background="@color/beuthorgTextColor" />
-
+
         <ListView
             android:id="@+id/menuformodulListView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="132dp" >
+
         </ListView>
+
+        <Button
+            android:id="@+id/modulmenucancelB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cancel"
+            android:text="cancel"
+            android:textColor="@color/beuthorgTextColor" android:layout_gravity="right"/>
     </LinearLayout>
 
 </LinearLayout>

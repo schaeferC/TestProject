@@ -34,6 +34,8 @@ public class StundenplanView extends Activity{
 
 	public static final int STUNDENPLAN_SUCCESS_CODE = 789658;
 
+	private Bundle savedInstanceState;
+	
 	private Button mondayB;
 	private Button tuesdayB;
 	private Button wednesdayB;
@@ -42,6 +44,7 @@ public class StundenplanView extends Activity{
 	private Button saturdayB;
 	private ListView menuforList;
 	private PopupWindow puwmodulmenu;
+	private Button cancelmodulmenuB;
 	
 	
 	
@@ -52,7 +55,18 @@ public class StundenplanView extends Activity{
 			vb = (Button) v;
 			LayoutInflater inflater= getLayoutInflater();
 			View view= inflater.inflate(R.layout.menuformodul, (ViewGroup) findViewById(R.id.menumodulroot));
-
+			cancelmodulmenuB = (Button) view.findViewById(R.id.modulmenucancelB);
+			cancelmodulmenuB.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					puwmodulmenu.dismiss();
+					
+					
+				}
+			});
+//			
+					
 			menuforList = (ListView) view.findViewById(R.id.menuformodulListView);
 			
 			final String[] items = {"Raumplan", "Modulbeschreibung", "zur Lehrkraftwebsite"};
@@ -76,36 +90,12 @@ public class StundenplanView extends Activity{
 					intent.putExtra("modul", vb.getText());
 					startActivityForResult(intent, ProfInfo.PROFINFO_REQUEST_CODE);
 				}
-
+					
 				}
 			});
 			puwmodulmenu=new PopupWindow(view, 500, 500, true);
 			puwmodulmenu.showAtLocation(view, Gravity.CENTER, 0, 0);
-//			Builder builder = new AlertDialog.Builder(v.getContext());
-//			builder.setView(view);
-//			builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
-//				@Override
-//				public void onClick(DialogInterface dialog, int which) {
-//					if(which == 0){
-//						startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class), Raumplan.RAUMPLAN_REQUEST_CODE);
-//					}else if (which == 1){
-//						Intent intent = new Intent(BeuthOrgApplication.getAppContext(), Modulbeschreibung.class);
-//						Log.d("Debug", vb.getText().toString());
-//						intent.putExtra("modul", vb.getText());
-//						startActivityForResult(intent, Modulbeschreibung.MODULBESCHREIBUNG_REQUEST_CODE);
-//					}else if(which == 2){
-//						Intent intent = new Intent(BeuthOrgApplication.getAppContext(), ProfInfo.class);
-//						intent.putExtra("modul", vb.getText());
-//						startActivityForResult(intent, ProfInfo.PROFINFO_REQUEST_CODE);
-//					}
-//					
-//				}
-//			});
-//			
-//			AlertDialog dialog = builder.create();
-//			
-//
-//			dialog.show();
+
 		}
 	};
 
@@ -114,7 +104,7 @@ public class StundenplanView extends Activity{
 	private Modul[] module;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-
+		this.savedInstanceState = savedInstanceState;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.stundenplan);
 		
