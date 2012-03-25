@@ -32,6 +32,10 @@
             android:label="Menu" >
         </activity>
         <activity
+            android:name=".beuthmenu.views.WithoutLoginMenu"
+            android:label="Without Login" >
+        </activity>
+        <activity
             android:name=".beuthmenu.views.AllgemeinUni"
             android:label="Allgemeines zur Uni" >
         </activity>
@@ -47,19 +51,19 @@
             android:name=".views.Login"
             android:label="Login" >
         </activity>
-                <activity
+        <activity
             android:name=".moduldescription.view.Modulbeschreibung"
             android:label="Modulbeschreibung" >
         </activity>
-                <activity
+        <activity
             android:name=".profinfoweb.view.ProfInfo"
             android:label="Prof Info" >
         </activity>
-                        <activity
+        <activity
             android:name=".raumplan.view.Raumplan"
             android:label="Raumplan" >
         </activity>
-                        <activity
+        <activity
             android:name=".stundenplan.view.StundenplanView"
             android:label="Stundenplan" >
         </activity>
@@ -71,29 +75,29 @@
             android:name=".beuthmenu.views.MensaSelected"
             android:label="Mensa" >
         </activity>
-         <activity
-            android:label="Ich"
-            android:name=".beuthmenu.views.IchSelected" >
+        <activity
+            android:name=".beuthmenu.views.IchSelected"
+            android:label="Ich" >
         </activity>
         <activity
-            android:label="Survival"
-            android:name=".beuthmenu.views.Survival" >
+            android:name=".beuthmenu.views.Survival"
+            android:label="Survival" >
         </activity>
         <activity
-            android:label="Fachbereich VI"
-            android:name=".beuthmenu.views.Fb6Selected" >
+            android:name=".beuthmenu.views.Fb6Selected"
+            android:label="Fachbereich VI" >
         </activity>
         <activity
-            android:label="Infos"
-            android:name=".beuthmenu.views.UniInfo" >
+            android:name=".beuthmenu.views.UniInfo"
+            android:label="Infos" >
         </activity>
         <activity
-            android:label="Kontakt"
-            android:name=".beuthmenu.views.UniKontakt" >
+            android:name=".beuthmenu.views.UniKontakt"
+            android:label="Kontakt" >
         </activity>
         <activity
-            android:label="Informationen zum Fachbereich VI"
-            android:name=".beuthmenu.views.Fb6Info" >
+            android:name=".beuthmenu.views.Fb6Info"
+            android:label="Informationen zum Fachbereich VI" >
         </activity>
     </application>
 

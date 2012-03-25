@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import de.bht.beuthorg.R;
 import de.bht.beuthorg.beuthmenu.views.BeuthMenu;
+import de.bht.beuthorg.beuthmenu.views.WithoutLoginMenu;
 import de.bht.beuthorg.datahandler.DataHandler;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 
@@ -47,6 +48,7 @@ public class Login extends Activity implements OnClickListener{
 		login= (Button)findViewById(R.id.login);
 		login.setOnClickListener(this);
 		withoutLogin=(Button) findViewById(R.id.withoutLogin);
+		withoutLogin.setOnClickListener(this);
 
 	}
 
@@ -91,6 +93,8 @@ public class Login extends Activity implements OnClickListener{
 				Toast.makeText(BeuthOrgApplication.getAppContext(), "Keine validen Daten vorhanden",
 	                    Toast.LENGTH_LONG).show();
 			}
+		}else if(v==withoutLogin){
+			startActivity(new Intent(BeuthOrgApplication.getAppContext(), WithoutLoginMenu.class));
 		}
 		
 		
