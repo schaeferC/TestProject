@@ -21,6 +21,10 @@
             android:name=".views.AllgemeinUni"
             android:label="@string/app_name" >
         </activity>
+          <activity
+            android:name=".views.IchSelected"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
