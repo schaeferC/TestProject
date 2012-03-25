@@ -9,8 +9,8 @@
         android:id="@+id/raumplanPlatzhalter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/hlogin" 
-        android:text="Not implemented yet"
+        android:background="@drawable/raumplanbild" 
+        android:text=""
         android:textColor="@color/beuthorgTextColor"
         android:gravity="center"/>
 
