@@ -17,25 +17,43 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-public class News extends Activity implements OnItemClickListener{
-	/** Called when the activity is first created. */
+/**
+ * Activity zur Darstellung der Lehrkraftnews
+ * 
+ * @author Claudia
+ * 
+ */
+public class News extends Activity implements OnItemClickListener {
+
+	/**
+	 * Constante mit der die Activity aufgerufen wird
+	 */
 	public static final int NEWS_REQUEST_CODE = 123321998;
 
+	/**
+	 * Result, dass die Activity zurückgibt nach erfolgreichem Abschluss
+	 */
 	public static final int NEWS_SUCCESS_CODE = 1;
-	// private Button Back;
+
+	/**
+	 * List in der die Lehrkraftnews angezeigt werden
+	 */
 	private ListView newsList;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// setContentView(R.layout.news);
-
+		// zugrunde liegendes Layout
 		setContentView(R.layout.news);
+		// Zuweisung eines Items des zugrundeliegenden Layouts
 		newsList = (ListView) findViewById(R.id.listNews);
 
+		// Aufruf um Lehrkraftnews zu erhalten
 		ArrayList<String> contentsNews = HTTPContentsNews.getLehrkraftNews();
+
 		NewsArrayAdapter newsArrayAdapter = new NewsArrayAdapter(
 				getApplicationContext(), R.layout.list_item_news, contentsNews);
+		// Eigenschaften von newsList setzen
 		newsList.setAdapter(newsArrayAdapter);
 		newsList.setCacheColorHint(Color.TRANSPARENT);
 		newsList.setOnItemClickListener(this);
@@ -43,14 +61,15 @@ public class News extends Activity implements OnItemClickListener{
 	}
 
 	@Override
-    public void onItemClick(AdapterView<?> parent, View view, int position,
-            long id) {
-		
-		Intent myIntent = new Intent(view.getContext(), OneNews.class); 
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+
+		Intent myIntent = new Intent(view.getContext(), OneNews.class);
 		myIntent.putExtra("news", parent.getItemAtPosition(position).toString());
 		startActivity(myIntent);
-		
+
 	}
+
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -59,6 +78,10 @@ public class News extends Activity implements OnItemClickListener{
 		return true;
 	}
 
+	/**
+	 * Beendet die aktuelle Activity und gibt der aufrufenden Activity den
+	 * SuccessCode zurück
+	 */
 	protected void returnToCallingActivity() {
 		Intent intent = new Intent();
 		setResult(News.NEWS_SUCCESS_CODE, intent);

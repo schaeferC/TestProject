@@ -10,8 +10,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+/**
+ * Diese Klasse dient zum Befüllen der Items der ViewList der News-Activity. 
+ * @author Claudia
+ *
+ */
 public class NewsArrayAdapter extends ArrayAdapter<String> {
 
+	/**
+	 * Beinhaltet die die Contents für jedes List_Item
+	 */
 	ArrayList<String> contents;
 	
 	public NewsArrayAdapter(Context context, int resource,
