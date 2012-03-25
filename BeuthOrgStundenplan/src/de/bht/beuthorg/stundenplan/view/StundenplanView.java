@@ -28,97 +28,133 @@ import de.bht.beuthorg.raumplan.view.Raumplan;
 import de.bht.beuthorg.stundenplan.R;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 
-public class StundenplanView extends Activity{
+/**
+ * Ist die Activity-Klasse zum Anzeigen des Stundenplans.
+ * Darstellung des Stundenplans als TableLayout
+ * 
+ * @author Claudia
+ * 
+ */
+public class StundenplanView extends Activity {
 
+	/**
+	 * Constante mit der die Activity aufgerufen wird
+	 */
 	public static final int STUNDENPLAN_REQUEST_CODE = 15587999;
 
+	/**
+	 * Result, dass die Activity zurückgibt nach erfolgreichem Abschluss
+	 */
 	public static final int STUNDENPLAN_SUCCESS_CODE = 789658;
 
-	private Bundle savedInstanceState;
-	
-	private Button mondayB;
-	private Button tuesdayB;
-	private Button wednesdayB;
-	private Button thursdayB;
-	private Button fridayB;
-	private Button saturdayB;
+	// Items für das PopUpMenu eines Moduls im Stundenplan
 	private ListView menuforList;
-	private PopupWindow puwmodulmenu;
 	private Button cancelmodulmenuB;
-	
-	
-	
+
+	/**
+	 * Das PopUpMenu
+	 */
+	private PopupWindow puwmodulmenu;
+
+	/**
+	 * Listener für die Module des Stundenplans zum Aufrufen des PopUpMenus
+	 */
 	private OnClickListener blockButtonsClicked = new OnClickListener() {
+
+		/**
+		 * Hilfsvariable um den Text von dem Parameter v der Methode onClick zu
+		 * bekommen.
+		 */
 		Button vb;
+
 		@Override
 		public void onClick(View v) {
+			// Zuweisung von vb
 			vb = (Button) v;
-			LayoutInflater inflater= getLayoutInflater();
-			View view= inflater.inflate(R.layout.menuformodul, (ViewGroup) findViewById(R.id.menumodulroot));
-			cancelmodulmenuB = (Button) view.findViewById(R.id.modulmenucancelB);
+			// Inflater um eine custom view aufzurufen
+			LayoutInflater inflater = getLayoutInflater();
+			// View erzeugen
+			View view = inflater.inflate(R.layout.menuformodul,
+					(ViewGroup) findViewById(R.id.menumodulroot));
+			// Zuweisung Cancelbutton mit Eigenschaft das popup yu schließen
+			cancelmodulmenuB = (Button) view
+					.findViewById(R.id.modulmenucancelB);
 			cancelmodulmenuB.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					puwmodulmenu.dismiss();
-					
-					
+
 				}
 			});
-//			
-					
-			menuforList = (ListView) view.findViewById(R.id.menuformodulListView);
-			
-			final String[] items = {"Raumplan", "Modulbeschreibung", "zur Lehrkraftwebsite"};
-			ArrayAdapter<String> adapter = new ArrayAdapter<String>(BeuthOrgApplication.getAppContext(), R.layout.list_item_modulmenu, items);
+			//
+
+			menuforList = (ListView) view
+					.findViewById(R.id.menuformodulListView);
+
+			final String[] items = { "Raumplan", "Modulbeschreibung",
+					"Lehrkraftwebsite" };
+			ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+					BeuthOrgApplication.getAppContext(),
+					R.layout.list_item_modulmenu, items);
 
 			menuforList.setAdapter(adapter);
 			menuforList.setOnItemClickListener(new OnItemClickListener() {
-				
+
 				@Override
-			    public void onItemClick(AdapterView<?> parent, View view, int position,
-			            long id) {
-					if(position == 0){
-					startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class), Raumplan.RAUMPLAN_REQUEST_CODE);
-				}else if (position == 1){
-					Intent intent = new Intent(BeuthOrgApplication.getAppContext(), Modulbeschreibung.class);
-					Log.d("Debug", vb.getText().toString());
-					intent.putExtra("modul", vb.getText());
-					startActivityForResult(intent, Modulbeschreibung.MODULBESCHREIBUNG_REQUEST_CODE);
-				}else if(position == 2){
-					Intent intent = new Intent(BeuthOrgApplication.getAppContext(), ProfInfo.class);
-					intent.putExtra("modul", vb.getText());
-					startActivityForResult(intent, ProfInfo.PROFINFO_REQUEST_CODE);
-				}
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
 					
+					if (position == 0) {
+						startActivityForResult(
+								new Intent(BeuthOrgApplication.getAppContext(),
+										Raumplan.class),
+								Raumplan.RAUMPLAN_REQUEST_CODE);
+					} else if (position == 1) {
+						Intent intent = new Intent(BeuthOrgApplication
+								.getAppContext(), Modulbeschreibung.class);
+						Log.d("Debug", vb.getText().toString());
+						intent.putExtra("modul", vb.getText());
+						startActivityForResult(
+								intent,
+								Modulbeschreibung.MODULBESCHREIBUNG_REQUEST_CODE);
+					} else if (position == 2) {
+						Intent intent = new Intent(BeuthOrgApplication
+								.getAppContext(), ProfInfo.class);
+						intent.putExtra("modul", vb.getText());
+						startActivityForResult(intent,
+								ProfInfo.PROFINFO_REQUEST_CODE);
+					}
+
 				}
 			});
-			puwmodulmenu=new PopupWindow(view, 500, 500, true);
+			puwmodulmenu = new PopupWindow(view, 500, 500, true);
 			puwmodulmenu.showAtLocation(view, Gravity.CENTER, 0, 0);
 
 		}
 	};
 
-
+	/**
+	 * Für die Buttons der Module des Stundenplans
+	 */
 	private Map<String, Button> blockMap;
+	/**
+	 * Module die dargestellt werden.
+	 */
 	private Modul[] module;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		this.savedInstanceState = savedInstanceState;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.stundenplan);
-		
+
 		blockMap = new HashMap<String, Button>();
+		
+		//Aufruf um die Module des Stundenplans des registrierten Studenten zu bekommen
 		module = BeuthOrgControl.getInstance().getRegistredStudent()
 				.getStundenplan().getModul();
 
-		mondayB = (Button) findViewById(R.id.mondayButton);
-		tuesdayB = (Button) findViewById(R.id.tuesdayButton);
-		wednesdayB = (Button) findViewById(R.id.wednesdayButton);
-		thursdayB = (Button) findViewById(R.id.thursdayButton);
-		fridayB = (Button) findViewById(R.id.fridayButton);
-		saturdayB = (Button) findViewById(R.id.saturdayButton);
-
+		// Vereinbarung der Buttons für die Module in die Map schreiben
 		blockMap.put("Mo8:00", (Button) findViewById(R.id.mondayBlock1Button));
 		blockMap.put("Di8:00", (Button) findViewById(R.id.tuesdayBlock1Button));
 		blockMap.put("Mi8:00",
@@ -187,15 +223,21 @@ public class StundenplanView extends Activity{
 		blockMap.put("Sa19:30",
 				(Button) findViewById(R.id.saturdayBlock7Button));
 
+		
 		for (int i = 0; i < module.length; i++) {
+			// jedem Modul wird sein richtiger Platz in der Table zugewiesen
+			//und nur an diesem Platz(Button) werden Eigenschaften gesetzt
+			
 			Modul modul = module[i];
 			String block = new String(modul.getDay() + modul.getTime());
 
 			if (blockMap.containsKey(block)) {
-				blockMap.get(block).setText(
-						modul.getModulName() + "\n" + modul.getRoom()+"\n"+ modul.getTeacher());
-				blockMap.get(block).setOnClickListener(blockButtonsClicked);
 				
+				blockMap.get(block).setText(
+						modul.getModulName() + "\n" + modul.getRoom() + "\n"
+								+ modul.getTeacher());
+				blockMap.get(block).setOnClickListener(blockButtonsClicked);
+
 			}
 		}
 
@@ -209,6 +251,9 @@ public class StundenplanView extends Activity{
 		return true;
 	}
 
+	/**
+	 * Beendet die aktuelle Activity und gibt der aufrufenden Activity den SuccessCode zurück
+	 */
 	protected void returnToCallingActivity() {
 		Intent intent = new Intent();
 		setResult(StundenplanView.STUNDENPLAN_SUCCESS_CODE, intent);
