@@ -31,8 +31,8 @@ public class BeuthMenu extends Activity {
 				finish();
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), AllgemeinUni.class), AllgemeinUni.UNI_REQUEST_CODE);
 			} else if (v == fb6B) {
-//				finish();
-//				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Fb6Selected.class), Fb6Selected.UNI_REQUEST_CODE);
+				finish();
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Fb6Selected.class), Fb6Selected.FB6SELECTED_REQUEST_CODE);
 			} else if (v == ichB) {
 				finish();
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), IchSelected.class), IchSelected.ICHSELECTED_REQUEST_CODE);

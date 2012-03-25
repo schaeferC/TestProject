@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fbback2"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="224dp"
+        android:layout_weight="1.06" >
+
+      <ImageView
+            android:id="@+id/fbwabe"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="175dp"
+            android:src="@drawable/fbmenu2" /> 
+
+        <Button
+            android:id="@+id/fsinfoB"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_alignBottom="@+id/fbwabe"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="-16dp"
+            android:layout_toRightOf="@+id/fbwabe"
+            android:background="@drawable/newswabe2"
+            android:text="Info"
+            android:textColor="@color/beuthorgTextColor"
+            android:textSize="22px" />
+
+        <Button
+            android:id="@+id/fsbackB"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/fbwabe"
+            android:layout_alignRight="@+id/fbwabe"
+            android:background="@android:color/transparent"
+            android:text="" />
+
+    </RelativeLayout>
+
+</LinearLayout>

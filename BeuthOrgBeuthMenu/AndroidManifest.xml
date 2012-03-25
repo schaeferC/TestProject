@@ -25,6 +25,10 @@
             android:name=".views.IchSelected"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".views.Fb6Selected"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
