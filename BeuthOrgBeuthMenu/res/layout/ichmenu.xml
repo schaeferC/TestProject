@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ichback"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="224dp"
+        android:layout_weight="1.06" >
+
+        <ImageView
+            android:id="@+id/ichwabe"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="103dp"
+            android:layout_marginRight="-6dp"
+            android:src="@drawable/ichmenu" />
+
+        <Button
+            android:id="@+id/israumplanB"
+            android:layout_width="125dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/ichwabe"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="85dp"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/raumplanwabe"
+            android:text="Raumplan"
+            android:textColor="@color/beuthorgTextColor"
+            android:textSize="22px" />
+
+        <Button
+            android:id="@+id/isstudiendokuB"
+            android:layout_width="155dp"
+            android:layout_height="100dp"
+            android:layout_alignRight="@+id/israumplanB"
+            android:layout_alignTop="@+id/ichwabe"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/studiendokuwabe"
+            android:text="Studiendoku"
+            android:textColor="@color/beuthorgTextColor"
+            android:textSize="22px" />
+
+        <Button
+            android:id="@+id/isstundenplanB"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="-10dp"
+            android:layout_marginTop="318dp"
+            android:background="@drawable/stundenplanwabe"
+            android:text="Stundenplan"
+            android:textColor="@color/beuthorgTextColor"
+            android:textSize="22px" />
+
+        <Button
+            android:id="@+id/isbackB"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_alignLeft="@+id/isstundenplanB"
+            android:layout_alignTop="@+id/isstudiendokuB"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-5dp"
+            android:background="@android:color/transparent"
+            android:text="" />
+
+    </RelativeLayout>
+
+</LinearLayout>

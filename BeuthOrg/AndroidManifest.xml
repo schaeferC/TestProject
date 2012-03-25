@@ -47,6 +47,22 @@
             android:name=".views.Login"
             android:label="Login" >
         </activity>
+                <activity
+            android:name=".views.Modulbeschreibung"
+            android:label="Login" >
+        </activity>
+                <activity
+            android:name=".views.ProfInfo"
+            android:label="Login" >
+        </activity>
+                        <activity
+            android:name=".views.Raumplan"
+            android:label="Login" >
+        </activity>
+                        <activity
+            android:name=".views.StundenplanView"
+            android:label="Login" >
+        </activity>
         <activity
             android:name=".mensafood.view.MensaFood"
             android:label="Mensa Essen" >
@@ -55,21 +71,13 @@
             android:name=".beuthmenu.views.MensaSelected"
             android:label="Mensa" >
         </activity>
-        <activity
-            android:name=".views.StundenplanView"
-            android:label="Mensa" >
+         <activity
+            android:label="Ich"
+            android:name=".beuthmenu.views.IchSelected" >
         </activity>
         <activity
-            android:name=".views.Raumplan"
-            android:label="Mensa" >
-        </activity>
-        <activity
-            android:name=".views.Modulbeschreibung"
-            android:label="Mensa" >
-        </activity>
-        <activity
-            android:name=".views.ProfInfo"
-            android:label="Mensa" >
+            android:label="FB6"
+            android:name=".beuthmenu.views.Fb6Selected" >
         </activity>
     </application>
 

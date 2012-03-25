@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/animationuniback2"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="224dp"
+        android:layout_weight="1.06" >
+
+        <Button
+            android:id="@+id/aunewsB"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="100dp"
+            android:background="@drawable/newswabe2"
+            android:text="News"
+            android:textColor="@color/beuthorgTextColor"
+            android:textSize="22px" />
+
+        <Button
+            android:id="@+id/auinfoB"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_alignLeft="@+id/aunewsB"
+            android:layout_below="@+id/aunewsB"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="-10dp"
+            android:background="@drawable/infowaben2"
+            android:text="Info"
+            android:textColor="@color/beuthorgTextColor"
+            android:textSize="22px" />
+
+          <ImageView
+            android:id="@+id/uniwabe"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-45dp"
+            android:src="@drawable/unimenu2" /> 
+
+       <Button
+            android:id="@+id/aukonB"
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:layout_alignBottom="@+id/auinfoB"
+            android:layout_marginBottom="-15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="-15dp"
+            android:layout_marginTop="75dp"
+            android:layout_toLeftOf="@+id/auinfoB"
+            android:background="@drawable/kontaktwaben2"
+            android:text="Kontakt"
+            android:textColor="@color/beuthorgTextColor"
+            android:textSize="22px" />
+
+       <Button
+           android:id="@+id/aubackB"
+           android:layout_width="110dp"
+           android:layout_height="65dp"
+           android:layout_above="@+id/auinfoB"
+           android:layout_marginBottom="-15dp"
+           android:layout_marginLeft="12dp"
+           android:layout_marginRight="-12dp"
+           android:layout_marginTop="15dp"
+           android:layout_toLeftOf="@+id/auinfoB"
+           android:background="@android:color/transparent"
+            android:text="" />
+        
+    </RelativeLayout>
+
+</LinearLayout>
