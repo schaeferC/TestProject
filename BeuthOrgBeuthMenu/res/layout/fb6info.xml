@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu"
+    android:orientation="vertical" >
+
+    
+    <ScrollView
+    android:id="@+id/SCROLLER_ID"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical"
+    android:fillViewport="true">
+
+        <TextView
+        android:id="@+id/infoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hlogin" 
+        android:textColor="@color/beuthorgTextColor"
+        android:singleLine="false"
+        android:scrollHorizontally="false"
+        android:padding="20dp" android:text="
+DEKANIN: \n
+	Prof. Dr. rer. nat. Heike Ripphausen-Lipa\n
+	Haus Bauwesen, Raum: 112 \n
+	Haus Gauß, Raum: 127\n
+	Sprechzeiten:\n
+	Donnerstag, 10.00 – 12.00 Uhr (im B127) und nach Vereinbarung\n
+	Homepage:	http://public.beuth-hochschule.de/ ~ripphaus\n
+	E-Mail:		ripphaus@beuth-hochschule.de\n
+	Telefon:\n
+		(030) 4504-2304 / (030) 4504-2751\n \n
+DEKANAT (FACHBEREICHSVERWALTUNG): \n
+	Kontakt:\n
+		Haus Gauß\n
+		Raum 129 / 131\n
+		E-Mail: fb06@beuth-hochschule.de\n
+		Fax: 45 04-20 13\n \n
+FB-VERWALTUNGSLEITERIN \n
+(PRÜFUNGSANGELEGENHEITEN):\n
+	Evelin Ulrich\n
+	Tel. 4504-2727\n
+	E-Mail: ulrich@beuth-hochschule.de\n
+	Sprechstunden für Studierende:\n
+		Mittwoch 09.30-12.30, 13.30-16.00 Uhr\n
+		Di Do Fr nach Terminvereinbarung per E-Mail. \n \n
+FACHBEREICHSSEKRETERIAT: \n
+	Sprechstunden für Studierende: \n
+	Mon-Donn 9.30-12.30 Uhr\n\n
+	Bettina Scholl-Bodsch\n
+	Tel. 4504-2537\n
+	E-Mail: bodsch@beuth-hochschule.de\n\n
+	Sonja Maier\n
+	Tel. 4504-2372\n
+	E-Mail: smaier@beuth-hochschule.de\n\n
+	Tanja Stanke\n
+	Tel. 4504-2467\n
+	E-Mail: stanke@beuth-hochschule.de\n\n
+	Heidi Kurpas\n
+	Tel. 4504-5187\n
+	E-Mail: kurpas@beuth-hochschule.de \n\n
+	
+"/>
+
+    </ScrollView>
+    
+    
+    
+    
+
+</LinearLayout>

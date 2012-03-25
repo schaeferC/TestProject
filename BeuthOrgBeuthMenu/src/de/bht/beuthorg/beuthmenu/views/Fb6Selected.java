@@ -12,6 +12,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import de.bht.beuthorg.beuthmenu.R;
+import de.bht.beuthorg.raumplan.view.Raumplan;
+import de.bht.beuthorg.util.BeuthOrgApplication;
 
 public class Fb6Selected extends Activity {
 
@@ -28,7 +30,7 @@ public class Fb6Selected extends Activity {
 		@Override
 		public void onClick(View v) {
 			if (v == fsinfoB) {
-
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Fb6Info.class), Fb6Info.FB6INFO_REQUEST_CODE);
 			} else if (v == fsbackB) {
 				returnToCallingActivity();
 			}
