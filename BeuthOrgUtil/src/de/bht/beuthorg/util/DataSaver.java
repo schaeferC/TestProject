@@ -11,8 +11,22 @@ import org.json.JSONObject;
 
 import android.content.Context;
 
+/**
+ * Diese Klasse speichert und liest Dateien die auf der SD-Karte.
+ * @author Claudia
+ *
+ */
 public class DataSaver {
 
+	/**
+	 * Schreibt die Datei filename mit dem Inhalt data für context.
+	 * @param context
+	 * 		Context, context
+	 * @param filename
+	 * 		String, unter welchem Namen gespeichert wird
+	 * @param data
+	 * 		String, Inhalt der Datei
+	 */
 	public static void writeData(Context context, String filename, String data){
 		
         FileOutputStream fOut = null;
@@ -36,6 +50,14 @@ public class DataSaver {
         }
 	}
 	
+	/**
+	 * Liest die Daten aus filname für den context
+	 * @param context
+	 * 		Context, context
+	 * @param filename
+	 * 		String, Name der Datei
+	 * @return
+	 */
 	public static JSONObject readSettings(Context context, String filename) {
 
         FileInputStream fIn = null;

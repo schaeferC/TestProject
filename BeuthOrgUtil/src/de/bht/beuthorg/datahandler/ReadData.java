@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-import de.bht.beuthorg.util.Common;
+import de.bht.beuthorg.util.Constants;
 
 
 /**
@@ -36,8 +36,8 @@ public class ReadData {
 	}
 
 	public static JSONObject LogIn(String matrikelnr, String pw) {
-		File file = new File(Common.PATH + "/" + Common.REGISTRATION_DATA + ""
-				+ Common.JSON2);
+		File file = new File(Constants.PATH + "/" + Constants.REGISTRATION_DATA + ""
+				+ Constants.JSON2);
 		JSONObject json = lies(file.getAbsolutePath());
 		
 		try {
@@ -47,9 +47,9 @@ public class ReadData {
 						.getString("RegistrationMatrikelnr").equals(matrikelnr)
 						&& jsonArray.getJSONObject(i)
 								.getString("RegistrationPassword").equals(pw)) {
-					File getStudent = new File(Common.PATH
-							+ Common.STUDENT_DATA + "/" + matrikelnr + ""
-							+ Common.JSON2);
+					File getStudent = new File(Constants.PATH
+							+ Constants.STUDENT_DATA + "/" + matrikelnr + ""
+							+ Constants.JSON2);
 					if (getStudent.exists()) {
 						setMatrikelnr(matrikelnr);
 						return lies(getStudent.getAbsolutePath());
@@ -71,7 +71,7 @@ public class ReadData {
 	}
 
 	public static JSONObject getAllLehrkraftnews() {
-		File[] files = new File(Common.PATH + Common.LEHRKRAFTNEWS_DATA + "/")
+		File[] files = new File(Constants.PATH + Constants.LEHRKRAFTNEWS_DATA + "/")
 				.listFiles();
 		JSONObject jsonObject = new JSONObject();
 		String jsonSource = new String();
@@ -107,7 +107,7 @@ public class ReadData {
 	}
 
 	public static JSONObject getAllEvents() {
-		File[] files = new File(Common.PATH + Common.Event_DATA + "/")
+		File[] files = new File(Constants.PATH + Constants.Event_DATA + "/")
 				.listFiles();
 		JSONObject jsonObject = new JSONObject();
 		String jsonSource = new String();
@@ -142,8 +142,8 @@ public class ReadData {
 	}
 
 	public static JSONObject getProfDataByProfname(String profname) {
-		File file = new File(Common.PATH + Common.PROF_DATA + "/" + profname
-				+ "" + Common.JSON2);
+		File file = new File(Constants.PATH + Constants.PROF_DATA + "/" + profname
+				+ "" + Constants.JSON2);
 		if (!file.exists()) {
 			try {
 				return new JSONObject(
@@ -169,7 +169,7 @@ public class ReadData {
 
 	public static JSONObject getModulDescriptionByStudOrd(String studord,
 			String modulname) {
-		File file = new File(Common.PATH + "" + studord + "" + Common.JSON2);
+		File file = new File(Constants.PATH + "" + studord + "" + Constants.JSON2);
 		if (!file.exists()) {
 			try {
 				return new JSONObject(
@@ -222,8 +222,8 @@ public class ReadData {
 	}
 
 	public static JSONObject getStudienDoku() {
-		File file = new File(Common.PATH + Common.STUDIENDOKU_DATA + "/Doku"
-				+ getMatrikelnr() + "" + Common.JSON2);
+		File file = new File(Constants.PATH + Constants.STUDIENDOKU_DATA + "/Doku"
+				+ getMatrikelnr() + "" + Constants.JSON2);
 		JSONObject json = new JSONObject();
 		if (file.exists()) {
 			String source = new String("{\"ErrorCode\":\"\",");

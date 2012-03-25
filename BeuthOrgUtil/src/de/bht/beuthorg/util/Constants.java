@@ -1,6 +1,11 @@
 package de.bht.beuthorg.util;
 
-public class Common {
+/**
+ * Siehe FakeApi Constants
+ * @author Claudia
+ *
+ */
+public class Constants {
 
 	
 	public static final String PATH="/sdcard/JSONDATA/";
