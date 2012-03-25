@@ -31,7 +31,6 @@ public class AllgemeinUni extends Activity{
 		@Override
 		public void onClick(View v) {
 			if (v == aunewsB) {
-				finish();
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), News.class), News.NEWS_REQUEST_CODE);
 			} else if (v == auinfoB) {
 //				finish();
