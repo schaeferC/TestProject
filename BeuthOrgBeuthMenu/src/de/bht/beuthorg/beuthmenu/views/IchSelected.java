@@ -12,6 +12,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import de.bht.beuthorg.beuthmenu.R;
+import de.bht.beuthorg.raumplan.view.Raumplan;
+import de.bht.beuthorg.stundenplan.view.StundenplanView;
+import de.bht.beuthorg.util.BeuthOrgApplication;
 
 
 public class IchSelected extends Activity{
@@ -32,11 +35,11 @@ public class IchSelected extends Activity{
 		@Override
 		public void onClick(View v) {
 			if (v == israumplanB) {
-
+				startActivity(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class));
 			} else if (v == isstudiendokuB) {
 
 			} else if (v == isstundenplanB) {
-
+				startActivity(new Intent(BeuthOrgApplication.getAppContext(), StundenplanView.class));
 			} else if (v == isbackB) {
 
 			}
