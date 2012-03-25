@@ -48,19 +48,19 @@
             android:label="Login" >
         </activity>
                 <activity
-            android:name=".views.Modulbeschreibung"
+            android:name=".moduldescription.view.Modulbeschreibung"
             android:label="Login" >
         </activity>
                 <activity
-            android:name=".views.ProfInfo"
+            android:name=".profinfoweb.view.ProfInfo"
             android:label="Login" >
         </activity>
                         <activity
-            android:name=".views.Raumplan"
+            android:name=".raumplan.view.Raumplan"
             android:label="Login" >
         </activity>
                         <activity
-            android:name=".views.StundenplanView"
+            android:name=".stundenplan.view.StundenplanView"
             android:label="Login" >
         </activity>
         <activity
