@@ -58,7 +58,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".views.StudienDokuView"
+            android:name=".studiendokumentation.view.StudienDokuView"
             android:label="@string/app_name" >
         </activity>
     </application>
