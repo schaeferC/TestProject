@@ -46,7 +46,7 @@ public class IchSelected extends Activity{
 			if (v == israumplanB) {
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Raumplan.class), Raumplan.RAUMPLAN_REQUEST_CODE);
 			} else if (v == isstudiendokuB) {
-
+				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), StudienDokuView.class), StudienDokuView.STUDIENDOKU_REQUEST_CODE);
 			} else if (v == isstundenplanB) {
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), StundenplanView.class), StundenplanView.STUNDENPLAN_REQUEST_CODE);
 			} else if (v == isbackB) {

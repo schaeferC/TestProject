@@ -79,6 +79,10 @@
             android:name=".beuthmenu.views.IchSelected"
             android:label="Ich" >
         </activity>
+       	<activity
+            android:name=".beuthmenu.views.StudienDokuView"
+            android:label="Studiendoku" >
+        </activity>
         <activity
             android:name=".beuthmenu.views.Survival"
             android:label="Survival" >
