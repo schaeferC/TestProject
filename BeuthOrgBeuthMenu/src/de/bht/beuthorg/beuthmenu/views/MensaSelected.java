@@ -39,6 +39,8 @@ public class MensaSelected extends Activity {
 		@Override
 		public void onClick(View v) {
 			if (v == food) {
+
+                ProgressTimerDialog.run(MensaSelected.this, "Lade Menuplan");
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(),MensaFood.class), MensaFood.MENSAFOOD_REQUEST_CODE);
 			}else if (v == mensabackB) {
 				returnToCallingActivity();

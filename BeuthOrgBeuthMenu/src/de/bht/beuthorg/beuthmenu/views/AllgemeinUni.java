@@ -42,6 +42,7 @@ public class AllgemeinUni extends Activity{
 		@Override
 		public void onClick(View v) {
 			if (v == aunewsB) {
+				ProgressTimerDialog.run(AllgemeinUni.this, "Lade Lehrkraftnews");
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), News.class), News.NEWS_REQUEST_CODE);
 			} else if (v == auinfoB) {
 				

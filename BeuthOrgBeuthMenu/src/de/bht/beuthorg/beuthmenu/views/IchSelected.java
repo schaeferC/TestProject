@@ -48,6 +48,7 @@ public class IchSelected extends Activity{
 			} else if (v == isstudiendokuB) {
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), StudienDokuView.class), StudienDokuView.STUDIENDOKU_REQUEST_CODE);
 			} else if (v == isstundenplanB) {
+				ProgressTimerDialog.run(IchSelected.this, "Lade Stundenplan");
 				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), StundenplanView.class), StundenplanView.STUNDENPLAN_REQUEST_CODE);
 			} else if (v == isbackB) {
 				returnToCallingActivity();
