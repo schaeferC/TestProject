@@ -19,10 +19,15 @@ import de.bht.beuthorg.util.BeuthOrgApplication;
 
 public class IchSelected extends Activity{
 	
+	/** Codes zur Identifizierung bzw. zum Aufruf der Activity */
+	
 	public static final int ICHSELECTED_REQUEST_CODE = 1233210998;
 
 	public static final int ICHSELECTED_SUCCESS_CODE = 10;
 	
+	/** 
+	 * XML-Komponenten als Variablen vereinbaren 
+	 */
 	private Button israumplanB;
 	private Button isstudiendokuB;
 	private Button isstundenplanB;
@@ -32,6 +37,10 @@ public class IchSelected extends Activity{
 	
 	private OnClickListener ocl = new OnClickListener() {
 
+		/**
+		 *  if-Bedingungen sorgen für Fallunterscheidung wann welche Activity aufgerufen wird,
+		 *  sobald auf ein bestimmten XML-Button geklickt wird. 
+		 */
 		@Override
 		public void onClick(View v) {
 			if (v == israumplanB) {
@@ -47,12 +56,19 @@ public class IchSelected extends Activity{
 		}
 	};
 	
-	
+	/** 
+	 * betroffenes Layout wird mit Hilfe von setContentView-Methode mit Activity verknüpft, 
+	 * um auf die XML-Komponenten zugreifen zu können.
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ichmenu);
 		
+		/** 
+		 * Variablen werden mit entsprechend vereinbarten ID's der XML-Komponenten versehen,
+		 *  um diese jeweils zu verknüpfen  
+		 */
 		israumplanB = (Button)findViewById(R.id.israumplanB); 
 		israumplanB.setOnClickListener(ocl);
 		
@@ -67,7 +83,9 @@ public class IchSelected extends Activity{
 		
 		ichmenu = (ImageView)findViewById(R.id.ichwabe);
 		
-        
+		/** 
+		 * Erstellen/Laden von Animationen 
+		 */
         Animation aScale = AnimationUtils.loadAnimation(this,
 				R.anim.menubuttonsscale);
         Animation aAlpha = AnimationUtils.loadAnimation(this,
@@ -78,7 +96,9 @@ public class IchSelected extends Activity{
 		set.addAnimation(aAlpha);
 		
 
-		
+		/** 
+		 * XML-Komponenten mit Animationen versehen/verknüpfen
+		 */
 		ichmenu.startAnimation(aScale);
 		isstundenplanB.startAnimation(set);
 		israumplanB.startAnimation(set);
@@ -86,7 +106,10 @@ public class IchSelected extends Activity{
 		
 	}
 	
-	
+	/** 
+	 * Methode sorgt dafür, dass beim Drücken der BACK-Taste des Smartphones
+	 * die jeweilig vorherige Activity aufgerufen wird. 
+	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -95,6 +118,10 @@ public class IchSelected extends Activity{
 		return true;
 	}
 
+	/**
+	 * Beendet die aktuelle Activity und gibt der aufrufenden Activity den
+	 * SuccessCode zurück
+	 */
 	protected void returnToCallingActivity() {
 		Intent intent = new Intent();
 		setResult(IchSelected.ICHSELECTED_SUCCESS_CODE, intent);

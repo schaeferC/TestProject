@@ -16,11 +16,17 @@ import de.bht.beuthorg.util.BeuthOrgApplication;
 
 public class AllgemeinUni extends Activity{
    
+	/**
+	 * Codes zur Identifizierung bzw. zum Aufruf der Activity 
+	 */
 	public static final int UNI_REQUEST_CODE = 123321000;
 
 	public static final int UNI_SUCCESS_CODE = 3;
 	/** Called when the activity is first created. */
-
+	
+	/** 
+	 * XML-Komponenten als Variablen vereinbaren 
+	 */
 	private Button aunewsB;
 	private Button auinfoB;
 	private Button aukontaktB;
@@ -29,6 +35,10 @@ public class AllgemeinUni extends Activity{
 	
 	private OnClickListener ocl = new OnClickListener() {
 
+		/**
+		 *  if-Bedingungen sorgen für Fallunterscheidung wann welche Activity aufgerufen wird,
+		 *  sobald auf ein bestimmten XML-Button geklickt wird. 
+		 */
 		@Override
 		public void onClick(View v) {
 			if (v == aunewsB) {
@@ -51,11 +61,19 @@ public class AllgemeinUni extends Activity{
 		}
 	};
 	
+	/** 
+	 * betroffenes Layout wird mit Hilfe von setContentView-Methode mit Activity verknüpft, 
+	 * um auf die XML-Komponenten zugreifen zu können.
+	 */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.unimenu);
         
+        /** 
+		 * Variablen werden mit entsprechend vereinbarten ID's der XML-Komponenten versehen,
+		 *  um diese jeweils zu verknüpfen  
+		 */
         aunewsB = (Button)findViewById(R.id.aunewsB);
         aunewsB.setOnClickListener(ocl);
         
@@ -71,6 +89,9 @@ public class AllgemeinUni extends Activity{
         ausurvivalB = (Button)findViewById(R.id.ausurvivalB);
         ausurvivalB.setOnClickListener(ocl);
         
+        /** 
+		 * Erstellen/Laden von Animationen 
+		 */
         Animation aScale = AnimationUtils.loadAnimation(this,
 				R.anim.menubuttonsscale);
         Animation aAlpha = AnimationUtils.loadAnimation(this,
@@ -80,10 +101,10 @@ public class AllgemeinUni extends Activity{
 		set.addAnimation(aRotate);
 		set.addAnimation(aAlpha);
 		
-//		Animation aSet = AnimationUtils.loadAnimation(this,
-//				R.anim.set);
 		
-
+		/** 
+		 * XML-Komponenten mit Animationen versehen/verknüpfen
+		 */
 		aukontaktB.startAnimation(set);
 		aunewsB.startAnimation(set);
 		auinfoB.startAnimation(set);
@@ -101,6 +122,10 @@ public class AllgemeinUni extends Activity{
 		
 	}
 	
+	/** 
+	 * Methode sorgt dafür, dass beim Drücken der BACK-Taste des Smartphones
+	 * die jeweilig vorherige Activity aufgerufen wird. 
+	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -109,6 +134,10 @@ public class AllgemeinUni extends Activity{
 		return true;
 	}
 
+	/**
+	 * Beendet die aktuelle Activity und gibt der aufrufenden Activity den
+	 * SuccessCode zurück
+	 */
 	protected void returnToCallingActivity() {
 		Intent intent = new Intent();
 		setResult(AllgemeinUni.UNI_SUCCESS_CODE, intent);

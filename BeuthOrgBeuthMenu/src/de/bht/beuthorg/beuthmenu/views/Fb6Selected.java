@@ -15,18 +15,31 @@ import de.bht.beuthorg.beuthmenu.R;
 import de.bht.beuthorg.raumplan.view.Raumplan;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 
+
 public class Fb6Selected extends Activity {
 
+	/**
+	 * Codes zur Identifizierung bzw. zum Aufruf der Activity 
+	 */
+	
 	public static final int FB6SELECTED_REQUEST_CODE = 1233218998;
 
 	public static final int FB6SELECTED_SUCCESS_CODE = 11;
 
+	/** 
+	 * XML-Komponenten als Variablen vereinbaren 
+	 */
 	private ImageView fbwabe;
 	private Button fsinfoB;
 	private Button fsbackB;
 
+	
 	private OnClickListener ocl = new OnClickListener() {
 
+		/**
+		 *  if-Bedingungen sorgen für Fallunterscheidung wann welche Activity aufgerufen wird,
+		 *  sobald auf ein bestimmten XML-Button geklickt wird. 
+		 */
 		@Override
 		public void onClick(View v) {
 			if (v == fsinfoB) {
@@ -36,12 +49,20 @@ public class Fb6Selected extends Activity {
 			}
 		}
 	};
-
+	
+	/** 
+	 * betroffenes Layout wird mit Hilfe von setContentView-Methode mit Activity verknüpft, 
+	 * um auf die XML-Komponenten zugreifen zu können.
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fbmenu);
-
+		
+		/** 
+		 * Variablen werden mit entsprechend vereinbarten ID's der XML-Komponenten versehen,
+		 *  um diese jeweils zu verknüpfen  
+		 */
 		fsinfoB = (Button) findViewById(R.id.fsinfoB);
 		fsinfoB.setOnClickListener(ocl);
 
@@ -50,6 +71,9 @@ public class Fb6Selected extends Activity {
 		fsbackB = (Button) findViewById(R.id.fsbackB);
 		fsbackB.setOnClickListener(ocl);
 
+		/** 
+		 * Erstellen/Laden von Animationen 
+		 */
 		Animation aScale = AnimationUtils.loadAnimation(this,
 				R.anim.menubuttonsscale);
 		Animation aAlpha = AnimationUtils.loadAnimation(this,
@@ -60,11 +84,18 @@ public class Fb6Selected extends Activity {
 		set.addAnimation(aRotate);
 		set.addAnimation(aAlpha);
 
+		/** 
+		 * XML-Komponenten mit Animationen versehen/verknüpfen
+		 */
 		fbwabe.startAnimation(aScale);
 		fsinfoB.startAnimation(set);
 
 	}
 	
+	/** 
+	 * Methode sorgt dafür, dass beim Drücken der BACK-Taste des Smartphones
+	 * die jeweilig vorherige Activity aufgerufen wird. 
+	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -73,6 +104,11 @@ public class Fb6Selected extends Activity {
 		return true;
 	}
 
+	
+	/**
+	 * Beendet die aktuelle Activity und gibt der aufrufenden Activity den
+	 * SuccessCode zurück
+	 */
 	protected void returnToCallingActivity() {
 		Intent intent = new Intent();
 		setResult(Fb6Selected.FB6SELECTED_SUCCESS_CODE, intent);

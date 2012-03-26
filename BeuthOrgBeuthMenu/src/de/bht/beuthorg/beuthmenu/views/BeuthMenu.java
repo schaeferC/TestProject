@@ -25,6 +25,10 @@ public class BeuthMenu extends Activity {
 	 */
 	private OnClickListener ocl = new OnClickListener() {
 
+		/**
+		 *  if-Bedingungen sorgen für Fallunterscheidung wann welche Activity aufgerufen wird,
+		 *  sobald auf ein bestimmten XML-Button geklickt wird. 
+		 */
 		@Override
 		public void onClick(View v) {
 			if (v == uniB) {
@@ -40,12 +44,19 @@ public class BeuthMenu extends Activity {
 		}
 	};
 
-	
+	/** 
+	 * betroffenes Layout wird mit Hilfe von setContentView-Methode mit Activity verknüpft, 
+	 * um auf die XML-Komponenten zugreifen zu können.
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
 
+		/** 
+		 * Variablen werden mit entsprechend vereinbarten ID's der XML-Komponenten versehen,
+		 *  um diese jeweils zu verknüpfen  
+		 */
 		uniB = (Button) findViewById(R.id.uniB);
 		uniB.setOnClickListener(ocl);
 
