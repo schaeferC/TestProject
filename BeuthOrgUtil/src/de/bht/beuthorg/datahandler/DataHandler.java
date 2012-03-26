@@ -42,6 +42,11 @@ public class DataHandler {
 
 	}
 
+	/**
+	 * Methode greift auf das StudienDoku-Objekt zu und entnimmt
+	 * die benötigten Daten aus der Fake-Api in Form einer ArrayList 
+	 * von String-Arrays 
+	 */
 	static public ArrayList<String[]> getStudienDoku() {
 		ReadData.setMatrikelnr(BeuthOrgControl.getInstance()
 				.getRegistredStudent().getMatrikelnr());
