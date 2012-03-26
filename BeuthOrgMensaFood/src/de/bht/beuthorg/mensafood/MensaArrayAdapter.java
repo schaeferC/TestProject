@@ -1,6 +1,5 @@
 package de.bht.beuthorg.mensafood;
 
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.text.Html;
@@ -12,8 +11,9 @@ import android.widget.TextView;
 
 /**
  * Klasse zur Darstellung der List-Items
+ * 
  * @author Claudia
- *
+ * 
  */
 public class MensaArrayAdapter extends ArrayAdapter<String> {
 
@@ -28,6 +28,7 @@ public class MensaArrayAdapter extends ArrayAdapter<String> {
 
 	/**
 	 * Konstruktor
+	 * 
 	 * @param context
 	 * @param textViewResourceId
 	 * @param objects
@@ -42,11 +43,12 @@ public class MensaArrayAdapter extends ArrayAdapter<String> {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		
+
 		TextView v = (TextView) super.getView(position, convertView, parent);
-		
+
 		if (position > 0) {
-			// nachdem welcher Content enthalten ist eine andere Darstellungsform wählen
+			// je nachdem welcher Content enthalten ist eine andere
+			// Darstellungsform wählen
 			if (contents[position].startsWith("EUR")) {
 				v.setText(contents[position]);
 				v.setGravity(Gravity.RIGHT);
@@ -66,6 +68,8 @@ public class MensaArrayAdapter extends ArrayAdapter<String> {
 			} else if (contents[position - 1].matches(".*?")) {
 
 				if (contents[position].matches(".*?\\|\\d+[\\|*\\d*]*")) {
+					// wenn irgendwelche Zeichen gefolgt von Zahlen dir getrennt
+					// von | sind
 					String first = contents[position].substring(0,
 							contents[position].indexOf("|"));
 					String last = contents[position]
@@ -77,7 +81,7 @@ public class MensaArrayAdapter extends ArrayAdapter<String> {
 					res.finishPreloading();
 					return v;
 				}
-				
+
 				v.setText(contents[position]);
 				v.setTextColor(res.getColor(R.color.beuthorgTextColor));
 				v.setTextSize(10);
