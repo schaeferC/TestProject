@@ -13,8 +13,19 @@ import de.bht.beuthorg.objects.StudienDoku;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 import de.bht.beuthorg.util.DataSaver;
 
+/**
+ * Diese Klasse regelt den Zugriff zur FakeApi
+ * @author Claudia
+ *
+ */
 public class DataHandler {
 
+	/**
+	 * Überprüft ob die eingegebenen Daten vorhanden sind
+	 * @param matrikel
+	 * @param pw
+	 * @return
+	 */
 	static public boolean isRegistered(String matrikel, String pw) {
 		JSONObject json = ReadData.LogIn(matrikel, pw);
 
