@@ -48,6 +48,10 @@ public class ProfInfo extends Activity {
 		webview.loadUrl(website);
 	}
 
+	/** 
+	 * Methode sorgt dafür, dass beim Drücken der BACK-Taste des Smartphones
+	 * die jeweilig vorherige Activity aufgerufen wird. 
+	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
