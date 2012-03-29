@@ -21,10 +21,14 @@ import de.bht.beuthorg.util.DataSaver;
 public class DataHandler {
 
 	/**
+<<<<<<< HEAD
+	 * Überprüfung auf gültigem Login 
+=======
 	 * Überprüft ob die eingegebenen Daten vorhanden sind
 	 * @param matrikel
 	 * @param pw
 	 * @return
+>>>>>>> acc30d6431e8e0524a7306887c616b86ca93f1d3
 	 */
 	static public boolean isRegistered(String matrikel, String pw) {
 		JSONObject json = ReadData.LogIn(matrikel, pw);
@@ -39,8 +43,13 @@ public class DataHandler {
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Methode greift auf das ModulOrd-Objekt zu und entnimmt
+	 * die benötigten Daten aus der Fake-Api in Form eines Strings 
+=======
 	 * @param modulname
 	 * @return
+>>>>>>> acc30d6431e8e0524a7306887c616b86ca93f1d3
 	 */
 	static public String getModulDescription(String modulname) {
 		JSONObject json = ReadData.getModulDescriptionByStudOrd(BeuthOrgControl
