@@ -15,18 +15,29 @@ import de.bht.beuthorg.studiendokumentation.R;
 
 public class StudienDokuView extends Activity {
 	
+	/** Codes zur Identifizierung bzw. zum Aufruf der Activity */
 	public static final int STUDIENDOKU_REQUEST_CODE = 123329998;
 
 	public static final int STUDIENDOKU_SUCCESS_CODE = 20;
 	
+	/** 
+	 * XML-Komponenten als Variablen vereinbaren 
+	 */
 	private ListView studiendokulist;
 	
+	/** 
+	 * betroffenes Layout wird mit Hilfe von setContentView-Methode mit Activity verknüpft, 
+	 * um auf die XML-Komponenten zugreifen zu können.
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.studiendoku);
 		studiendokulist = (ListView) findViewById(R.id.studiendokuList);
 		
+		/** 
+		 * ArrayList wird mit Inhalt der Studiendoku aus der Fake-Api gefüllt 
+		 */
 		ArrayList<String[]> contentsStudienDoku = DataHandler.getStudienDoku();
 		String[] doku = new String[contentsStudienDoku.size()];
 		for(int i = 0; i< contentsStudienDoku.size(); i++){
@@ -46,6 +57,10 @@ public class StudienDokuView extends Activity {
 
 	}
 	
+	/** 
+	 * Methode sorgt dafür, dass beim Drücken der BACK-Taste des Smartphones
+	 * die jeweilig vorherige Activity aufgerufen wird. 
+	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -54,6 +69,10 @@ public class StudienDokuView extends Activity {
 		return true;
 	}
 
+	/**
+	 * Beendet die aktuelle Activity und gibt der aufrufenden Activity den
+	 * SuccessCode zurück
+	 */
 	protected void returnToCallingActivity() {
 		Intent intent = new Intent();
 		setResult(StudienDokuView.STUDIENDOKU_SUCCESS_CODE, intent);
