@@ -4,7 +4,12 @@ import de.bht.beuthorg.beuthmenu.R;
 import android.app.Activity;
 import android.os.Bundle;
 
-
+/**
+ * Activity für die Darstellung der Kontakt-Seite des Uni-Bereichs
+ * 
+ * @author Enis Gürmen
+ * 
+ */
 public class UniKontakt extends Activity {
 	
 	/** Codes zur Identifizierung bzw. zum Aufruf der Activity */

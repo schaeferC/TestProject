@@ -15,7 +15,12 @@ import de.bht.beuthorg.beuthmenu.R;
 import de.bht.beuthorg.raumplan.view.Raumplan;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 
-
+/**
+ * Activity für die Darstellung des FB6-Untermenüs
+ * 
+ * @author Enis Gürmen
+ * 
+ */
 public class Fb6Selected extends Activity {
 
 	/**

@@ -17,7 +17,12 @@ import de.bht.beuthorg.studiendokumentation.view.StudienDokuView;
 import de.bht.beuthorg.stundenplan.view.StundenplanView;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 
-
+/**
+ * Activity für die Darstellung des Ich-Untermenüs
+ * 
+ * @author Enis Gürmen
+ * 
+ */
 public class IchSelected extends Activity{
 	
 	/** Codes zur Identifizierung bzw. zum Aufruf der Activity */
