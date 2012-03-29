@@ -29,6 +29,10 @@ import de.bht.beuthorg.util.BeuthOrgApplication;
  */
 public class Login extends Activity implements OnClickListener {
 
+	/** 
+	 * XML-Komponenten als Variablen vereinbaren 
+	 */
+	
 	// Objekte vom MainMenu
 	private Button login;
 	private Button withoutLogin;
@@ -45,12 +49,20 @@ public class Login extends Activity implements OnClickListener {
 	private Button cancel;
 	private Button enterLogin;
 
+	/** 
+	 * betroffenes Layout wird mit Hilfe von setContentView-Methode mit Activity verknüpft, 
+	 * um auf die XML-Komponenten zugreifen zu können.
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
 
+		/** 
+		 * Variablen werden mit entsprechend vereinbarten ID's der XML-Komponenten versehen,
+		 *  um diese jeweils zu verknüpfen  
+		 */
 		login = (Button) findViewById(R.id.login);
 		login.setOnClickListener(this);
 		withoutLogin = (Button) findViewById(R.id.withoutLogin);
@@ -58,6 +70,10 @@ public class Login extends Activity implements OnClickListener {
 
 	}
 
+	/**
+	 *  if-Bedingungen sorgen für Fallunterscheidung wann welche Activity aufgerufen wird,
+	 *  sobald auf ein bestimmten XML-Button geklickt wird. 
+	 */
 	@Override
 	public void onClick(View v) {
 

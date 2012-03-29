@@ -9,24 +9,34 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 
-/**
- * Nicht mehr in Benutzung
- *
- */
-public class BeuthOrgActivity extends Activity{
 
-	/** Called when the activity is first created. */
+public class BeuthOrgActivity extends Activity{
 		   
+	/** 
+	 * XML-Komponenten als Variablen vereinbaren 
+	 */
 	private Button helloButton;
 	
+	/** 
+	 * betroffenes Layout wird mit Hilfe von setContentView-Methode mit Activity verknüpft, 
+	 * um auf die XML-Komponenten zugreifen zu können.
+	 */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-                
+            
+        /** 
+		 * Variablen werden mit entsprechend vereinbarten ID's der XML-Komponenten versehen,
+		 *  um diese jeweils zu verknüpfen  
+		 */
         helloButton = (Button)findViewById(R.id.hello_button);
         helloButton.setOnClickListener(new OnClickListener() {
 			
+        	/**
+    		 *  if-Bedingungen sorgen für Fallunterscheidung wann welche Activity aufgerufen wird,
+    		 *  sobald auf ein bestimmten XML-Button geklickt wird. 
+    		 */
 			@Override
 			public void onClick(View v) {
 				if (v == helloButton){
