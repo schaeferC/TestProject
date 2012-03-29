@@ -33,9 +33,15 @@ public class DataHandler {
 			return false;
 		}
 		BeuthOrgControl.getInstance().setRegistredStudent(json);
+		ReadData.setMatrikelnr(BeuthOrgControl.getInstance()
+				.getRegistredStudent().getMatrikelnr());
 		return true;
 	}
 
+	/**
+	 * @param modulname
+	 * @return
+	 */
 	static public String getModulDescription(String modulname) {
 		JSONObject json = ReadData.getModulDescriptionByStudOrd(BeuthOrgControl
 				.getInstance().getRegistredStudent().getStudienOrdnung(),
@@ -59,8 +65,6 @@ public class DataHandler {
 	 * von String-Arrays 
 	 */
 	static public ArrayList<String[]> getStudienDoku() {
-		ReadData.setMatrikelnr(BeuthOrgControl.getInstance()
-				.getRegistredStudent().getMatrikelnr());
 		JSONObject json = ReadData.getStudienDoku();
 		StudienDoku studienDoku = new StudienDoku(json);
 		return studienDoku.getEntities();

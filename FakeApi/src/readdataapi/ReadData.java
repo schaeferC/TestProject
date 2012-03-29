@@ -290,7 +290,7 @@ public class ReadData {
 	 * Getter
 	 * @return
 	 */
-	public static String getMatrikelnr() {
+	private static String getMatrikelnr() {
 		return matrikelnr;
 	}
 

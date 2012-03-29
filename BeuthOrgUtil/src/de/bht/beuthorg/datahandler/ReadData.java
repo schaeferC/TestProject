@@ -249,7 +249,7 @@ public class ReadData {
 		return json;
 	}
 
-	public static String getMatrikelnr() {
+	private static String getMatrikelnr() {
 		return matrikelnr;
 	}
 
