@@ -20,7 +20,7 @@ public class ReadData {
 
 	private static String matrikelnr;
 
-	public static JSONObject lies(String filePath) {
+	private static JSONObject lies(String filePath) {
 
 		try {
 			FileReader fr = new FileReader(filePath);

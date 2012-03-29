@@ -24,7 +24,7 @@ public class ReadData {
 	 * 		String, Datei die ausgelesen wird
 	 * @return
 	 */
-	public static JSONObject lies(String filePath) {
+	private static JSONObject lies(String filePath) {
 
 		try {
 			FileReader fr = new FileReader(filePath);
