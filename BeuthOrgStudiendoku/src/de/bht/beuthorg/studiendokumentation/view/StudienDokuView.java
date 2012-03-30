@@ -9,9 +9,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.ListView;
-import de.bht.beuthorg.datahandler.DataHandler;
 import de.bht.beuthorg.studiendokumentation.ArrayAdapterStudiendoku;
 import de.bht.beuthorg.studiendokumentation.R;
+import de.bht.beuthorg.util.datahandler.DataHandler;
 
 public class StudienDokuView extends Activity {
 	

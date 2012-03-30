@@ -3,11 +3,10 @@ package de.bht.beuthorg.profinfoweb.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.webkit.WebView;
-import de.bht.beuthorg.datahandler.DataHandler;
 import de.bht.beuthorg.profinfoweb.R;
+import de.bht.beuthorg.util.datahandler.DataHandler;
 
 /**
  * Activity für die Darstellung der Website des Profs

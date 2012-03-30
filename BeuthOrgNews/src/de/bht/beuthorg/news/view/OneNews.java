@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 import de.bht.beuthorg.news.R;
-import de.bht.beuthorg.objects.LehrkraftNews;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 import de.bht.beuthorg.util.DataSaver;
+import de.bht.beuthorg.util.objects.LehrkraftNews;
 
 /**
  * Activity zur Darstellung einer LehrkraftNews

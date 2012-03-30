@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,13 +19,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import de.bht.beuthorg.control.BeuthOrgControl;
 import de.bht.beuthorg.moduldescription.view.Modulbeschreibung;
-import de.bht.beuthorg.objects.Modul;
 import de.bht.beuthorg.profinfoweb.view.ProfInfo;
 import de.bht.beuthorg.raumplan.view.Raumplan;
 import de.bht.beuthorg.stundenplan.R;
 import de.bht.beuthorg.util.BeuthOrgApplication;
+import de.bht.beuthorg.util.control.BeuthOrgControl;
+import de.bht.beuthorg.util.objects.Modul;
 
 /**
  * Ist die Activity-Klasse zum Anzeigen des Stundenplans.

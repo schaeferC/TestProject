@@ -1,13 +1,12 @@
 package de.bht.beuthorg.moduldescription.view;
 
-import de.bht.beuthorg.datahandler.DataHandler;
-import de.bht.beuthorg.moduldescription.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.TextView;
+import de.bht.beuthorg.moduldescription.R;
+import de.bht.beuthorg.util.datahandler.DataHandler;
 
 /**
  * Diese Klasse stellt die Activity der Modulbeschreibung dar

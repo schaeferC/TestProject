@@ -3,7 +3,6 @@ package de.bht.beuthorg.views;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +16,8 @@ import android.widget.Toast;
 import de.bht.beuthorg.R;
 import de.bht.beuthorg.beuthmenu.views.BeuthMenu;
 import de.bht.beuthorg.beuthmenu.views.WithoutLoginMenu;
-import de.bht.beuthorg.datahandler.DataHandler;
 import de.bht.beuthorg.util.BeuthOrgApplication;
+import de.bht.beuthorg.util.datahandler.DataHandler;
 
 /**
  * Diese Klasse stellt den Loginbereich da. Dazu gehört die auswahl mit oder
