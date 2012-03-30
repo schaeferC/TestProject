@@ -7,12 +7,14 @@ import android.util.Log;
 
 /**
  * Java Objekt der Module mit Modulordnung und -beschreibung
+ * 
  * @author Claudia
- *
+ * 
  */
 public class ModulOrd {
 	/**
-	 * Beschreibt die Ordnung des Moduls nach welcher Studienordnung dieses stattfindet
+	 * Beschreibt die Ordnung des Moduls nach welcher Studienordnung dieses
+	 * stattfindet
 	 */
 	private String modulNOrd;
 	/**
@@ -26,6 +28,7 @@ public class ModulOrd {
 
 	/**
 	 * Konstruktor
+	 * 
 	 * @param json
 	 */
 	public ModulOrd(JSONObject json) {
@@ -36,22 +39,22 @@ public class ModulOrd {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		if(errorString.isEmpty()){
+		if (errorString.isEmpty()) {
 			try {
-				JSONObject obj=json.getJSONObject("ModulOrd");
-				Log.d("Debug", "obj: "+obj.toString());
+				JSONObject obj = json.getJSONObject("ModulOrd");
+				Log.d("Debug", "obj: " + obj.toString());
 				this.modulNameOrd = obj.getString("ModulNameOrd");
 				this.modulNOrd = obj.getString("ModulNOrd:");
 
+				this.moduldescriptionOrd = obj
+						.getString("ModulDescriptionOrd:");
 
-			this.moduldescriptionOrd = obj.getString("ModulDescriptionOrd:");
-			
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else {
-			Log.w("ErrorCode", "ErrorMessage at ModulOrd: "+ errorString);
+		} else {
+			Log.w("ErrorCode", "ErrorMessage at ModulOrd: " + errorString);
 		}
 	}
 
@@ -66,5 +69,5 @@ public class ModulOrd {
 	public String getModulNameOrd() {
 		return modulNameOrd;
 	}
-	
+
 }

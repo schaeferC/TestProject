@@ -8,8 +8,9 @@ import org.json.JSONObject;
 
 /**
  * Java Objekt des Stundenplans
+ * 
  * @author Claudia
- *
+ * 
  */
 public class StundenPlan {
 	/**
@@ -24,6 +25,7 @@ public class StundenPlan {
 
 	/**
 	 * Konstruktor
+	 * 
 	 * @param json
 	 */
 	public StundenPlan(JSONObject json) {
@@ -55,7 +57,5 @@ public class StundenPlan {
 		return "StundenPlan [modul=" + Arrays.toString(modul)
 				+ ", stundenPlanName=" + stundenPlanName + "]";
 	}
-	
-	
 
 }

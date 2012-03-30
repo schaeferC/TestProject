@@ -9,6 +9,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+/**
+ * Diese Klasse bildet die Darstellung des Hauptmenus im WithoutLogin-Bereich
+ * 
+ * @author Claudia
+ * 
+ */
 public class WithoutLoginMenu extends Activity {
 
 	/**
@@ -24,34 +30,43 @@ public class WithoutLoginMenu extends Activity {
 	private OnClickListener ocl = new OnClickListener() {
 
 		/**
-		 *  if-Bedingungen sorgen für Fallunterscheidung wann welche Activity aufgerufen wird,
-		 *  sobald auf ein bestimmten XML-Button geklickt wird. 
+		 * if-Bedingungen sorgen für Fallunterscheidung wann welche Activity
+		 * aufgerufen wird, sobald auf ein bestimmten XML-Button geklickt wird.
 		 */
 		@Override
 		public void onClick(View v) {
 			if (v == uniWB) {
-				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), AllgemeinUni.class), AllgemeinUni.UNI_REQUEST_CODE);
+				startActivityForResult(
+						new Intent(BeuthOrgApplication.getAppContext(),
+								AllgemeinUni.class),
+						AllgemeinUni.UNI_REQUEST_CODE);
 			} else if (v == fb6WB) {
-				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), Fb6Selected.class), Fb6Selected.FB6SELECTED_REQUEST_CODE);
-			}  else if (v == mensaWB) {
-				startActivityForResult(new Intent(BeuthOrgApplication.getAppContext(), MensaSelected.class), MensaSelected.MENSASELECTED_REQUEST_CODE);
+				startActivityForResult(
+						new Intent(BeuthOrgApplication.getAppContext(),
+								Fb6Selected.class),
+						Fb6Selected.FB6SELECTED_REQUEST_CODE);
+			} else if (v == mensaWB) {
+				startActivityForResult(
+						new Intent(BeuthOrgApplication.getAppContext(),
+								MensaSelected.class),
+						MensaSelected.MENSASELECTED_REQUEST_CODE);
 			}
 
 		}
 	};
 
-	/** 
-	 * betroffenes Layout wird mit Hilfe von setContentView-Methode mit Activity verknüpft, 
-	 * um auf die XML-Komponenten zugreifen zu können.
+	/**
+	 * betroffenes Layout wird mit Hilfe von setContentView-Methode mit Activity
+	 * verknüpft, um auf die XML-Komponenten zugreifen zu können.
 	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.withoutloginmenu);
 
-		/** 
-		 * Variablen werden mit entsprechend vereinbarten ID's der XML-Komponenten versehen,
-		 *  um diese jeweils zu verknüpfen  
+		/**
+		 * Variablen werden mit entsprechend vereinbarten ID's der
+		 * XML-Komponenten versehen, um diese jeweils zu verknüpfen
 		 */
 		uniWB = (Button) findViewById(R.id.uniWB);
 		uniWB.setOnClickListener(ocl);

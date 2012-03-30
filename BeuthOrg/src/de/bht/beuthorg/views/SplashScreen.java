@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 
 /**
  * Activity für den ersten Screen
+ * @author Dean 
  *
  */
 public class SplashScreen extends Activity {

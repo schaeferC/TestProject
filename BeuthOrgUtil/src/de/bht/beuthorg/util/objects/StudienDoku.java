@@ -20,7 +20,7 @@ public class StudienDoku {
 	 * Studiendoku als JSONArray
 	 */
 	private JSONArray sdoku;
-	
+
 	/**
 	 * Inhalt der Studiendoku in Form einer ArrayList
 	 */
@@ -44,7 +44,7 @@ public class StudienDoku {
 	 * Ordnet den Inhalt der Studiendoku den entsprechenden Tags zu
 	 */
 	public ArrayList<String[]> getEntities() {
-		
+
 		for (int i = 0; i < sdoku.length(); i++) {
 			String[] temp = new String[6];
 			try {
@@ -59,8 +59,8 @@ public class StudienDoku {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			for(String s: temp){
-				Log.w("Debug", "StudiendokuKlasse: "+s);
+			for (String s : temp) {
+				Log.w("Debug", "StudiendokuKlasse: " + s);
 			}
 			entities.add(temp);
 		}

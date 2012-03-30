@@ -5,8 +5,9 @@ import org.json.JSONObject;
 
 /**
  * Java Objekt der Module im Stundenplan
+ * 
  * @author Claudia
- *
+ * 
  */
 public class Modul {
 
@@ -37,6 +38,7 @@ public class Modul {
 
 	/**
 	 * Konstruktor
+	 * 
 	 * @param json
 	 */
 	public Modul(JSONObject json) {
@@ -88,5 +90,4 @@ public class Modul {
 				+ ", gueltigNStudienOrdnung=" + gueltigNStudienOrdnung + "]";
 	}
 
-	
 }

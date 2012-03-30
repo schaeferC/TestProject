@@ -5,8 +5,9 @@ import org.json.JSONObject;
 
 /**
  * Java Objekt eines Studenten
+ * 
  * @author Claudia
- *
+ * 
  */
 public class Student {
 	/**
@@ -51,6 +52,7 @@ public class Student {
 
 	/**
 	 * Konstruktor
+	 * 
 	 * @param json
 	 */
 	public Student(JSONObject json) {
@@ -112,5 +114,4 @@ public class Student {
 				+ stundenplan + ", degreeCourse=" + degreeCourse + "]";
 	}
 
-	
 }

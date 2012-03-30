@@ -7,11 +7,12 @@ import android.util.Log;
 
 /**
  * Java Objekt für die Daten die zu einem Prof gehören
+ * 
  * @author Claudia
- *
+ * 
  */
 public class ProfData {
-	
+
 	/**
 	 * Name des Profs
 	 */
@@ -20,7 +21,8 @@ public class ProfData {
 	 * Website des Profs
 	 */
 	private String website;
-	public ProfData(JSONObject json){
+
+	public ProfData(JSONObject json) {
 		String errorString = null;
 		try {
 			errorString = json.getString("ErrorCode");
@@ -28,28 +30,29 @@ public class ProfData {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		if(errorString.isEmpty()){
+		if (errorString.isEmpty()) {
 			try {
-				JSONObject obj=json.getJSONObject("ProfData");
-				Log.d("Debug", "obj: "+obj.toString());
+				JSONObject obj = json.getJSONObject("ProfData");
+				Log.d("Debug", "obj: " + obj.toString());
 				this.website = obj.getString("Website");
 				this.profName = obj.getString("ProfName");
 
-			
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else {
-			Log.w("ErrorCode", "ErrorMessage at ProfData: "+ errorString);
+		} else {
+			Log.w("ErrorCode", "ErrorMessage at ProfData: " + errorString);
 		}
-		
+
 	}
+
 	public String getProfName() {
 		return profName;
 	}
+
 	public String getWebsite() {
 		return website;
 	}
-	
+
 }

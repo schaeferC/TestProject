@@ -1,4 +1,5 @@
 package de.bht.beuthorg.util.datahandler;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,14 +8,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
 import de.bht.beuthorg.util.Constants;
-
 
 /**
  * Nachzulesen in FakeApi ReadData
+ * 
  * @author Claudia Schaefer
- *
+ * 
  */
 public class ReadData {
 
@@ -36,10 +36,10 @@ public class ReadData {
 	}
 
 	public static JSONObject LogIn(String matrikelnr, String pw) {
-		File file = new File(Constants.PATH + "/" + Constants.REGISTRATION_DATA + ""
-				+ Constants.JSON2);
+		File file = new File(Constants.PATH + "/" + Constants.REGISTRATION_DATA
+				+ "" + Constants.JSON2);
 		JSONObject json = lies(file.getAbsolutePath());
-		
+
 		try {
 			JSONArray jsonArray = json.getJSONArray("Registration");
 			for (int i = 0; i < jsonArray.length(); i++) {
@@ -71,8 +71,8 @@ public class ReadData {
 	}
 
 	public static JSONObject getAllLehrkraftnews() {
-		File[] files = new File(Constants.PATH + Constants.LEHRKRAFTNEWS_DATA + "/")
-				.listFiles();
+		File[] files = new File(Constants.PATH + Constants.LEHRKRAFTNEWS_DATA
+				+ "/").listFiles();
 		JSONObject jsonObject = new JSONObject();
 		String jsonSource = new String();
 
@@ -142,8 +142,8 @@ public class ReadData {
 	}
 
 	public static JSONObject getProfDataByProfname(String profname) {
-		File file = new File(Constants.PATH + Constants.PROF_DATA + "/" + profname
-				+ "" + Constants.JSON2);
+		File file = new File(Constants.PATH + Constants.PROF_DATA + "/"
+				+ profname + "" + Constants.JSON2);
 		if (!file.exists()) {
 			try {
 				return new JSONObject(
@@ -169,7 +169,8 @@ public class ReadData {
 
 	public static JSONObject getModulDescriptionByStudOrd(String studord,
 			String modulname) {
-		File file = new File(Constants.PATH + "" + studord + "" + Constants.JSON2);
+		File file = new File(Constants.PATH + "" + studord + ""
+				+ Constants.JSON2);
 		if (!file.exists()) {
 			try {
 				return new JSONObject(
@@ -222,8 +223,8 @@ public class ReadData {
 	}
 
 	public static JSONObject getStudienDoku() {
-		File file = new File(Constants.PATH + Constants.STUDIENDOKU_DATA + "/Doku"
-				+ getMatrikelnr() + "" + Constants.JSON2);
+		File file = new File(Constants.PATH + Constants.STUDIENDOKU_DATA
+				+ "/Doku" + getMatrikelnr() + "" + Constants.JSON2);
 		JSONObject json = new JSONObject();
 		if (file.exists()) {
 			String source = new String("{\"ErrorCode\":\"\",");

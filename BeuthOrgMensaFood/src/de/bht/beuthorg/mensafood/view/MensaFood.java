@@ -16,8 +16,9 @@ import android.widget.TextView;
 
 /**
  * Diese Klasse stellt den Mensaspeiseplan des aktuellen und nächsten Tages dar.
+ * 
  * @author Claudia
- *
+ * 
  */
 public class MensaFood extends Activity {
 
@@ -29,7 +30,7 @@ public class MensaFood extends Activity {
 	 * Result, dass die Activity zurückgibt nach erfolgreichem Abschluss
 	 */
 	public static final int MENSAFOOD_SUCCESS_CODE = 2;
-	
+
 	/**
 	 * In View enthaltene Items
 	 */
@@ -50,6 +51,7 @@ public class MensaFood extends Activity {
 			}
 		}
 	};
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -62,7 +64,7 @@ public class MensaFood extends Activity {
 		dayA = (TextView) findViewById(R.id.dayA);
 		bottomContentsView = (TextView) findViewById(R.id.bottomContent);
 
-		//zum wechseln des Textes in Button und View für changeDay
+		// zum wechseln des Textes in Button und View für changeDay
 		if (day != null) {
 			if (day.contains("today")) {
 				day = new String("tomorrow");
@@ -81,7 +83,7 @@ public class MensaFood extends Activity {
 
 		dayB.setOnClickListener(onClick);
 
-		//Inhalte holen
+		// Inhalte holen
 		String siteContent = HTTPContents.mensaGetContents(day);
 		bottomContents = siteContent.substring(siteContent
 				.indexOf("Kennzeichnung"));
@@ -94,7 +96,6 @@ public class MensaFood extends Activity {
 		mealList.setAdapter(adapter);
 		mealList.setCacheColorHint(Color.TRANSPARENT);
 
-
 	}
 
 	/**
@@ -104,7 +105,7 @@ public class MensaFood extends Activity {
 
 		this.onCreate(savedInstanceState);
 	}
-	
+
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -112,6 +113,7 @@ public class MensaFood extends Activity {
 		}
 		return true;
 	}
+
 	/**
 	 * Beendet die aktuelle Activity und gibt der aufrufenden Activity den
 	 * SuccessCode zurück
@@ -121,6 +123,5 @@ public class MensaFood extends Activity {
 		setResult(MensaFood.MENSAFOOD_SUCCESS_CODE, intent);
 		finish();
 	}
-
 
 }

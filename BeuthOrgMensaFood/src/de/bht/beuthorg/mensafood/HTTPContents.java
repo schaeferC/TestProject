@@ -1,6 +1,5 @@
 package de.bht.beuthorg.mensafood;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,8 +12,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 /**
  * Diese Klasse besorgt die Inhalte für das MensaEssen von der mensa-website
+ * 
  * @author Claudia
- *
+ * 
  */
 public class HTTPContents {
 
@@ -30,15 +30,17 @@ public class HTTPContents {
 	 * Client um die Anfrage auf die Website auszufürhen
 	 */
 	private static HttpClient hc = new DefaultHttpClient();
+
 	/**
-	 * Diese Methode führt den Aufruf der Website aus und gibt den benötigten Content zurück
+	 * Diese Methode führt den Aufruf der Website aus und gibt den benötigten
+	 * Content zurück
+	 * 
 	 * @param url
-	 * 		String, aufgerufene URL
+	 *            String, aufgerufene URL
 	 * @return
 	 */
 	private static String getResponse(String url) {
 
-		
 		HttpGet get = new HttpGet(url);
 
 		try {
@@ -48,7 +50,7 @@ public class HTTPContents {
 			InputStreamReader isr = new InputStreamReader(r.getEntity()
 					.getContent());
 			BufferedReader br = new BufferedReader(isr);
-			//erste Zeile einlesen
+			// erste Zeile einlesen
 			String temp = br.readLine();
 
 			String siteInformation = new String("");
@@ -86,17 +88,38 @@ public class HTTPContents {
 		if (siteInformation == null) {
 			return new String("\n leer");
 		}
-		//rausscheißen der nicht benötigten Inhalte
+		// rausscheißen der nicht benötigten Inhalte
 		siteInformation = siteInformation.substring(
 				siteInformation.indexOf("<div class=\"mensa_day\">"),
 				siteInformation.lastIndexOf("<style type=\"text/css\">"));
 
-		siteInformation = siteInformation.replaceAll("[^\\S]+\\s[^\\S]+", ""); //alle whitespaces ersetzen die nicht zwischen nicht-whitespaces stehen
-		siteInformation = siteInformation.replaceAll("<.*?>", "|");// alle Tags entfernen
-		siteInformation = siteInformation.replaceAll("\t{1,}", "\n"); // da wo mind. ein Tab ist einen Zeilenwechsel machen
+		siteInformation = siteInformation.replaceAll("[^\\S]+\\s[^\\S]+", ""); // alle
+																				// whitespaces
+																				// ersetzen
+																				// die
+																				// nicht
+																				// zwischen
+																				// nicht-whitespaces
+																				// stehen
+		siteInformation = siteInformation.replaceAll("<.*?>", "|");// alle Tags
+																	// entfernen
+		siteInformation = siteInformation.replaceAll("\t{1,}", "\n"); // da wo
+																		// mind.
+																		// ein
+																		// Tab
+																		// ist
+																		// einen
+																		// Zeilenwechsel
+																		// machen
 		siteInformation = siteInformation.replaceAll("\\|{2,}[E]+[U]+[R]+",
-				"\nEUR"); // wo mind. 2 | stehen und dahinter EUR mit Zeilenwechsel und EUR ersetzen
-		siteInformation = siteInformation.replaceAll("\\|{3,}", "\n");// wo mind. 3 | stehen Zeilenwechsel einsetzen
+				"\nEUR"); // wo mind. 2 | stehen und dahinter EUR mit
+							// Zeilenwechsel und EUR ersetzen
+		siteInformation = siteInformation.replaceAll("\\|{3,}", "\n");// wo
+																		// mind.
+																		// 3 |
+																		// stehen
+																		// Zeilenwechsel
+																		// einsetzen
 
 		return siteInformation;
 	}
