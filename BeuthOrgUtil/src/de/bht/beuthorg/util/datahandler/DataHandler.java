@@ -1,4 +1,4 @@
-package de.bht.beuthorg.datahandler;
+package de.bht.beuthorg.util.datahandler;
 
 import java.util.ArrayList;
 
@@ -6,12 +6,12 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
-import de.bht.beuthorg.control.BeuthOrgControl;
-import de.bht.beuthorg.objects.ModulOrd;
-import de.bht.beuthorg.objects.ProfData;
-import de.bht.beuthorg.objects.StudienDoku;
 import de.bht.beuthorg.util.BeuthOrgApplication;
 import de.bht.beuthorg.util.DataSaver;
+import de.bht.beuthorg.util.control.BeuthOrgControl;
+import de.bht.beuthorg.util.objects.ModulOrd;
+import de.bht.beuthorg.util.objects.ProfData;
+import de.bht.beuthorg.util.objects.StudienDoku;
 
 /**
  * Diese Klasse regelt den Zugriff zur FakeApi

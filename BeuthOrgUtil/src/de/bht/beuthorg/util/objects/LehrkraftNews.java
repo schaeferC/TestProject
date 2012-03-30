@@ -1,4 +1,4 @@
-package de.bht.beuthorg.objects;
+package de.bht.beuthorg.util.objects;
 
 
 import org.json.JSONArray;

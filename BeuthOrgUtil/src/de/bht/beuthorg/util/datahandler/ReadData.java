@@ -1,4 +1,4 @@
-package de.bht.beuthorg.datahandler;
+package de.bht.beuthorg.util.datahandler;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

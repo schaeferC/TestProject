@@ -1,9 +1,9 @@
-package de.bht.beuthorg.control;
+package de.bht.beuthorg.util.control;
 
 import org.json.JSONObject;
 
-import de.bht.beuthorg.objects.ModulOrd;
-import de.bht.beuthorg.objects.Student;
+import de.bht.beuthorg.util.objects.ModulOrd;
+import de.bht.beuthorg.util.objects.Student;
 
 /**
  * Diese Klasse dient als Control-Klasse um bestimmte Inhalte zu setzen und
