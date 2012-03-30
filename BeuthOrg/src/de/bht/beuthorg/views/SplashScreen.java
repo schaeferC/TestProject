@@ -15,7 +15,10 @@ public class SplashScreen extends Activity {
 	private boolean active = true;
     private static final int TIMER = 5000;
     
-    /** Called when the activity is first created. */
+    /** 
+	 * betroffenes Layout wird mit Hilfe von setContentView-Methode mit Activity verknüpft, 
+	 * um auf die XML-Komponenten zugreifen zu können.
+	 */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

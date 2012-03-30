@@ -4,7 +4,12 @@ import de.bht.beuthorg.beuthmenu.R;
 import android.app.Activity;
 import android.os.Bundle;
 
-
+/**
+ * Activity für die Darstellung der Info-Seite vom Fachbereich 6
+ * 
+ * @author Enis Gürmen
+ * 
+ */
 public class Fb6Info extends Activity {
 	
 	/** Codes zur Identifizierung bzw. zum Aufruf der Activity */

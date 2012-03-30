@@ -5,9 +5,13 @@ import android.content.Context;
 
 public class ProgressTimerDialog {
 
+	/**
+	 * Timer und Logdauer werden auf Anfangswerte gesetzt 
+	 */
 	private static final int TIMER = 100;
 	private static final int LOGTIME = 3000;
 
+	
 	public static void run(Context context, String message) {
 		final ProgressDialog pd = new ProgressDialog(context);
 		pd.setMessage(message);

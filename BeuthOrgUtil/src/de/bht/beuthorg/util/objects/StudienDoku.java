@@ -8,11 +8,27 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+/**
+ * Java-Objekt einer Studiendoku
+ * 
+ * @author Enis Gürmen
+ * 
+ */
 public class StudienDoku {
 
+	/**
+	 * Studiendoku als JSONArray
+	 */
 	private JSONArray sdoku;
+	
+	/**
+	 * Inhalt der Studiendoku in Form einer ArrayList
+	 */
 	public ArrayList<String[]> entities;
 
+	/**
+	 * Initialisierung der ArrayList
+	 */
 	public StudienDoku(JSONObject json) {
 		entities = new ArrayList<String[]>();
 		try {
@@ -24,6 +40,9 @@ public class StudienDoku {
 		}
 	}
 
+	/**
+	 * Ordnet den Inhalt der Studiendoku den entsprechenden Tags zu
+	 */
 	public ArrayList<String[]> getEntities() {
 		
 		for (int i = 0; i < sdoku.length(); i++) {

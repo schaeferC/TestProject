@@ -9,7 +9,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
-
+/**
+ * Activity für die Darstellung der Survival-Seite
+ * 
+ * @author Enis Gürmen
+ * 
+ */
 public class Survival extends Activity {
 	
 	/** Codes zur Identifizierung bzw. zum Aufruf der Activity */
