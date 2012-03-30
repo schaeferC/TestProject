@@ -10,6 +10,11 @@ import android.widget.Button;
 
 
 
+/**
+ * Nich mehr in Benutzung. Veraltet
+ * @author Dean
+ *
+ */
 public class BeuthOrgActivity extends Activity{
 		   
 	/** 
